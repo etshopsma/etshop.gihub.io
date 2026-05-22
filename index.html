@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HSC Learning Resources — Bangladesh</title>
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #f0f2f5;
+    color: #1a1a2e;
+    min-height: 100vh;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: linear-gradient(135deg, #0f1923 0%, #1b3a6b 60%, #0d2e5a 100%);
+    color: white;
+    padding: 48px 32px 40px;
+    text-align: center;
+  }
+  .hero-tag {
+    display: inline-block;
+    background: #f0a500;
+    color: #0f1923;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    padding: 5px 14px;
+    border-radius: 3px;
+    margin-bottom: 20px;
+  }
+  .hero h1 {
+    font-size: 34px;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 12px;
+  }
+  .hero h1 span { color: #f0a500; }
+  .hero p {
+    font-size: 15px;
+    color: rgba(255,255,255,0.7);
+    max-width: 540px;
+    margin: 0 auto;
+  }
+
+  /* ── MAIN WRAPPER ── */
+  .wrapper {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 36px 20px 60px;
+  }
+
+  /* ── SECTION LABELS ── */
+  .section-label {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #888;
+    margin-bottom: 14px;
+  }
+
+  /* ── SUBJECT CARDS ── */
+  .subject-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+  .subject-btn {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: white;
+    border: 2px solid #e0e4ed;
+    border-radius: 12px;
+    padding: 18px 28px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 700;
+    color: #1a1a2e;
+    transition: border-color 0.18s, box-shadow 0.18s, background 0.18s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    min-width: 200px;
+  }
+  .subject-btn:hover {
+    border-color: #1b3a6b;
+    box-shadow: 0 4px 18px rgba(27,58,107,0.13);
+  }
+  .subject-btn.active {
+    border-color: #1b3a6b;
+    background: #1b3a6b;
+    color: white;
+    box-shadow: 0 4px 18px rgba(27,58,107,0.22);
+  }
+  .subject-btn .icon {
+    font-size: 26px;
+    line-height: 1;
+  }
+  .subject-btn .label-wrap .sub {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    opacity: 0.6;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 2px;
+  }
+  .subject-btn .label-wrap .main {
+    display: block;
+    font-size: 17px;
+  }
+  .subject-btn.active .label-wrap .sub { opacity: 0.7; }
+  /* coming soon pill */
+  .soon {
+    font-size: 10px;
+    font-weight: 700;
+    background: #f0a500;
+    color: #0f1923;
+    padding: 2px 8px;
+    border-radius: 10px;
+    letter-spacing: 1px;
+    margin-left: auto;
+  }
+
+  /* ── PANEL (animated reveal) ── */
+  .panel {
+    display: none;
+    animation: fadeIn 0.22s ease;
+  }
+  .panel.visible { display: block; }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── DIVIDER ── */
+  .divider {
+    border: none;
+    border-top: 2px solid #e0e4ed;
+    margin: 0 0 28px;
+  }
+
+  /* ── TOPIC CARDS ── */
+  .topic-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-bottom: 32px;
+  }
+  .topic-btn {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: white;
+    border: 2px solid #e0e4ed;
+    border-radius: 10px;
+    padding: 14px 22px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 700;
+    color: #1a1a2e;
+    transition: border-color 0.18s, box-shadow 0.18s, background 0.18s;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    flex: 1;
+    min-width: 200px;
+  }
+  .topic-btn:hover {
+    border-color: #1b3a6b;
+    box-shadow: 0 3px 14px rgba(27,58,107,0.11);
+  }
+  .topic-btn.active {
+    border-color: #f0a500;
+    background: #fffbf0;
+    color: #0f1923;
+    box-shadow: 0 3px 14px rgba(240,165,0,0.15);
+  }
+  .topic-btn .t-num {
+    width: 30px;
+    height: 30px;
+    background: #eef0f7;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 800;
+    color: #1b3a6b;
+    flex-shrink: 0;
+  }
+  .topic-btn.active .t-num {
+    background: #f0a500;
+    color: #0f1923;
+  }
+
+  /* ── DAY BUTTONS (Sentences) ── */
+  .day-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    gap: 12px;
+    margin-bottom: 10px;
+  }
+  .day-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    border: 2px solid #e0e4ed;
+    border-radius: 10px;
+    padding: 18px 12px;
+    text-decoration: none;
+    color: #1a1a2e;
+    font-weight: 700;
+    font-size: 14px;
+    transition: border-color 0.18s, box-shadow 0.18s, transform 0.15s;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    text-align: center;
+    gap: 6px;
+  }
+  .day-link:hover {
+    border-color: #1b3a6b;
+    box-shadow: 0 4px 16px rgba(27,58,107,0.14);
+    transform: translateY(-2px);
+    color: #1b3a6b;
+  }
+  .day-link .day-icon { font-size: 22px; }
+  .day-link .day-label { font-size: 15px; font-weight: 800; color: #1b3a6b; }
+  .day-link .day-sub { font-size: 11px; font-weight: 600; color: #888; letter-spacing: 0.5px; }
+
+  /* ── PREPOSITION LINKS ── */
+  .prep-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 14px;
+    margin-bottom: 10px;
+  }
+  .prep-link {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: white;
+    border: 2px solid #e0e4ed;
+    border-radius: 10px;
+    padding: 18px 20px;
+    text-decoration: none;
+    color: #1a1a2e;
+    font-weight: 700;
+    font-size: 14px;
+    transition: border-color 0.18s, box-shadow 0.18s, transform 0.15s;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  }
+  .prep-link:hover {
+    border-color: #1b3a6b;
+    box-shadow: 0 4px 16px rgba(27,58,107,0.14);
+    transform: translateY(-2px);
+  }
+  .prep-link .p-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    flex-shrink: 0;
+  }
+  .prep-link .p-icon.navy { background: #1b3a6b20; }
+  .prep-link .p-icon.orange { background: #f0a50020; }
+  .prep-link .p-text .p-title { font-size: 15px; font-weight: 800; color: #1b3a6b; display: block; }
+  .prep-link .p-text .p-desc  { font-size: 12px; font-weight: 500; color: #888; display: block; margin-top: 2px; }
+  .prep-link:hover .p-text .p-title { color: #2a5298; }
+
+  /* ── INFO HINT ── */
+  .hint {
+    background: #e8f5ee;
+    border-left: 4px solid #1a7a4a;
+    border-radius: 0 8px 8px 0;
+    padding: 12px 16px;
+    font-size: 13px;
+    color: #0d3022;
+    margin-top: 20px;
+  }
+  .hint strong { color: #1a7a4a; }
+
+  /* ── FOOTER ── */
+  .footer {
+    background: #1b3a6b;
+    color: rgba(255,255,255,0.65);
+    text-align: center;
+    padding: 24px 20px;
+    font-size: 13px;
+  }
+  .footer strong { color: #f0a500; }
+</style>
+</head>
+<body>
+
+<!-- ═══════════ HERO ═══════════ -->
+<div class="hero">
+  <div class="hero-tag">HSC Bangladesh</div>
+  <h1>Welcome to <span>HSC</span> Learning Resources</h1>
+  <p>Your one-stop study companion — select a subject below to explore chapters and materials.</p>
+</div>
+
+<!-- ═══════════ MAIN ═══════════ -->
+<div class="wrapper">
+
+  <!-- STEP 1: Choose Subject -->
+  <p class="section-label">Step 1 — Choose a Subject</p>
+  <div class="subject-grid">
+
+    <button class="subject-btn" id="btn-english" onclick="selectSubject('english')">
+      <span class="icon">📘</span>
+      <span class="label-wrap">
+        <span class="sub">Subject</span>
+        <span class="main">English</span>
+      </span>
+    </button>
+
+    <button class="subject-btn" style="opacity:0.55; cursor:not-allowed;">
+      <span class="icon">📐</span>
+      <span class="label-wrap">
+        <span class="sub">Subject</span>
+        <span class="main">Mathematics</span>
+      </span>
+      <span class="soon">SOON</span>
+    </button>
+
+    <button class="subject-btn" style="opacity:0.55; cursor:not-allowed;">
+      <span class="icon">🔬</span>
+      <span class="label-wrap">
+        <span class="sub">Subject</span>
+        <span class="main">Science</span>
+      </span>
+      <span class="soon">SOON</span>
+    </button>
+
+  </div>
+
+  <!-- ═══ ENGLISH PANEL ═══ -->
+  <div class="panel" id="panel-english">
+    <hr class="divider">
+    <p class="section-label">Step 2 — Choose a Chapter</p>
+    <div class="topic-grid">
+      <button class="topic-btn" id="btn-sentences" onclick="selectTopic('sentences')">
+        <span class="t-num">1</span>
+        Frequently Used Sentences
+      </button>
+      <button class="topic-btn" id="btn-preposition" onclick="selectTopic('preposition')">
+        <span class="t-num">2</span>
+        Preposition
+      </button>
+    </div>
+
+    <!-- ─── Chapter 1: Sentences ─── -->
+    <div class="panel" id="panel-sentences">
+      <hr class="divider">
+      <p class="section-label">Chapter 1 — Frequently Used Sentences · Select a Day</p>
+      <div class="day-grid">
+
+        <a class="day-link" href="Day1_English_Sentences.html">
+          <span class="day-icon">📄</span>
+          <span class="day-label">Day 1</span>
+          <span class="day-sub">Sentences 1–200</span>
+        </a>
+
+        <a class="day-link" href="Day2_English_Sentences.html">
+          <span class="day-icon">📄</span>
+          <span class="day-label">Day 2</span>
+          <span class="day-sub">Sentences 201–400</span>
+        </a>
+
+        <a class="day-link" href="Day3_English_Sentences.html">
+          <span class="day-icon">📄</span>
+          <span class="day-label">Day 3</span>
+          <span class="day-sub">Sentences 401–600</span>
+        </a>
+
+        <a class="day-link" href="Day4_English_Sentences.html">
+          <span class="day-icon">📄</span>
+          <span class="day-label">Day 4</span>
+          <span class="day-sub">Sentences 601–800</span>
+        </a>
+
+        <a class="day-link" href="Day5_English_Sentences.html">
+          <span class="day-icon">📄</span>
+          <span class="day-label">Day 5</span>
+          <span class="day-sub">Sentences 801–1000</span>
+        </a>
+
+      </div>
+      <div class="hint">
+        <strong>💡 How to study:</strong> Open each day's file, read the English sentence, cover the Bangla column and try to recall the meaning. Practice speaking each sentence aloud.
+      </div>
+    </div><!-- /panel-sentences -->
+
+    <!-- ─── Chapter 2: Preposition ─── -->
+    <div class="panel" id="panel-preposition">
+      <hr class="divider">
+      <p class="section-label">Chapter 2 — Preposition · Select a Topic</p>
+      <div class="prep-grid">
+
+        <a class="prep-link" href="hsc_prepositions_complete_guide.html">
+          <span class="p-icon navy">📗</span>
+          <span class="p-text">
+            <span class="p-title">General Preposition</span>
+            <span class="p-desc">Complete Master Guide — HSC</span>
+          </span>
+        </a>
+
+        <a class="prep-link" href="hsc_appropiate_prepositions.html">
+          <span class="p-icon orange">📙</span>
+          <span class="p-text">
+            <span class="p-title">Appropriate Preposition</span>
+            <span class="p-desc">HSC Exam-focused list</span>
+          </span>
+        </a>
+
+      </div>
+      <div class="hint">
+        <strong>💡 Tip:</strong> Start with <em>General Preposition</em> to understand the rules, then practise the <em>Appropriate Preposition</em> list which is directly asked in HSC exams.
+      </div>
+    </div><!-- /panel-preposition -->
+
+  </div><!-- /panel-english -->
+
+</div><!-- /wrapper -->
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer class="footer">
+  <strong>HSC Learning Resources — Bangladesh</strong><br>
+  Study Smart · Practice Daily · Excel in Exams
+</footer>
+
+<script>
+  function selectSubject(name) {
+    // Toggle subject button active state
+    document.querySelectorAll('.subject-btn').forEach(b => b.classList.remove('active'));
+    const subBtn = document.getElementById('btn-' + name);
+    if (subBtn) subBtn.classList.add('active');
+
+    // Hide all subject panels
+    document.querySelectorAll('[id^="panel-"]').forEach(p => p.classList.remove('visible'));
+
+    // Show selected subject panel
+    const panel = document.getElementById('panel-' + name);
+    if (panel) panel.classList.add('visible');
+  }
+
+  function selectTopic(name) {
+    // Toggle topic button active state (only within English panel)
+    document.querySelectorAll('.topic-btn').forEach(b => b.classList.remove('active'));
+    const topicBtn = document.getElementById('btn-' + name);
+    if (topicBtn) topicBtn.classList.add('active');
+
+    // Hide chapter sub-panels
+    document.getElementById('panel-sentences').classList.remove('visible');
+    document.getElementById('panel-preposition').classList.remove('visible');
+
+    // Show selected chapter panel
+    const panel = document.getElementById('panel-' + name);
+    if (panel) panel.classList.add('visible');
+  }
+</script>
+
+</body>
+</html>

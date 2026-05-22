@@ -1,0 +1,1555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HSC English Prepositions – Complete Master Guide</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Merriweather:ital,wght@0,400;0,700;1,400&family=Source+Code+Pro:wght@400;600&display=swap');
+
+  :root {
+    --primary: #1a3a5c;
+    --accent: #e8640a;
+    --gold: #c9960a;
+    --light-bg: #f5f0e8;
+    --card-bg: #ffffff;
+    --green: #1a6b3c;
+    --red: #9b1c1c;
+    --blue-light: #e8f0fa;
+    --border: #c8b89a;
+    --text: #1e1e1e;
+    --muted: #5a5040;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Hind Siliguri', sans-serif;
+    background: var(--light-bg);
+    color: var(--text);
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  /* ── COVER PAGE ── */
+  .cover {
+    background: linear-gradient(160deg, #1a3a5c 0%, #0d2240 60%, #1a3a5c 100%);
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 60px 40px;
+    page-break-after: always;
+    position: relative;
+    overflow: hidden;
+  }
+  .cover::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: repeating-linear-gradient(
+      45deg, transparent, transparent 40px,
+      rgba(255,255,255,0.02) 40px, rgba(255,255,255,0.02) 80px
+    );
+  }
+  .cover-badge {
+    background: var(--accent);
+    color: white;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 6px 20px;
+    border-radius: 20px;
+    margin-bottom: 28px;
+  }
+  .cover h1 {
+    font-family: 'Merriweather', serif;
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 1.25;
+    margin-bottom: 10px;
+    color: #fff;
+  }
+  .cover h1 span { color: #f4a83a; }
+  .cover .subtitle {
+    font-size: 18px;
+    color: rgba(255,255,255,0.8);
+    margin-bottom: 10px;
+  }
+  .cover .bangla-title {
+    font-size: 22px;
+    color: #f4a83a;
+    font-weight: 600;
+    margin-bottom: 40px;
+  }
+  .cover-stats {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+  }
+  .stat-box {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 12px;
+    padding: 18px 28px;
+    text-align: center;
+  }
+  .stat-num { font-size: 36px; font-weight: 700; color: #f4a83a; }
+  .stat-label { font-size: 12px; color: rgba(255,255,255,0.75); text-transform: uppercase; letter-spacing: 1px; }
+  .cover-footer {
+    font-size: 13px;
+    color: rgba(255,255,255,0.5);
+    border-top: 1px solid rgba(255,255,255,0.15);
+    padding-top: 20px;
+    margin-top: auto;
+    width: 100%;
+    text-align: center;
+  }
+
+  /* ── TOC ── */
+  .toc-page {
+    padding: 60px 50px;
+    page-break-after: always;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .toc-title {
+    font-family: 'Merriweather', serif;
+    font-size: 28px;
+    color: var(--primary);
+    border-bottom: 3px solid var(--accent);
+    padding-bottom: 12px;
+    margin-bottom: 30px;
+  }
+  .toc-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px dotted var(--border);
+    font-size: 15px;
+  }
+  .toc-item .toc-section { color: var(--primary); font-weight: 600; }
+  .toc-sub { padding: 6px 20px; font-size: 13.5px; color: var(--muted); border-bottom: 1px dotted #ddd; display: flex; justify-content: space-between; }
+
+  /* ── GENERAL LAYOUT ── */
+  .page-wrapper {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 0 30px 60px;
+  }
+
+  /* ── SECTION HEADERS ── */
+  .part-header {
+    background: var(--primary);
+    color: white;
+    padding: 30px 40px;
+    margin: 40px 0 30px;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    page-break-before: always;
+  }
+  .part-header::after {
+    content: '';
+    position: absolute;
+    right: -20px; top: -20px;
+    width: 120px; height: 120px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 50%;
+  }
+  .part-num {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #f4a83a;
+    margin-bottom: 6px;
+  }
+  .part-header h2 {
+    font-family: 'Merriweather', serif;
+    font-size: 26px;
+    font-weight: 700;
+  }
+  .part-header p { color: rgba(255,255,255,0.75); margin-top: 8px; font-size: 14px; }
+
+  .section-title {
+    font-family: 'Merriweather', serif;
+    font-size: 20px;
+    color: var(--primary);
+    border-left: 5px solid var(--accent);
+    padding-left: 14px;
+    margin: 35px 0 18px;
+  }
+
+  .sub-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--green);
+    background: #eafaf0;
+    display: inline-block;
+    padding: 4px 14px;
+    border-radius: 4px;
+    margin: 22px 0 12px;
+    border-left: 4px solid var(--green);
+  }
+
+  /* ── RULE BOXES ── */
+  .rule-box {
+    background: #fffbe8;
+    border: 1.5px solid var(--gold);
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin: 18px 0;
+  }
+  .rule-box .rule-title {
+    font-weight: 700;
+    color: #7a5a00;
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+  .rule-box ul { padding-left: 18px; }
+  .rule-box li { margin-bottom: 5px; }
+
+  .tip-box {
+    background: #e8f4fd;
+    border-left: 5px solid #2980b9;
+    padding: 14px 18px;
+    border-radius: 6px;
+    margin: 16px 0;
+    font-size: 13.5px;
+  }
+  .tip-box strong { color: #1a5276; }
+
+  .warn-box {
+    background: #fef5e7;
+    border-left: 5px solid var(--accent);
+    padding: 14px 18px;
+    border-radius: 6px;
+    margin: 16px 0;
+    font-size: 13.5px;
+  }
+
+  /* ── EXAMPLE TABLES ── */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0 24px;
+    font-size: 13.5px;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+  }
+  thead tr { background: var(--primary); color: white; }
+  thead th { padding: 12px 14px; text-align: left; font-weight: 600; }
+  tbody tr:nth-child(even) { background: #f8f4ee; }
+  tbody tr:hover { background: #e8f0fa; }
+  td { padding: 10px 14px; border-bottom: 1px solid #ede8df; }
+  td:first-child { font-weight: 500; color: var(--primary); }
+  td.bangla { color: var(--muted); font-size: 13px; }
+  td.prep { color: var(--accent); font-weight: 700; }
+  .num-cell { color: #999; font-size: 12px; width: 30px; text-align: center; }
+
+  /* ── EXAM SECTION ── */
+  .exam-q {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin: 14px 0;
+    position: relative;
+  }
+  .exam-q .q-num {
+    position: absolute;
+    left: -14px; top: 14px;
+    background: var(--accent);
+    color: white;
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 12px; font-weight: 700;
+  }
+  .exam-q .question { font-weight: 600; margin-bottom: 8px; color: var(--primary); }
+  .exam-q .answer { color: var(--green); font-weight: 600; }
+  .exam-q .explanation { color: var(--muted); font-size: 13px; margin-top: 6px; }
+  .blank { text-decoration: underline; text-decoration-style: dotted; color: #aaa; min-width: 40px; display: inline-block; text-align: center; }
+
+  /* ── PATTERN CARDS ── */
+  .pattern-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
+    margin: 20px 0;
+  }
+  .pattern-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px;
+    border-top: 4px solid var(--accent);
+  }
+  .pattern-card h4 { color: var(--primary); font-size: 14px; margin-bottom: 10px; }
+  .pattern-card ul { padding-left: 16px; font-size: 13px; }
+  .pattern-card li { margin-bottom: 5px; color: var(--muted); }
+  .pattern-card li span { color: var(--accent); font-weight: 600; }
+
+  /* ── FREQUENCY TABLE ── */
+  .freq-badge {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+  }
+  .high { background: #fde8e8; color: #9b1c1c; }
+  .med { background: #fffbe8; color: #7a5a00; }
+  .low { background: #e8f4fd; color: #1a5276; }
+
+  /* ── PAGE BREAK ── */
+  @media print {
+    .part-header { page-break-before: always; }
+    .cover { page-break-after: always; }
+    .toc-page { page-break-after: always; }
+    table { page-break-inside: avoid; }
+    .exam-q { page-break-inside: avoid; }
+    body { font-size: 12px; }
+    .cover h1 { font-size: 32px; }
+    @page { margin: 1.5cm; }
+  }
+
+  .highlight { background: #fff3cd; padding: 2px 5px; border-radius: 3px; font-weight: 600; }
+  .prep-tag { background: var(--accent); color: white; padding: 1px 7px; border-radius: 4px; font-size: 12px; font-weight: 700; }
+
+  .footer-note {
+    text-align: center;
+    color: var(--muted);
+    font-size: 12px;
+    padding: 30px;
+    border-top: 1px solid var(--border);
+    margin-top: 40px;
+  }
+
+  .index-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    margin: 16px 0;
+  }
+  .index-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 10px;
+    text-align: center;
+    border-top: 3px solid var(--primary);
+  }
+  .index-card .prep-word { font-size: 18px; font-weight: 700; color: var(--accent); }
+  .index-card .prep-meaning { font-size: 11px; color: var(--muted); }
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════
+     COVER PAGE
+══════════════════════════════════════════ -->
+<div class="cover">
+  <div class="cover-badge">HSC English Exam Special</div>
+  <h1>Complete Guide to<br><span>Prepositions</span></h1>
+  <div class="subtitle">For Class 11 & 12 Students | Bangladesh HSC Board</div>
+  <div class="bangla-title">Preposition সম্পূর্ণ গাইড – HSC পরীক্ষার জন্য</div>
+
+  <div class="cover-stats">
+    <div class="stat-box">
+      <div class="stat-num">300+</div>
+      <div class="stat-label">Examples</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-num">50+</div>
+      <div class="stat-label">Exam Questions</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-num">20+</div>
+      <div class="stat-label">Rules &amp; Tips</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-num">12+</div>
+      <div class="stat-label">Prepositions Covered</div>
+    </div>
+  </div>
+
+  <div class="cover-footer">
+    Prepared for Bangladesh HSC Board Examination Preparation &nbsp;|&nbsp; All Rights Reserved
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     TABLE OF CONTENTS
+══════════════════════════════════════════ -->
+<div class="toc-page">
+  <div class="toc-title">Table of Contents</div>
+
+  <div class="toc-item"><span class="toc-section">PART 1 — Introduction to Prepositions</span> <span>Section 1</span></div>
+  <div class="toc-sub"><span>What is a Preposition? Rules &amp; Overview</span></div>
+  <div class="toc-sub"><span>Quick Reference Index</span></div>
+
+  <div class="toc-item"><span class="toc-section">PART 2 — 300+ General Preposition Examples</span> <span>Section 2</span></div>
+  <div class="toc-sub"><span>IN — Time, Place, State (30 examples)</span></div>
+  <div class="toc-sub"><span>ON — Surface, Day, Topic (30 examples)</span></div>
+  <div class="toc-sub"><span>AT — Point, Time, Place (25 examples)</span></div>
+  <div class="toc-sub"><span>BY — Means, Agent, Time (25 examples)</span></div>
+  <div class="toc-sub"><span>FOR — Purpose, Duration, Benefit (25 examples)</span></div>
+  <div class="toc-sub"><span>WITH — Accompaniment, Instrument (20 examples)</span></div>
+  <div class="toc-sub"><span>FROM — Origin, Source, Distance (20 examples)</span></div>
+  <div class="toc-sub"><span>TO — Direction, Purpose (20 examples)</span></div>
+  <div class="toc-sub"><span>OF — Possession, Partitive (20 examples)</span></div>
+  <div class="toc-sub"><span>ABOUT, AFTER, AGAINST, AMONG, BETWEEN &amp; More (50 examples)</span></div>
+  <div class="toc-sub"><span>Mixed / Advanced Examples (35 examples)</span></div>
+
+  <div class="toc-item"><span class="toc-section">PART 3 — HSC Board Exam Analysis</span> <span>Section 3</span></div>
+  <div class="toc-sub"><span>Exam Pattern &amp; Frequency Analysis</span></div>
+  <div class="toc-sub"><span>50 Solved HSC-Pattern Questions</span></div>
+  <div class="toc-sub"><span>Common Verb + Preposition Combinations</span></div>
+  <div class="toc-sub"><span>Adjective + Preposition Combinations</span></div>
+  <div class="toc-sub"><span>Memorization Tricks &amp; Shortcuts</span></div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     PAGE WRAPPER START
+══════════════════════════════════════════ -->
+<div class="page-wrapper">
+
+<!-- ══════════════════════════════════════════
+     PART 1 — INTRODUCTION
+══════════════════════════════════════════ -->
+<div class="part-header">
+  <div class="part-num">Part 1</div>
+  <h2>Introduction to Prepositions</h2>
+  <p>সংজ্ঞা, নিয়ম এবং দ্রুত রেফারেন্স গাইড</p>
+</div>
+
+<div class="section-title">What is a Preposition? (Preposition কী?)</div>
+<p>A <strong>preposition</strong> is a word placed <em>before a noun or pronoun</em> to show its relationship with another word in the sentence. It indicates time, place, direction, manner, cause, or other relationships.</p>
+<br>
+<p><strong>বাংলায়:</strong> Preposition হলো এমন একটি শব্দ যা Noun বা Pronoun-এর আগে বসে এবং বাক্যের অন্য শব্দের সাথে সম্পর্ক দেখায়।</p>
+
+<div class="rule-box">
+  <div class="rule-title">📌 Golden Rules for HSC (সবচেয়ে গুরুত্বপূর্ণ নিয়ম)</div>
+  <ul>
+    <li>Preposition সবসময় Noun বা Pronoun-এর আগে বসে।</li>
+    <li>Preposition-এর পরে Object থাকে (noun/pronoun/gerund)।</li>
+    <li>একই Verb বা Adjective-এর সাথে নির্দিষ্ট Preposition ব্যবহার হয় — এগুলো মুখস্থ করতে হবে।</li>
+    <li>Time-এর জন্য: <strong>at</strong> (নির্দিষ্ট সময়), <strong>on</strong> (দিন/তারিখ), <strong>in</strong> (মাস/বছর/ঋতু)।</li>
+    <li>Place-এর জন্য: <strong>at</strong> (বিন্দু), <strong>on</strong> (পৃষ্ঠ), <strong>in</strong> (ভেতরে)।</li>
+  </ul>
+</div>
+
+<div class="section-title">Quick Reference Index (দ্রুত সূচি)</div>
+<div class="index-grid">
+  <div class="index-card"><div class="prep-word">IN</div><div class="prep-meaning">ভেতরে / মধ্যে</div></div>
+  <div class="index-card"><div class="prep-word">ON</div><div class="prep-meaning">উপরে / উপর</div></div>
+  <div class="index-card"><div class="prep-word">AT</div><div class="prep-meaning">এ / তে (বিন্দু)</div></div>
+  <div class="index-card"><div class="prep-word">BY</div><div class="prep-meaning">দ্বারা / পাশে</div></div>
+  <div class="index-card"><div class="prep-word">FOR</div><div class="prep-meaning">জন্য / উদ্দেশ্যে</div></div>
+  <div class="index-card"><div class="prep-word">WITH</div><div class="prep-meaning">সাথে / দিয়ে</div></div>
+  <div class="index-card"><div class="prep-word">FROM</div><div class="prep-meaning">থেকে / হতে</div></div>
+  <div class="index-card"><div class="prep-word">TO</div><div class="prep-meaning">দিকে / প্রতি</div></div>
+  <div class="index-card"><div class="prep-word">OF</div><div class="prep-meaning">এর (সম্পর্ক)</div></div>
+  <div class="index-card"><div class="prep-word">ABOUT</div><div class="prep-meaning">সম্পর্কে</div></div>
+  <div class="index-card"><div class="prep-word">AFTER</div><div class="prep-meaning">পরে</div></div>
+  <div class="index-card"><div class="prep-word">AGAINST</div><div class="prep-meaning">বিরুদ্ধে</div></div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     PART 2 — 300+ EXAMPLES
+══════════════════════════════════════════ -->
+<div class="part-header">
+  <div class="part-num">Part 2</div>
+  <h2>300+ General Preposition Examples</h2>
+  <p>সময়, স্থান, দিকনির্দেশ, কারণ এবং পদ্ধতি সহ উদাহরণ</p>
+</div>
+
+<!-- ─── IN ─── -->
+<div class="section-title">1. Preposition: IN (মধ্যে / ভেতরে)</div>
+
+<div class="rule-box">
+  <div class="rule-title">📌 IN ব্যবহারের নিয়ম</div>
+  <ul>
+    <li><strong>Time:</strong> in the morning, in 2020, in January, in summer, in the 21st century</li>
+    <li><strong>Place:</strong> in a room, in a country, in a city</li>
+    <li><strong>State/Condition:</strong> in trouble, in danger, in love</li>
+    <li><strong>Language/Medium:</strong> in English, in a loud voice</li>
+  </ul>
+</div>
+
+<table>
+  <thead><tr><th>#</th><th>English Sentence</th><th>Bangla Meaning (বাংলা অর্থ)</th></tr></thead>
+  <tbody>
+    <tr><td class="num-cell">1</td><td>He lives <span class="prep-tag">in</span> Dhaka.</td><td class="bangla">সে ঢাকায় বাস করে।</td></tr>
+    <tr><td class="num-cell">2</td><td>She was born <span class="prep-tag">in</span> 2005.</td><td class="bangla">সে ২০০৫ সালে জন্মগ্রহণ করেছিল।</td></tr>
+    <tr><td class="num-cell">3</td><td>We go to school <span class="prep-tag">in</span> the morning.</td><td class="bangla">আমরা সকালে স্কুলে যাই।</td></tr>
+    <tr><td class="num-cell">4</td><td>The bird is <span class="prep-tag">in</span> the cage.</td><td class="bangla">পাখিটি খাঁচার ভেতরে আছে।</td></tr>
+    <tr><td class="num-cell">5</td><td>Bangladesh is located <span class="prep-tag">in</span> South Asia.</td><td class="bangla">বাংলাদেশ দক্ষিণ এশিয়ায় অবস্থিত।</td></tr>
+    <tr><td class="num-cell">6</td><td>It is very hot <span class="prep-tag">in</span> summer.</td><td class="bangla">গ্রীষ্মে খুব গরম পড়ে।</td></tr>
+    <tr><td class="num-cell">7</td><td>Write your answer <span class="prep-tag">in</span> English.</td><td class="bangla">তোমার উত্তর ইংরেজিতে লিখো।</td></tr>
+    <tr><td class="num-cell">8</td><td>He is <span class="prep-tag">in</span> trouble because of his mistake.</td><td class="bangla">তার ভুলের কারণে সে বিপদে পড়েছে।</td></tr>
+    <tr><td class="num-cell">9</td><td>I will see you <span class="prep-tag">in</span> an hour.</td><td class="bangla">আমি এক ঘণ্টার মধ্যে তোমার সাথে দেখা করব।</td></tr>
+    <tr><td class="num-cell">10</td><td>She is dressed <span class="prep-tag">in</span> red.</td><td class="bangla">সে লাল পোশাক পরিহিত।</td></tr>
+    <tr><td class="num-cell">11</td><td>The flowers bloom <span class="prep-tag">in</span> spring.</td><td class="bangla">বসন্তে ফুল ফোটে।</td></tr>
+    <tr><td class="num-cell">12</td><td>He spoke <span class="prep-tag">in</span> a soft voice.</td><td class="bangla">সে আস্তে স্বরে কথা বলল।</td></tr>
+    <tr><td class="num-cell">13</td><td>I am interested <span class="prep-tag">in</span> reading novels.</td><td class="bangla">আমি উপন্যাস পড়তে আগ্রহী।</td></tr>
+    <tr><td class="num-cell">14</td><td>There is a mistake <span class="prep-tag">in</span> your essay.</td><td class="bangla">তোমার রচনায় একটি ভুল আছে।</td></tr>
+    <tr><td class="num-cell">15</td><td>The students are <span class="prep-tag">in</span> the classroom.</td><td class="bangla">শিক্ষার্থীরা শ্রেণিকক্ষে আছে।</td></tr>
+    <tr><td class="num-cell">16</td><td>He paid <span class="prep-tag">in</span> cash.</td><td class="bangla">সে নগদ অর্থ প্রদান করল।</td></tr>
+    <tr><td class="num-cell">17</td><td>We are <span class="prep-tag">in</span> need of your help.</td><td class="bangla">আমাদের তোমার সাহায্যের প্রয়োজন।</td></tr>
+    <tr><td class="num-cell">18</td><td>The festival takes place <span class="prep-tag">in</span> December.</td><td class="bangla">উৎসবটি ডিসেম্বর মাসে অনুষ্ঠিত হয়।</td></tr>
+    <tr><td class="num-cell">19</td><td>He has confidence <span class="prep-tag">in</span> himself.</td><td class="bangla">তার নিজের উপর আত্মবিশ্বাস আছে।</td></tr>
+    <tr><td class="num-cell">20</td><td>Please stand <span class="prep-tag">in</span> line.</td><td class="bangla">অনুগ্রহ করে সারিতে দাঁড়াও।</td></tr>
+    <tr><td class="num-cell">21</td><td>He graduated <span class="prep-tag">in</span> 2022.</td><td class="bangla">সে ২০২২ সালে স্নাতক হয়েছে।</td></tr>
+    <tr><td class="num-cell">22</td><td>The thief hid <span class="prep-tag">in</span> the dark.</td><td class="bangla">চোর অন্ধকারে লুকিয়েছিল।</td></tr>
+    <tr><td class="num-cell">23</td><td>She believes <span class="prep-tag">in</span> God.</td><td class="bangla">সে ঈশ্বরে বিশ্বাস করে।</td></tr>
+    <tr><td class="num-cell">24</td><td>He is an expert <span class="prep-tag">in</span> mathematics.</td><td class="bangla">সে গণিতে বিশেষজ্ঞ।</td></tr>
+    <tr><td class="num-cell">25</td><td>The exam results will come <span class="prep-tag">in</span> a week.</td><td class="bangla">এক সপ্তাহের মধ্যে পরীক্ষার ফলাফল আসবে।</td></tr>
+    <tr><td class="num-cell">26</td><td>I saw him <span class="prep-tag">in</span> the street.</td><td class="bangla">আমি রাস্তায় তাকে দেখলাম।</td></tr>
+    <tr><td class="num-cell">27</td><td>She is <span class="prep-tag">in</span> love with him.</td><td class="bangla">সে তার প্রেমে পড়েছে।</td></tr>
+    <tr><td class="num-cell">28</td><td>The country is <span class="prep-tag">in</span> danger of flood.</td><td class="bangla">দেশটি বন্যার বিপদে রয়েছে।</td></tr>
+    <tr><td class="num-cell">29</td><td>He replied <span class="prep-tag">in</span> anger.</td><td class="bangla">সে রাগের সাথে জবাব দিল।</td></tr>
+    <tr><td class="num-cell">30</td><td>The crops grow <span class="prep-tag">in</span> fertile soil.</td><td class="bangla">উর্বর মাটিতে ফসল জন্মায়।</td></tr>
+  </tbody>
+</table>
+
+<!-- ─── ON ─── -->
+<div class="section-title">2. Preposition: ON (উপরে / উপর)</div>
+
+<div class="rule-box">
+  <div class="rule-title">📌 ON ব্যবহারের নিয়ম</div>
+  <ul>
+    <li><strong>Time:</strong> on Monday, on 15th March, on a holiday, on my birthday</li>
+    <li><strong>Surface:</strong> on the table, on the wall, on the floor</li>
+    <li><strong>Topic/Subject:</strong> a book on history, a lecture on science</li>
+    <li><strong>Media/Transport:</strong> on TV, on the radio, on a bus, on a plane</li>
+  </ul>
+</div>
+
+<table>
+  <thead><tr><th>#</th><th>English Sentence</th><th>Bangla Meaning (বাংলা অর্থ)</th></tr></thead>
+  <tbody>
+    <tr><td class="num-cell">31</td><td>The book is <span class="prep-tag">on</span> the table.</td><td class="bangla">বইটি টেবিলের উপরে আছে।</td></tr>
+    <tr><td class="num-cell">32</td><td>I was born <span class="prep-tag">on</span> a Friday.</td><td class="bangla">আমি শুক্রবারে জন্মগ্রহণ করেছিলাম।</td></tr>
+    <tr><td class="num-cell">33</td><td>The picture is hanging <span class="prep-tag">on</span> the wall.</td><td class="bangla">ছবিটি দেয়ালে ঝুলছে।</td></tr>
+    <tr><td class="num-cell">34</td><td>He arrived <span class="prep-tag">on</span> time.</td><td class="bangla">সে সময়মতো পৌঁছাল।</td></tr>
+    <tr><td class="num-cell">35</td><td>I watched the news <span class="prep-tag">on</span> TV.</td><td class="bangla">আমি টিভিতে খবর দেখলাম।</td></tr>
+    <tr><td class="num-cell">36</td><td>We will travel <span class="prep-tag">on</span> Saturday.</td><td class="bangla">আমরা শনিবারে ভ্রমণ করব।</td></tr>
+    <tr><td class="num-cell">37</td><td>There is a crack <span class="prep-tag">on</span> the glass.</td><td class="bangla">কাচের উপর একটি ফাটল আছে।</td></tr>
+    <tr><td class="num-cell">38</td><td>He wrote a book <span class="prep-tag">on</span> climate change.</td><td class="bangla">সে জলবায়ু পরিবর্তন বিষয়ে একটি বই লিখেছে।</td></tr>
+    <tr><td class="num-cell">39</td><td>She is talking <span class="prep-tag">on</span> the phone.</td><td class="bangla">সে ফোনে কথা বলছে।</td></tr>
+    <tr><td class="num-cell">40</td><td>The children are playing <span class="prep-tag">on</span> the roof.</td><td class="bangla">শিশুরা ছাদে খেলছে।</td></tr>
+    <tr><td class="num-cell">41</td><td>Put the bag <span class="prep-tag">on</span> the chair.</td><td class="bangla">ব্যাগটি চেয়ারের উপর রাখো।</td></tr>
+    <tr><td class="num-cell">42</td><td>The shop is <span class="prep-tag">on</span> the main road.</td><td class="bangla">দোকানটি প্রধান সড়কে অবস্থিত।</td></tr>
+    <tr><td class="num-cell">43</td><td>He left <span class="prep-tag">on</span> 5th March.</td><td class="bangla">সে ৫ই মার্চ চলে গেল।</td></tr>
+    <tr><td class="num-cell">44</td><td>She heard the song <span class="prep-tag">on</span> the radio.</td><td class="bangla">সে রেডিওতে গানটি শুনল।</td></tr>
+    <tr><td class="num-cell">45</td><td>The doctor is <span class="prep-tag">on</span> duty.</td><td class="bangla">ডাক্তার দায়িত্বে আছেন।</td></tr>
+    <tr><td class="num-cell">46</td><td>He congratulated her <span class="prep-tag">on</span> her success.</td><td class="bangla">সে তার সাফল্যে তাকে অভিনন্দন জানাল।</td></tr>
+    <tr><td class="num-cell">47</td><td>The class starts <span class="prep-tag">on</span> Monday morning.</td><td class="bangla">সোমবার সকালে ক্লাস শুরু হয়।</td></tr>
+    <tr><td class="num-cell">48</td><td>We depend <span class="prep-tag">on</span> technology today.</td><td class="bangla">আজকাল আমরা প্রযুক্তির উপর নির্ভর করি।</td></tr>
+    <tr><td class="num-cell">49</td><td>He is <span class="prep-tag">on</span> a diet to lose weight.</td><td class="bangla">সে ওজন কমাতে ডায়েটে আছে।</td></tr>
+    <tr><td class="num-cell">50</td><td>The village is <span class="prep-tag">on</span> the bank of a river.</td><td class="bangla">গ্রামটি একটি নদীর তীরে অবস্থিত।</td></tr>
+    <tr><td class="num-cell">51</td><td>He is travelling <span class="prep-tag">on</span> business.</td><td class="bangla">সে ব্যবসায়িক কারণে ভ্রমণ করছে।</td></tr>
+    <tr><td class="num-cell">52</td><td>I read it <span class="prep-tag">on</span> the internet.</td><td class="bangla">আমি এটি ইন্টারনেটে পড়েছি।</td></tr>
+    <tr><td class="num-cell">53</td><td>She is working <span class="prep-tag">on</span> a project.</td><td class="bangla">সে একটি প্রকল্পে কাজ করছে।</td></tr>
+    <tr><td class="num-cell">54</td><td>The patient is <span class="prep-tag">on</span> medicine.</td><td class="bangla">রোগী ওষুধ খাচ্ছে।</td></tr>
+    <tr><td class="num-cell">55</td><td>The cat is sitting <span class="prep-tag">on</span> the mat.</td><td class="bangla">বিড়ালটি মাদুরের উপর বসে আছে।</td></tr>
+    <tr><td class="num-cell">56</td><td>He spoke <span class="prep-tag">on</span> behalf of the students.</td><td class="bangla">সে শিক্ষার্থীদের পক্ষে কথা বলল।</td></tr>
+    <tr><td class="num-cell">57</td><td>The school is closed <span class="prep-tag">on</span> Fridays.</td><td class="bangla">শুক্রবারে স্কুল বন্ধ থাকে।</td></tr>
+    <tr><td class="num-cell">58</td><td>The tree is <span class="prep-tag">on</span> the left side.</td><td class="bangla">গাছটি বাম দিকে আছে।</td></tr>
+    <tr><td class="num-cell">59</td><td>The food is <span class="prep-tag">on</span> the stove.</td><td class="bangla">খাবার চুলায় আছে।</td></tr>
+    <tr><td class="num-cell">60</td><td>He swore <span class="prep-tag">on</span> the Quran.</td><td class="bangla">সে কোরআনে শপথ করল।</td></tr>
+  </tbody>
+</table>
+
+<!-- ─── AT ─── -->
+<div class="section-title">3. Preposition: AT (এ / তে — নির্দিষ্ট বিন্দু)</div>
+
+<div class="rule-box">
+  <div class="rule-title">📌 AT ব্যবহারের নিয়ম</div>
+  <ul>
+    <li><strong>Exact time:</strong> at 6 o'clock, at noon, at midnight, at dawn</li>
+    <li><strong>Specific place (point):</strong> at the bus stop, at the door, at school, at home</li>
+    <li><strong>Activity/event:</strong> at the party, at a meeting, at the match</li>
+    <li><strong>Direction:</strong> look at, laugh at, aim at, point at</li>
+  </ul>
+</div>
+
+<table>
+  <thead><tr><th>#</th><th>English Sentence</th><th>Bangla Meaning (বাংলা অর্থ)</th></tr></thead>
+  <tbody>
+    <tr><td class="num-cell">61</td><td>The train arrives <span class="prep-tag">at</span> 6 o'clock.</td><td class="bangla">ট্রেন ৬টায় পৌঁছায়।</td></tr>
+    <tr><td class="num-cell">62</td><td>He is standing <span class="prep-tag">at</span> the door.</td><td class="bangla">সে দরজায় দাঁড়িয়ে আছে।</td></tr>
+    <tr><td class="num-cell">63</td><td>She studies <span class="prep-tag">at</span> Dhaka University.</td><td class="bangla">সে ঢাকা বিশ্ববিদ্যালয়ে পড়াশোনা করে।</td></tr>
+    <tr><td class="num-cell">64</td><td>We met <span class="prep-tag">at</span> the bus stop.</td><td class="bangla">আমরা বাস স্টপে দেখা করলাম।</td></tr>
+    <tr><td class="num-cell">65</td><td>He woke up <span class="prep-tag">at</span> dawn.</td><td class="bangla">সে ভোরে উঠল।</td></tr>
+    <tr><td class="num-cell">66</td><td>I am good <span class="prep-tag">at</span> cricket.</td><td class="bangla">আমি ক্রিকেটে ভালো।</td></tr>
+    <tr><td class="num-cell">67</td><td>Don't laugh <span class="prep-tag">at</span> others.</td><td class="bangla">অন্যদের নিয়ে হাসাহাসি করো না।</td></tr>
+    <tr><td class="num-cell">68</td><td>The children are <span class="prep-tag">at</span> home today.</td><td class="bangla">আজ শিশুরা বাড়িতে আছে।</td></tr>
+    <tr><td class="num-cell">69</td><td>She was surprised <span class="prep-tag">at</span> the news.</td><td class="bangla">সে খবর শুনে অবাক হলো।</td></tr>
+    <tr><td class="num-cell">70</td><td>He works <span class="prep-tag">at</span> a hospital.</td><td class="bangla">সে একটি হাসপাতালে কাজ করে।</td></tr>
+    <tr><td class="num-cell">71</td><td>They met <span class="prep-tag">at</span> the wedding ceremony.</td><td class="bangla">তারা বিয়ের অনুষ্ঠানে দেখা করল।</td></tr>
+    <tr><td class="num-cell">72</td><td>I arrived <span class="prep-tag">at</span> the airport on time.</td><td class="bangla">আমি সময়মতো বিমানবন্দরে পৌঁছালাম।</td></tr>
+    <tr><td class="num-cell">73</td><td>She is angry <span class="prep-tag">at</span> him.</td><td class="bangla">সে তার উপর রাগান্বিত।</td></tr>
+    <tr><td class="num-cell">74</td><td>He sat <span class="prep-tag">at</span> the desk and studied.</td><td class="bangla">সে ডেস্কে বসে পড়াশোনা করল।</td></tr>
+    <tr><td class="num-cell">75</td><td>The price is <span class="prep-tag">at</span> its highest.</td><td class="bangla">দাম সর্বোচ্চ পর্যায়ে আছে।</td></tr>
+    <tr><td class="num-cell">76</td><td>Look <span class="prep-tag">at</span> the blackboard.</td><td class="bangla">ব্ল্যাকবোর্ডের দিকে তাকাও।</td></tr>
+    <tr><td class="num-cell">77</td><td>She smiled <span class="prep-tag">at</span> the child.</td><td class="bangla">সে শিশুটির দিকে হাসল।</td></tr>
+    <tr><td class="num-cell">78</td><td>He is skilled <span class="prep-tag">at</span> painting.</td><td class="bangla">সে চিত্রাঙ্কনে দক্ষ।</td></tr>
+    <tr><td class="num-cell">79</td><td>The function starts <span class="prep-tag">at</span> noon.</td><td class="bangla">অনুষ্ঠানটি দুপুরে শুরু হয়।</td></tr>
+    <tr><td class="num-cell">80</td><td>They were shocked <span class="prep-tag">at</span> his behaviour.</td><td class="bangla">তারা তার আচরণে হতবাক হয়ে গেল।</td></tr>
+    <tr><td class="num-cell">81</td><td>Aim <span class="prep-tag">at</span> the target carefully.</td><td class="bangla">লক্ষ্যস্থলে সাবধানে নিশানা করো।</td></tr>
+    <tr><td class="num-cell">82</td><td>The old man died <span class="prep-tag">at</span> the age of 90.</td><td class="bangla">বৃদ্ধ লোকটি ৯০ বছর বয়সে মারা গেলেন।</td></tr>
+    <tr><td class="num-cell">83</td><td>She is waiting <span class="prep-tag">at</span> the corner of the road.</td><td class="bangla">সে রাস্তার কোণে অপেক্ষা করছে।</td></tr>
+    <tr><td class="num-cell">84</td><td>I will be <span class="prep-tag">at</span> the library all afternoon.</td><td class="bangla">আমি সারা বিকাল লাইব্রেরিতে থাকব।</td></tr>
+    <tr><td class="num-cell">85</td><td>He knocked <span class="prep-tag">at</span> the door twice.</td><td class="bangla">সে দুইবার দরজায় টোকা দিল।</td></tr>
+  </tbody>
+</table>
+
+<!-- ─── BY ─── -->
+<div class="section-title">4. Preposition: BY (দ্বারা / পাশে / নাগাদ)</div>
+
+<div class="rule-box">
+  <div class="rule-title">📌 BY ব্যবহারের নিয়ম</div>
+  <ul>
+    <li><strong>Agent (Passive):</strong> written by Tagore, made by machine</li>
+    <li><strong>Means of transport:</strong> by bus, by train, by air, by sea</li>
+    <li><strong>Deadline:</strong> by 5 PM, by next week, by tomorrow</li>
+    <li><strong>Near/beside:</strong> standing by the river, sitting by the window</li>
+    <li><strong>Method:</strong> by hand, by mistake, by chance</li>
+  </ul>
+</div>
+
+<table>
+  <thead><tr><th>#</th><th>English Sentence</th><th>Bangla Meaning (বাংলা অর্থ)</th></tr></thead>
+  <tbody>
+    <tr><td class="num-cell">86</td><td>This novel was written <span class="prep-tag">by</span> Rabindranath Tagore.</td><td class="bangla">এই উপন্যাসটি রবীন্দ্রনাথ ঠাকুর লিখেছিলেন।</td></tr>
+    <tr><td class="num-cell">87</td><td>He travels to school <span class="prep-tag">by</span> bus.</td><td class="bangla">সে বাসে স্কুলে যায়।</td></tr>
+    <tr><td class="num-cell">88</td><td>Finish the work <span class="prep-tag">by</span> tomorrow.</td><td class="bangla">আগামীকালের মধ্যে কাজটি শেষ করো।</td></tr>
+    <tr><td class="num-cell">89</td><td>He was sitting <span class="prep-tag">by</span> the window.</td><td class="bangla">সে জানালার পাশে বসে ছিল।</td></tr>
+    <tr><td class="num-cell">90</td><td>I met her <span class="prep-tag">by</span> chance at the market.</td><td class="bangla">আমি বাজারে সুযোগক্রমে তার সাথে দেখা করলাম।</td></tr>
+    <tr><td class="num-cell">91</td><td>He earns his living <span class="prep-tag">by</span> teaching.</td><td class="bangla">সে পড়িয়ে জীবিকা নির্বাহ করে।</td></tr>
+    <tr><td class="num-cell">92</td><td>She goes abroad <span class="prep-tag">by</span> air.</td><td class="bangla">সে বিমানে বিদেশে যায়।</td></tr>
+    <tr><td class="num-cell">93</td><td>He did it <span class="prep-tag">by</span> mistake.</td><td class="bangla">সে ভুলক্রমে এটি করেছিল।</td></tr>
+    <tr><td class="num-cell">94</td><td>The river flows <span class="prep-tag">by</span> our village.</td><td class="bangla">আমাদের গ্রামের পাশ দিয়ে নদী বয়।</td></tr>
+    <tr><td class="num-cell">95</td><td>The building was destroyed <span class="prep-tag">by</span> fire.</td><td class="bangla">আগুনে ভবনটি ধ্বংস হয়ে গেছে।</td></tr>
+    <tr><td class="num-cell">96</td><td>She increased her skills <span class="prep-tag">by</span> practice.</td><td class="bangla">সে অনুশীলনের মাধ্যমে তার দক্ষতা বাড়িয়েছে।</td></tr>
+    <tr><td class="num-cell">97</td><td>He succeeded <span class="prep-tag">by</span> dint of hard work.</td><td class="bangla">সে কঠোর পরিশ্রমের বলে সাফল্য পেয়েছে।</td></tr>
+    <tr><td class="num-cell">98</td><td>Please submit the form <span class="prep-tag">by</span> Monday.</td><td class="bangla">সোমবারের মধ্যে ফর্মটি জমা দিন।</td></tr>
+    <tr><td class="num-cell">99</td><td>The goods were sent <span class="prep-tag">by</span> sea.</td><td class="bangla">পণ্যগুলো সমুদ্রপথে পাঠানো হয়েছিল।</td></tr>
+    <tr><td class="num-cell">100</td><td>They were standing side <span class="prep-tag">by</span> side.</td><td class="bangla">তারা পাশাপাশি দাঁড়িয়ে ছিল।</td></tr>
+    <tr><td class="num-cell">101</td><td>He grabbed her <span class="prep-tag">by</span> the hand.</td><td class="bangla">সে তার হাত ধরল।</td></tr>
+    <tr><td class="num-cell">102</td><td>This shirt is made <span class="prep-tag">by</span> hand.</td><td class="bangla">এই শার্টটি হাতে তৈরি।</td></tr>
+    <tr><td class="num-cell">103</td><td>He was bitten <span class="prep-tag">by</span> a snake.</td><td class="bangla">তাকে সাপে কামড় দিয়েছিল।</td></tr>
+    <tr><td class="num-cell">104</td><td>She was amazed <span class="prep-tag">by</span> his performance.</td><td class="bangla">তার পারফরম্যান্সে সে অবাক হয়ে গেল।</td></tr>
+    <tr><td class="num-cell">105</td><td>The bus passes <span class="prep-tag">by</span> the school.</td><td class="bangla">স্কুলের পাশ দিয়ে বাস যায়।</td></tr>
+    <tr><td class="num-cell">106</td><td>He is known <span class="prep-tag">by</span> his deeds.</td><td class="bangla">সে তার কর্ম দ্বারা পরিচিত।</td></tr>
+    <tr><td class="num-cell">107</td><td>Multiply 4 <span class="prep-tag">by</span> 5 to get 20.</td><td class="bangla">৪ কে ৫ দিয়ে গুণ করলে ২০ হয়।</td></tr>
+    <tr><td class="num-cell">108</td><td>She called me <span class="prep-tag">by</span> my name.</td><td class="bangla">সে আমাকে আমার নাম ধরে ডেকেছিল।</td></tr>
+    <tr><td class="num-cell">109</td><td>He is a doctor <span class="prep-tag">by</span> profession.</td><td class="bangla">সে পেশায় একজন ডাক্তার।</td></tr>
+    <tr><td class="num-cell">110</td><td>He was released from jail <span class="prep-tag">by</span> 8 PM.</td><td class="bangla">রাত ৮টার মধ্যে তাকে জেল থেকে মুক্তি দেওয়া হয়েছিল।</td></tr>
+  </tbody>
+</table>
+
+<!-- ─── FOR ─── -->
+<div class="section-title">5. Preposition: FOR (জন্য / উদ্দেশ্যে / মেয়াদে)</div>
+
+<div class="rule-box">
+  <div class="rule-title">📌 FOR ব্যবহারের নিয়ম</div>
+  <ul>
+    <li><strong>Purpose/Benefit:</strong> for the sake of, for your health</li>
+    <li><strong>Duration:</strong> for two hours, for a long time, for years</li>
+    <li><strong>Exchange:</strong> paid 500 taka for a book</li>
+    <li><strong>Reason/Cause:</strong> famous for, known for, punished for</li>
+  </ul>
+</div>
+
+<table>
+  <thead><tr><th>#</th><th>English Sentence</th><th>Bangla Meaning (বাংলা অর্থ)</th></tr></thead>
+  <tbody>
+    <tr><td class="num-cell">111</td><td>He worked hard <span class="prep-tag">for</span> success.</td><td class="bangla">সে সাফল্যের জন্য কঠোর পরিশ্রম করল।</td></tr>
+    <tr><td class="num-cell">112</td><td>I waited <span class="prep-tag">for</span> two hours.</td><td class="bangla">আমি দুই ঘণ্টা অপেক্ষা করলাম।</td></tr>
+    <tr><td class="num-cell">113</td><td>This medicine is good <span class="prep-tag">for</span> fever.</td><td class="bangla">এই ওষুধ জ্বরের জন্য ভালো।</td></tr>
+    <tr><td class="num-cell">114</td><td>She is famous <span class="prep-tag">for</span> her singing.</td><td class="bangla">সে তার গানের জন্য বিখ্যাত।</td></tr>
+    <tr><td class="num-cell">115</td><td>He was punished <span class="prep-tag">for</span> telling a lie.</td><td class="bangla">মিথ্যা বলার জন্য তাকে শাস্তি দেওয়া হলো।</td></tr>
+    <tr><td class="num-cell">116</td><td>I bought this pen <span class="prep-tag">for</span> 50 taka.</td><td class="bangla">আমি ৫০ টাকায় এই কলমটি কিনেছি।</td></tr>
+    <tr><td class="num-cell">117</td><td>He has been living here <span class="prep-tag">for</span> ten years.</td><td class="bangla">সে দশ বছর ধরে এখানে বাস করছে।</td></tr>
+    <tr><td class="num-cell">118</td><td>Thank you <span class="prep-tag">for</span> your help.</td><td class="bangla">তোমার সাহায্যের জন্য ধন্যবাদ।</td></tr>
+    <tr><td class="num-cell">119</td><td>Bangladesh is known <span class="prep-tag">for</span> its jute.</td><td class="bangla">বাংলাদেশ পাটের জন্য পরিচিত।</td></tr>
+    <tr><td class="num-cell">120</td><td>She cried <span class="prep-tag">for</span> joy when she heard the news.</td><td class="bangla">খবর শুনে সে আনন্দে কেঁদে ফেলল।</td></tr>
+    <tr><td class="num-cell">121</td><td>He applied <span class="prep-tag">for</span> the job.</td><td class="bangla">সে চাকরির জন্য আবেদন করল।</td></tr>
+    <tr><td class="num-cell">122</td><td>She left <span class="prep-tag">for</span> London last night.</td><td class="bangla">সে গতরাতে লন্ডনের উদ্দেশ্যে রওনা দিল।</td></tr>
+    <tr><td class="num-cell">123</td><td>He struggled <span class="prep-tag">for</span> survival.</td><td class="bangla">সে বেঁচে থাকার জন্য সংগ্রাম করল।</td></tr>
+    <tr><td class="num-cell">124</td><td>I am sorry <span class="prep-tag">for</span> being late.</td><td class="bangla">দেরি করার জন্য আমি দুঃখিত।</td></tr>
+    <tr><td class="num-cell">125</td><td>This hall is used <span class="prep-tag">for</span> meetings.</td><td class="bangla">এই হলটি সভার জন্য ব্যবহার করা হয়।</td></tr>
+    <tr><td class="num-cell">126</td><td>He is eager <span class="prep-tag">for</span> knowledge.</td><td class="bangla">সে জ্ঞানের প্রতি আগ্রহী।</td></tr>
+    <tr><td class="num-cell">127</td><td>She sacrificed her life <span class="prep-tag">for</span> the country.</td><td class="bangla">সে দেশের জন্য তার জীবন উৎসর্গ করল।</td></tr>
+    <tr><td class="num-cell">128</td><td>He is fit <span class="prep-tag">for</span> the job.</td><td class="bangla">সে কাজটির জন্য উপযুক্ত।</td></tr>
+    <tr><td class="num-cell">129</td><td>I searched <span class="prep-tag">for</span> my keys everywhere.</td><td class="bangla">আমি সর্বত্র চাবির সন্ধান করলাম।</td></tr>
+    <tr><td class="num-cell">130</td><td>She has not eaten anything <span class="prep-tag">for</span> hours.</td><td class="bangla">সে ঘণ্টার পর ঘণ্টা কিছু খায়নি।</td></tr>
+    <tr><td class="num-cell">131</td><td>He is responsible <span class="prep-tag">for</span> this mistake.</td><td class="bangla">এই ভুলের জন্য সে দায়ী।</td></tr>
+    <tr><td class="num-cell">132</td><td>The doctor prescribed medicine <span class="prep-tag">for</span> the patient.</td><td class="bangla">ডাক্তার রোগীর জন্য ওষুধ দিলেন।</td></tr>
+    <tr><td class="num-cell">133</td><td>She is preparing <span class="prep-tag">for</span> the exam.</td><td class="bangla">সে পরীক্ষার জন্য প্রস্তুতি নিচ্ছে।</td></tr>
+    <tr><td class="num-cell">134</td><td>He stood up <span class="prep-tag">for</span> justice.</td><td class="bangla">সে ন্যায়বিচারের পক্ষে দাঁড়াল।</td></tr>
+    <tr><td class="num-cell">135</td><td>This gift is <span class="prep-tag">for</span> you.</td><td class="bangla">এই উপহারটি তোমার জন্য।</td></tr>
+  </tbody>
+</table>
+
+<!-- ─── WITH ─── -->
+<div class="section-title">6. Preposition: WITH (সাথে / দিয়ে / দ্বারা)</div>
+<table>
+  <thead><tr><th>#</th><th>English Sentence</th><th>Bangla Meaning (বাংলা অর্থ)</th></tr></thead>
+  <tbody>
+    <tr><td class="num-cell">136</td><td>He came <span class="prep-tag">with</span> his friends.</td><td class="bangla">সে তার বন্ধুদের সাথে এলো।</td></tr>
+    <tr><td class="num-cell">137</td><td>She cut the bread <span class="prep-tag">with</span> a knife.</td><td class="bangla">সে ছুরি দিয়ে রুটি কাটল।</td></tr>
+    <tr><td class="num-cell">138</td><td>He is trembling <span class="prep-tag">with</span> cold.</td><td class="bangla">সে ঠান্ডায় কাঁপছে।</td></tr>
+    <tr><td class="num-cell">139</td><td>She is satisfied <span class="prep-tag">with</span> her result.</td><td class="bangla">সে তার ফলাফলে সন্তুষ্ট।</td></tr>
+    <tr><td class="num-cell">140</td><td>I agree <span class="prep-tag">with</span> your opinion.</td><td class="bangla">আমি তোমার মতামতের সাথে একমত।</td></tr>
+    <tr><td class="num-cell">141</td><td>He is popular <span class="prep-tag">with</span> his classmates.</td><td class="bangla">সে তার সহপাঠীদের কাছে জনপ্রিয়।</td></tr>
+    <tr><td class="num-cell">142</td><td>She looked at me <span class="prep-tag">with</span> surprise.</td><td class="bangla">সে বিস্ময়ে আমার দিকে তাকাল।</td></tr>
+    <tr><td class="num-cell">143</td><td>I am pleased <span class="prep-tag">with</span> your work.</td><td class="bangla">আমি তোমার কাজে খুশি।</td></tr>
+    <tr><td class="num-cell">144</td><td>She fought <span class="prep-tag">with</span> her brother over the toy.</td><td class="bangla">সে তার ভাইয়ের সাথে খেলনার জন্য ঝগড়া করল।</td></tr>
+    <tr><td class="num-cell">145</td><td>He broke the window <span class="prep-tag">with</span> a stone.</td><td class="bangla">সে পাথর দিয়ে জানালা ভাঙল।</td></tr>
+    <tr><td class="num-cell">146</td><td>She spoke <span class="prep-tag">with</span> great enthusiasm.</td><td class="bangla">সে প্রচণ্ড উৎসাহের সাথে কথা বলল।</td></tr>
+    <tr><td class="num-cell">147</td><td>Are you familiar <span class="prep-tag">with</span> this topic?</td><td class="bangla">আপনি কি এই বিষয়ের সাথে পরিচিত?</td></tr>
+    <tr><td class="num-cell">148</td><td>He was charged <span class="prep-tag">with</span> theft.</td><td class="bangla">তাকে চুরির অভিযোগে অভিযুক্ত করা হলো।</td></tr>
+    <tr><td class="num-cell">149</td><td>She covered her face <span class="prep-tag">with</span> her hands.</td><td class="bangla">সে হাত দিয়ে মুখ ঢেকে নিল।</td></tr>
+    <tr><td class="num-cell">150</td><td>He is talented <span class="prep-tag">with</span> both hands.</td><td class="bangla">সে উভয় হাতে দক্ষ।</td></tr>
+    <tr><td class="num-cell">151</td><td>I am not happy <span class="prep-tag">with</span> this decision.</td><td class="bangla">আমি এই সিদ্ধান্তে খুশি নই।</td></tr>
+    <tr><td class="num-cell">152</td><td>He wrote the letter <span class="prep-tag">with</span> care.</td><td class="bangla">সে যত্নের সাথে চিঠিটি লিখল।</td></tr>
+    <tr><td class="num-cell">153</td><td>She is suffering <span class="prep-tag">with</span> a headache.</td><td class="bangla">সে মাথাব্যথায় ভুগছে।</td></tr>
+    <tr><td class="num-cell">154</td><td>He dealt <span class="prep-tag">with</span> the problem wisely.</td><td class="bangla">সে বুদ্ধিমত্তার সাথে সমস্যাটি মোকাবেলা করল।</td></tr>
+    <tr><td class="num-cell">155</td><td>The room is filled <span class="prep-tag">with</span> flowers.</td><td class="bangla">ঘরটি ফুলে পরিপূর্ণ।</td></tr>
+  </tbody>
+</table>
+
+<!-- ─── FROM ─── -->
+<div class="section-title">7. Preposition: FROM (থেকে / হতে)</div>
+<table>
+  <thead><tr><th>#</th><th>English Sentence</th><th>Bangla Meaning (বাংলা অর্থ)</th></tr></thead>
+  <tbody>
+    <tr><td class="num-cell">156</td><td>He came <span class="prep-tag">from</span> Chittagong.</td><td class="bangla">সে চট্টগ্রাম থেকে এসেছে।</td></tr>
+    <tr><td class="num-cell">157</td><td>She is suffering <span class="prep-tag">from</span> fever.</td><td class="bangla">সে জ্বরে ভুগছে।</td></tr>
+    <tr><td class="num-cell">158</td><td>The class starts <span class="prep-tag">from</span> 9 AM.</td><td class="bangla">ক্লাস সকাল ৯টা থেকে শুরু হয়।</td></tr>
+    <tr><td class="num-cell">159</td><td>He borrowed money <span class="prep-tag">from</span> his friend.</td><td class="bangla">সে তার বন্ধুর কাছ থেকে টাকা ধার করল।</td></tr>
+    <tr><td class="num-cell">160</td><td>She prevented him <span class="prep-tag">from</span> going out.</td><td class="bangla">সে তাকে বাইরে যাওয়া থেকে বিরত রাখল।</td></tr>
+    <tr><td class="num-cell">161</td><td>The journey <span class="prep-tag">from</span> Dhaka to Sylhet takes 5 hours.</td><td class="bangla">ঢাকা থেকে সিলেট যাত্রায় ৫ ঘণ্টা লাগে।</td></tr>
+    <tr><td class="num-cell">162</td><td>He resigned <span class="prep-tag">from</span> his post.</td><td class="bangla">সে তার পদ থেকে পদত্যাগ করল।</td></tr>
+    <tr><td class="num-cell">163</td><td>She was absent <span class="prep-tag">from</span> class.</td><td class="bangla">সে ক্লাসে অনুপস্থিত ছিল।</td></tr>
+    <tr><td class="num-cell">164</td><td>He learned the lesson <span class="prep-tag">from</span> experience.</td><td class="bangla">সে অভিজ্ঞতা থেকে পাঠ নিল।</td></tr>
+    <tr><td class="num-cell">165</td><td>She is different <span class="prep-tag">from</span> her sister.</td><td class="bangla">সে তার বোনের থেকে আলাদা।</td></tr>
+    <tr><td class="num-cell">166</td><td>The wind blows <span class="prep-tag">from</span> the north.</td><td class="bangla">বায়ু উত্তর দিক থেকে বয়।</td></tr>
+    <tr><td class="num-cell">167</td><td>He was saved <span class="prep-tag">from</span> drowning.</td><td class="bangla">সে ডুবে যাওয়া থেকে রক্ষা পেল।</td></tr>
+    <tr><td class="num-cell">168</td><td>The price has risen <span class="prep-tag">from</span> 50 to 100 taka.</td><td class="bangla">দাম ৫০ টাকা থেকে বেড়ে ১০০ টাকা হয়েছে।</td></tr>
+    <tr><td class="num-cell">169</td><td>She derives pleasure <span class="prep-tag">from</span> gardening.</td><td class="bangla">সে বাগান করা থেকে আনন্দ পায়।</td></tr>
+    <tr><td class="num-cell">170</td><td>He fell <span class="prep-tag">from</span> the tree.</td><td class="bangla">সে গাছ থেকে পড়ে গেল।</td></tr>
+    <tr><td class="num-cell">171</td><td>She graduated <span class="prep-tag">from</span> Dhaka University.</td><td class="bangla">সে ঢাকা বিশ্ববিদ্যালয় থেকে স্নাতক হয়েছে।</td></tr>
+    <tr><td class="num-cell">172</td><td>He keeps away <span class="prep-tag">from</span> bad company.</td><td class="bangla">সে খারাপ সঙ্গ থেকে দূরে থাকে।</td></tr>
+    <tr><td class="num-cell">173</td><td>The school is 2 km <span class="prep-tag">from</span> here.</td><td class="bangla">স্কুলটি এখান থেকে ২ কিলোমিটার দূরে।</td></tr>
+    <tr><td class="num-cell">174</td><td>He recovered <span class="prep-tag">from</span> illness quickly.</td><td class="bangla">সে দ্রুত অসুস্থতা থেকে সেরে উঠল।</td></tr>
+    <tr><td class="num-cell">175</td><td>She was freed <span class="prep-tag">from</span> all responsibilities.</td><td class="bangla">সে সমস্ত দায়িত্ব থেকে মুক্তি পেল।</td></tr>
+  </tbody>
+</table>
+
+<!-- ─── TO ─── -->
+<div class="section-title">8. Preposition: TO (দিকে / প্রতি / পর্যন্ত)</div>
+<table>
+  <thead><tr><th>#</th><th>English Sentence</th><th>Bangla Meaning (বাংলা অর্থ)</th></tr></thead>
+  <tbody>
+    <tr><td class="num-cell">176</td><td>He went <span class="prep-tag">to</span> the market.</td><td class="bangla">সে বাজারে গেল।</td></tr>
+    <tr><td class="num-cell">177</td><td>She listened <span class="prep-tag">to</span> music all night.</td><td class="bangla">সে সারারাত সংগীত শুনল।</td></tr>
+    <tr><td class="num-cell">178</td><td>He was kind <span class="prep-tag">to</span> the poor.</td><td class="bangla">সে গরিবদের প্রতি দয়ালু ছিল।</td></tr>
+    <tr><td class="num-cell">179</td><td>She gave the book <span class="prep-tag">to</span> her friend.</td><td class="bangla">সে তার বন্ধুকে বইটি দিল।</td></tr>
+    <tr><td class="num-cell">180</td><td>He agreed <span class="prep-tag">to</span> the proposal.</td><td class="bangla">সে প্রস্তাবে রাজি হলো।</td></tr>
+    <tr><td class="num-cell">181</td><td>I was devoted <span class="prep-tag">to</span> my work.</td><td class="bangla">আমি আমার কাজে নিবেদিত ছিলাম।</td></tr>
+    <tr><td class="num-cell">182</td><td>We work from 9 AM <span class="prep-tag">to</span> 5 PM.</td><td class="bangla">আমরা সকাল ৯টা থেকে বিকাল ৫টা পর্যন্ত কাজ করি।</td></tr>
+    <tr><td class="num-cell">183</td><td>He was appointed <span class="prep-tag">to</span> the post.</td><td class="bangla">তাকে পদে নিয়োগ দেওয়া হলো।</td></tr>
+    <tr><td class="num-cell">184</td><td>She was loyal <span class="prep-tag">to</span> her country.</td><td class="bangla">সে তার দেশের প্রতি বিশ্বস্ত ছিল।</td></tr>
+    <tr><td class="num-cell">185</td><td>The road leads <span class="prep-tag">to</span> the city.</td><td class="bangla">রাস্তাটি শহরের দিকে যায়।</td></tr>
+    <tr><td class="num-cell">186</td><td>He belongs <span class="prep-tag">to</span> a wealthy family.</td><td class="bangla">সে একটি ধনী পরিবারের সদস্য।</td></tr>
+    <tr><td class="num-cell">187</td><td>She replied <span class="prep-tag">to</span> my message.</td><td class="bangla">সে আমার বার্তার উত্তর দিল।</td></tr>
+    <tr><td class="num-cell">188</td><td>He confessed <span class="prep-tag">to</span> his mistake.</td><td class="bangla">সে তার ভুল স্বীকার করল।</td></tr>
+    <tr><td class="num-cell">189</td><td>We must attend <span class="prep-tag">to</span> our duties.</td><td class="bangla">আমাদের অবশ্যই দায়িত্বে মনোযোগ দিতে হবে।</td></tr>
+    <tr><td class="num-cell">190</td><td>She objected <span class="prep-tag">to</span> the plan.</td><td class="bangla">সে পরিকল্পনার বিরোধিতা করল।</td></tr>
+    <tr><td class="num-cell">191</td><td>He is accustomed <span class="prep-tag">to</span> hard work.</td><td class="bangla">সে কঠোর পরিশ্রমে অভ্যস্ত।</td></tr>
+    <tr><td class="num-cell">192</td><td>He is junior <span class="prep-tag">to</span> me in rank.</td><td class="bangla">পদমর্যাদায় সে আমার চেয়ে জুনিয়র।</td></tr>
+    <tr><td class="num-cell">193</td><td>She admitted <span class="prep-tag">to</span> the hospital yesterday.</td><td class="bangla">সে গতকাল হাসপাতালে ভর্তি হলো।</td></tr>
+    <tr><td class="num-cell">194</td><td>He paid no attention <span class="prep-tag">to</span> her words.</td><td class="bangla">সে তার কথায় কোনো মনোযোগ দিল না।</td></tr>
+    <tr><td class="num-cell">195</td><td>I am looking forward <span class="prep-tag">to</span> meeting you.</td><td class="bangla">আমি তোমার সাথে দেখা করার অপেক্ষায় আছি।</td></tr>
+  </tbody>
+</table>
+
+<!-- ─── OF ─── -->
+<div class="section-title">9. Preposition: OF (এর — সম্পর্ক, অংশ)</div>
+<table>
+  <thead><tr><th>#</th><th>English Sentence</th><th>Bangla Meaning (বাংলা অর্থ)</th></tr></thead>
+  <tbody>
+    <tr><td class="num-cell">196</td><td>This is the capital <span class="prep-tag">of</span> Bangladesh.</td><td class="bangla">এটি বাংলাদেশের রাজধানী।</td></tr>
+    <tr><td class="num-cell">197</td><td>He was proud <span class="prep-tag">of</span> his achievement.</td><td class="bangla">সে তার অর্জনে গর্বিত ছিল।</td></tr>
+    <tr><td class="num-cell">198</td><td>She is afraid <span class="prep-tag">of</span> snakes.</td><td class="bangla">সে সাপকে ভয় পায়।</td></tr>
+    <tr><td class="num-cell">199</td><td>He is fond <span class="prep-tag">of</span> music.</td><td class="bangla">সে সংগীতের প্রতি অনুরাগী।</td></tr>
+    <tr><td class="num-cell">200</td><td>She died <span class="prep-tag">of</span> cancer.</td><td class="bangla">সে ক্যান্সারে মারা গেল।</td></tr>
+    <tr><td class="num-cell">201</td><td>He is a man <span class="prep-tag">of</span> great courage.</td><td class="bangla">সে অসীম সাহসের একজন মানুষ।</td></tr>
+    <tr><td class="num-cell">202</td><td>She is aware <span class="prep-tag">of</span> the risks.</td><td class="bangla">সে ঝুঁকি সম্পর্কে সচেতন।</td></tr>
+    <tr><td class="num-cell">203</td><td>A cup <span class="prep-tag">of</span> tea is very refreshing.</td><td class="bangla">এক কাপ চা খুব প্রাণবন্ত করে তোলে।</td></tr>
+    <tr><td class="num-cell">204</td><td>He was accused <span class="prep-tag">of</span> cheating.</td><td class="bangla">তাকে প্রতারণার অভিযোগে অভিযুক্ত করা হলো।</td></tr>
+    <tr><td class="num-cell">205</td><td>She is suspicious <span class="prep-tag">of</span> his motives.</td><td class="bangla">সে তার উদ্দেশ্য নিয়ে সন্দিহান।</td></tr>
+    <tr><td class="num-cell">206</td><td>He is capable <span class="prep-tag">of</span> doing this.</td><td class="bangla">সে এটি করতে সক্ষম।</td></tr>
+    <tr><td class="num-cell">207</td><td>She was ashamed <span class="prep-tag">of</span> her behaviour.</td><td class="bangla">সে তার আচরণে লজ্জিত ছিল।</td></tr>
+    <tr><td class="num-cell">208</td><td>He has a lot <span class="prep-tag">of</span> experience.</td><td class="bangla">তার প্রচুর অভিজ্ঞতা আছে।</td></tr>
+    <tr><td class="num-cell">209</td><td>It is a matter <span class="prep-tag">of</span> great importance.</td><td class="bangla">এটি অত্যন্ত গুরুত্বপূর্ণ বিষয়।</td></tr>
+    <tr><td class="num-cell">210</td><td>She is tired <span class="prep-tag">of</span> waiting.</td><td class="bangla">সে অপেক্ষায় ক্লান্ত।</td></tr>
+  </tbody>
+</table>
+
+<!-- ─── ABOUT / AFTER / AGAINST / AMONG / BETWEEN ─── -->
+<div class="section-title">10. Other Important Prepositions: ABOUT, AFTER, AGAINST, AMONG, BETWEEN, OVER, UNDER, THROUGH, WITHOUT, SINCE, UNTIL</div>
+
+<div class="sub-title">ABOUT (সম্পর্কে / প্রায়)</div>
+<table>
+  <thead><tr><th>#</th><th>English Sentence</th><th>Bangla Meaning</th></tr></thead>
+  <tbody>
+    <tr><td class="num-cell">211</td><td>She is worried <span class="prep-tag">about</span> her exam.</td><td class="bangla">সে তার পরীক্ষা নিয়ে চিন্তিত।</td></tr>
+    <tr><td class="num-cell">212</td><td>He told me <span class="prep-tag">about</span> the accident.</td><td class="bangla">সে আমাকে দুর্ঘটনা সম্পর্কে বলল।</td></tr>
+    <tr><td class="num-cell">213</td><td>They talked <span class="prep-tag">about</span> the problem for hours.</td><td class="bangla">তারা ঘণ্টার পর ঘণ্টা সমস্যাটি নিয়ে কথা বলল।</td></tr>
+    <tr><td class="num-cell">214</td><td>There is something strange <span class="prep-tag">about</span> him.</td><td class="bangla">তার মধ্যে কিছু একটা অদ্ভুত আছে।</td></tr>
+    <tr><td class="num-cell">215</td><td>He knows a lot <span class="prep-tag">about</span> history.</td><td class="bangla">সে ইতিহাস সম্পর্কে অনেক কিছু জানে।</td></tr>
+  </tbody>
+</table>
+
+<div class="sub-title">AFTER (পরে / পিছনে)</div>
+<table>
+  <thead><tr><th>#</th><th>English Sentence</th><th>Bangla Meaning</th></tr></thead>
+  <tbody>
+    <tr><td class="num-cell">216</td><td>He came home <span class="prep-tag">after</span> school.</td><td class="bangla">সে স্কুলের পরে বাড়ি এলো।</td></tr>
+    <tr><td class="num-cell">217</td><td>She looked <span class="prep-tag">after</span> the sick child.</td><td class="bangla">সে অসুস্থ শিশুটির যত্ন নিল।</td></tr>
+    <tr><td class="num-cell">218</td><td>The police ran <span class="prep-tag">after</span> the thief.</td><td class="bangla">পুলিশ চোরের পিছনে দৌড়াল।</td></tr>
+    <tr><td class="num-cell">219</td><td>He was named <span class="prep-tag">after</span> his grandfather.</td><td class="bangla">তার নাম দাদার নামে রাখা হয়েছিল।</td></tr>
+    <tr><td class="num-cell">220</td><td>Day <span class="prep-tag">after</span> day she waited for him.</td><td class="bangla">দিনের পর দিন সে তার জন্য অপেক্ষা করল।</td></tr>
+  </tbody>
+</table>
+
+<div class="sub-title">AGAINST (বিরুদ্ধে / বিপক্ষে)</div>
+<table>
+  <thead><tr><th>#</th><th>English Sentence</th><th>Bangla Meaning</th></tr></thead>
+  <tbody>
+    <tr><td class="num-cell">221</td><td>He voted <span class="prep-tag">against</span> the bill.</td><td class="bangla">সে বিলের বিরুদ্ধে ভোট দিল।</td></tr>
+    <tr><td class="num-cell">222</td><td>She leaned <span class="prep-tag">against</span> the wall.</td><td class="bangla">সে দেয়ালে হেলান দিল।</td></tr>
+    <tr><td class="num-cell">223</td><td>He fought <span class="prep-tag">against</span> injustice all his life.</td><td class="bangla">সে সারাজীবন অবিচারের বিরুদ্ধে লড়াই করল।</td></tr>
+    <tr><td class="num-cell">224</td><td>She protested <span class="prep-tag">against</span> the decision.</td><td class="bangla">সে সিদ্ধান্তের বিরুদ্ধে প্রতিবাদ করল।</td></tr>
+    <tr><td class="num-cell">225</td><td>Swimming <span class="prep-tag">against</span> the current is difficult.</td><td class="bangla">স্রোতের বিরুদ্ধে সাঁতার কাটা কঠিন।</td></tr>
+  </tbody>
+</table>
+
+<div class="sub-title">AMONG / BETWEEN (মধ্যে)</div>
+<table>
+  <thead><tr><th>#</th><th>English Sentence</th><th>Bangla Meaning</th></tr></thead>
+  <tbody>
+    <tr><td class="num-cell">226</td><td>He distributed sweets <span class="prep-tag">among</span> the children. (3+)</td><td class="bangla">সে শিশুদের মধ্যে মিষ্টি বিতরণ করল।</td></tr>
+    <tr><td class="num-cell">227</td><td>She divided the cake <span class="prep-tag">between</span> her two friends. (2 জন)</td><td class="bangla">সে তার দুই বন্ধুর মধ্যে কেকটি ভাগ করল।</td></tr>
+    <tr><td class="num-cell">228</td><td>He sat <span class="prep-tag">among</span> a group of students.</td><td class="bangla">সে একদল শিক্ষার্থীর মাঝে বসল।</td></tr>
+    <tr><td class="num-cell">229</td><td>There was a quarrel <span class="prep-tag">between</span> the two brothers.</td><td class="bangla">দুই ভাইয়ের মধ্যে ঝগড়া হলো।</td></tr>
+    <tr><td class="num-cell">230</td><td>She is the best <span class="prep-tag">among</span> all her classmates.</td><td class="bangla">সে তার সমস্ত সহপাঠীদের মধ্যে সেরা।</td></tr>
+  </tbody>
+</table>
+
+<div class="sub-title">OVER / UNDER / THROUGH / WITHOUT / SINCE / UNTIL</div>
+<table>
+  <thead><tr><th>#</th><th>Preposition</th><th>English Sentence</th><th>Bangla Meaning</th></tr></thead>
+  <tbody>
+    <tr><td class="num-cell">231</td><td class="prep">OVER</td><td>The plane flew <span class="prep-tag">over</span> the city.</td><td class="bangla">বিমানটি শহরের উপর দিয়ে উড়ল।</td></tr>
+    <tr><td class="num-cell">232</td><td class="prep">OVER</td><td>He has authority <span class="prep-tag">over</span> the department.</td><td class="bangla">বিভাগের উপর তার কর্তৃত্ব আছে।</td></tr>
+    <tr><td class="num-cell">233</td><td class="prep">OVER</td><td>She is <span class="prep-tag">over</span> 30 years old.</td><td class="bangla">সে ৩০ বছরের বেশি বয়সী।</td></tr>
+    <tr><td class="num-cell">234</td><td class="prep">UNDER</td><td>The cat is hiding <span class="prep-tag">under</span> the bed.</td><td class="bangla">বিড়ালটি খাটের নিচে লুকিয়ে আছে।</td></tr>
+    <tr><td class="num-cell">235</td><td class="prep">UNDER</td><td>He is still <span class="prep-tag">under</span> 18 years of age.</td><td class="bangla">সে এখনও ১৮ বছরের কম বয়সী।</td></tr>
+    <tr><td class="num-cell">236</td><td class="prep">UNDER</td><td>The matter is <span class="prep-tag">under</span> consideration.</td><td class="bangla">বিষয়টি বিবেচনাধীন।</td></tr>
+    <tr><td class="num-cell">237</td><td class="prep">THROUGH</td><td>He walked <span class="prep-tag">through</span> the forest alone.</td><td class="bangla">সে একাই জঙ্গলের মধ্য দিয়ে হেঁটে গেল।</td></tr>
+    <tr><td class="num-cell">238</td><td class="prep">THROUGH</td><td>She succeeded <span class="prep-tag">through</span> hard work.</td><td class="bangla">সে কঠোর পরিশ্রমের মাধ্যমে সফল হলো।</td></tr>
+    <tr><td class="num-cell">239</td><td class="prep">WITHOUT</td><td>He cannot live <span class="prep-tag">without</span> water.</td><td class="bangla">সে পানি ছাড়া বেঁচে থাকতে পারবে না।</td></tr>
+    <tr><td class="num-cell">240</td><td class="prep">WITHOUT</td><td>She left <span class="prep-tag">without</span> saying goodbye.</td><td class="bangla">সে বিদায় না জানিয়েই চলে গেল।</td></tr>
+    <tr><td class="num-cell">241</td><td class="prep">SINCE</td><td>He has been ill <span class="prep-tag">since</span> Monday.</td><td class="bangla">সে সোমবার থেকে অসুস্থ।</td></tr>
+    <tr><td class="num-cell">242</td><td class="prep">SINCE</td><td>I have not seen her <span class="prep-tag">since</span> childhood.</td><td class="bangla">শৈশব থেকে আমি তাকে দেখিনি।</td></tr>
+    <tr><td class="num-cell">243</td><td class="prep">UNTIL</td><td>Wait here <span class="prep-tag">until</span> I return.</td><td class="bangla">আমি না ফেরা পর্যন্ত এখানে অপেক্ষা করো।</td></tr>
+    <tr><td class="num-cell">244</td><td class="prep">UNTIL</td><td>She worked <span class="prep-tag">until</span> midnight.</td><td class="bangla">সে মধ্যরাত পর্যন্ত কাজ করল।</td></tr>
+    <tr><td class="num-cell">245</td><td class="prep">BESIDE</td><td>She sat <span class="prep-tag">beside</span> her mother.</td><td class="bangla">সে তার মায়ের পাশে বসল।</td></tr>
+    <tr><td class="num-cell">246</td><td class="prep">BESIDES</td><td><span class="prep-tag">Besides</span> English, he knows French.</td><td class="bangla">ইংরেজি ছাড়াও সে ফরাসি জানে।</td></tr>
+    <tr><td class="num-cell">247</td><td class="prep">BEHIND</td><td>The garden is <span class="prep-tag">behind</span> the house.</td><td class="bangla">বাগানটি বাড়ির পিছনে।</td></tr>
+    <tr><td class="num-cell">248</td><td class="prep">BEFORE</td><td>Think <span class="prep-tag">before</span> you speak.</td><td class="bangla">কথা বলার আগে চিন্তা করো।</td></tr>
+    <tr><td class="num-cell">249</td><td class="prep">DURING</td><td>Do not talk <span class="prep-tag">during</span> the examination.</td><td class="bangla">পরীক্ষার সময় কথা বলো না।</td></tr>
+    <tr><td class="num-cell">250</td><td class="prep">DURING</td><td>It rained heavily <span class="prep-tag">during</span> the night.</td><td class="bangla">রাতে প্রচুর বৃষ্টি হলো।</td></tr>
+  </tbody>
+</table>
+
+<!-- ─── MIXED ADVANCED ─── -->
+<div class="section-title">11. Mixed / Advanced Examples (বিচিত্র ও উন্নত উদাহরণ)</div>
+<table>
+  <thead><tr><th>#</th><th>English Sentence</th><th>Bangla Meaning</th></tr></thead>
+  <tbody>
+    <tr><td class="num-cell">251</td><td>He is engaged <span class="prep-tag">in</span> a new business.</td><td class="bangla">সে নতুন ব্যবসায় নিযুক্ত আছে।</td></tr>
+    <tr><td class="num-cell">252</td><td>She is superior <span class="prep-tag">to</span> her classmates in studies.</td><td class="bangla">পড়াশোনায় সে তার সহপাঠীদের চেয়ে উৎকৃষ্ট।</td></tr>
+    <tr><td class="num-cell">253</td><td>He is indifferent <span class="prep-tag">to</span> others' opinion.</td><td class="bangla">সে অন্যদের মতামতের প্রতি উদাসীন।</td></tr>
+    <tr><td class="num-cell">254</td><td>She contributed greatly <span class="prep-tag">to</span> society.</td><td class="bangla">সে সমাজে ব্যাপকভাবে অবদান রেখেছে।</td></tr>
+    <tr><td class="num-cell">255</td><td>He was expelled <span class="prep-tag">from</span> school.</td><td class="bangla">তাকে স্কুল থেকে বহিষ্কার করা হলো।</td></tr>
+    <tr><td class="num-cell">256</td><td>She is married <span class="prep-tag">to</span> a doctor.</td><td class="bangla">সে একজন ডাক্তারের সাথে বিবাহিত।</td></tr>
+    <tr><td class="num-cell">257</td><td>He is envious <span class="prep-tag">of</span> his friend's success.</td><td class="bangla">সে তার বন্ধুর সাফল্যে ঈর্ষান্বিত।</td></tr>
+    <tr><td class="num-cell">258</td><td>She looked <span class="prep-tag">into</span> the matter carefully.</td><td class="bangla">সে বিষয়টি সাবধানে তদন্ত করল।</td></tr>
+    <tr><td class="num-cell">259</td><td>He came across a rare coin.</td><td class="bangla">সে একটি দুর্লভ মুদ্রা খুঁজে পেল।</td></tr>
+    <tr><td class="num-cell">260</td><td>She insisted <span class="prep-tag">on</span> going alone.</td><td class="bangla">সে একা যাওয়ার জন্য জোর দিল।</td></tr>
+    <tr><td class="num-cell">261</td><td>He gave up smoking <span class="prep-tag">for</span> his health.</td><td class="bangla">সে স্বাস্থ্যের জন্য ধূমপান ছেড়ে দিল।</td></tr>
+    <tr><td class="num-cell">262</td><td>She complied <span class="prep-tag">with</span> the rules.</td><td class="bangla">সে নিয়মাবলী মেনে চলল।</td></tr>
+    <tr><td class="num-cell">263</td><td>He succeeded <span class="prep-tag">in</span> his mission.</td><td class="bangla">সে তার মিশনে সফল হলো।</td></tr>
+    <tr><td class="num-cell">264</td><td>She is accustomed <span class="prep-tag">to</span> waking up early.</td><td class="bangla">সে ভোরে ওঠার অভ্যাসে অভ্যস্ত।</td></tr>
+    <tr><td class="num-cell">265</td><td>He apologized <span class="prep-tag">for</span> his rude behaviour.</td><td class="bangla">সে তার অভদ্র আচরণের জন্য ক্ষমা চাইল।</td></tr>
+    <tr><td class="num-cell">266</td><td>She was deprived <span class="prep-tag">of</span> her rights.</td><td class="bangla">সে তার অধিকার থেকে বঞ্চিত হলো।</td></tr>
+    <tr><td class="num-cell">267</td><td>He knocked <span class="prep-tag">on</span> the door politely.</td><td class="bangla">সে ভদ্রভাবে দরজায় টোকা দিল।</td></tr>
+    <tr><td class="num-cell">268</td><td>She coped <span class="prep-tag">with</span> the difficulty bravely.</td><td class="bangla">সে সাহসিকতার সাথে সমস্যা মোকাবেলা করল।</td></tr>
+    <tr><td class="num-cell">269</td><td>He is addicted <span class="prep-tag">to</span> mobile games.</td><td class="bangla">সে মোবাইল গেমসে আসক্ত।</td></tr>
+    <tr><td class="num-cell">270</td><td>She abstained <span class="prep-tag">from</span> voting.</td><td class="bangla">সে ভোটদান থেকে বিরত থাকল।</td></tr>
+    <tr><td class="num-cell">271</td><td>He shouted <span class="prep-tag">at</span> the top of his voice.</td><td class="bangla">সে গলার সর্বোচ্চ শক্তিতে চিৎকার করল।</td></tr>
+    <tr><td class="num-cell">272</td><td>She spoke <span class="prep-tag">in</span> favour of the poor.</td><td class="bangla">সে দরিদ্রদের পক্ষে কথা বলল।</td></tr>
+    <tr><td class="num-cell">273</td><td>He broke free <span class="prep-tag">from</span> old habits.</td><td class="bangla">সে পুরানো অভ্যাস থেকে মুক্ত হলো।</td></tr>
+    <tr><td class="num-cell">274</td><td>She was delighted <span class="prep-tag">at</span> winning the prize.</td><td class="bangla">পুরস্কার জেতায় সে আনন্দিত হলো।</td></tr>
+    <tr><td class="num-cell">275</td><td>He helped <span class="prep-tag">in</span> solving the problem.</td><td class="bangla">সমস্যা সমাধানে সে সাহায্য করল।</td></tr>
+    <tr><td class="num-cell">276</td><td>She is particular <span class="prep-tag">about</span> cleanliness.</td><td class="bangla">পরিচ্ছন্নতা সম্পর্কে সে অত্যন্ত সতর্ক।</td></tr>
+    <tr><td class="num-cell">277</td><td>He reminded me <span class="prep-tag">of</span> my duties.</td><td class="bangla">সে আমাকে আমার দায়িত্বের কথা মনে করিয়ে দিল।</td></tr>
+    <tr><td class="num-cell">278</td><td>She is qualified <span class="prep-tag">for</span> the post.</td><td class="bangla">সে পদের জন্য যোগ্য।</td></tr>
+    <tr><td class="num-cell">279</td><td>He is obsessed <span class="prep-tag">with</span> cleanliness.</td><td class="bangla">সে পরিচ্ছন্নতায় আচ্ছন্ন।</td></tr>
+    <tr><td class="num-cell">280</td><td>She has a talent <span class="prep-tag">for</span> writing.</td><td class="bangla">তার লেখালেখির প্রতিভা আছে।</td></tr>
+    <tr><td class="num-cell">281</td><td>He suffered <span class="prep-tag">from</span> depression for months.</td><td class="bangla">সে মাসের পর মাস বিষণ্নতায় ভুগল।</td></tr>
+    <tr><td class="num-cell">282</td><td>She was astonished <span class="prep-tag">at</span> his intelligence.</td><td class="bangla">তার বুদ্ধিমত্তায় সে হতবাক হয়ে গেল।</td></tr>
+    <tr><td class="num-cell">283</td><td>He is the minister <span class="prep-tag">in</span> charge of education.</td><td class="bangla">সে শিক্ষা বিষয়ক দায়িত্বপ্রাপ্ত মন্ত্রী।</td></tr>
+    <tr><td class="num-cell">284</td><td>She is well-versed <span class="prep-tag">in</span> English literature.</td><td class="bangla">সে ইংরেজি সাহিত্যে সুপণ্ডিত।</td></tr>
+    <tr><td class="num-cell">285</td><td>He made progress <span class="prep-tag">in</span> his studies.</td><td class="bangla">সে পড়াশোনায় অগ্রগতি করেছে।</td></tr>
+    <tr><td class="num-cell">286</td><td>She is hopeful <span class="prep-tag">of</span> a bright future.</td><td class="bangla">সে উজ্জ্বল ভবিষ্যতের বিষয়ে আশাবাদী।</td></tr>
+    <tr><td class="num-cell">287</td><td>He was charged <span class="prep-tag">with</span> murder.</td><td class="bangla">তাকে হত্যার অভিযোগে অভিযুক্ত করা হলো।</td></tr>
+    <tr><td class="num-cell">288</td><td>She knocked <span class="prep-tag">at</span> the door and waited.</td><td class="bangla">সে দরজায় টোকা দিয়ে অপেক্ষা করল।</td></tr>
+    <tr><td class="num-cell">289</td><td>He is committed <span class="prep-tag">to</span> his work.</td><td class="bangla">সে তার কাজের প্রতি প্রতিশ্রুতিবদ্ধ।</td></tr>
+    <tr><td class="num-cell">290</td><td>She is nervous <span class="prep-tag">about</span> the result.</td><td class="bangla">সে ফলাফল নিয়ে উদ্বিগ্ন।</td></tr>
+    <tr><td class="num-cell">291</td><td>He received a reward <span class="prep-tag">for</span> his bravery.</td><td class="bangla">সে তার সাহসিকতার জন্য পুরস্কার পেল।</td></tr>
+    <tr><td class="num-cell">292</td><td>She poured water <span class="prep-tag">into</span> the glass.</td><td class="bangla">সে গ্লাসে পানি ঢালল।</td></tr>
+    <tr><td class="num-cell">293</td><td>He came out <span class="prep-tag">of</span> the building quickly.</td><td class="bangla">সে দ্রুত ভবন থেকে বেরিয়ে এলো।</td></tr>
+    <tr><td class="num-cell">294</td><td>She walked <span class="prep-tag">towards</span> the station.</td><td class="bangla">সে স্টেশনের দিকে হাঁটল।</td></tr>
+    <tr><td class="num-cell">295</td><td>He lives far <span class="prep-tag">from</span> his workplace.</td><td class="bangla">সে তার কর্মস্থল থেকে অনেক দূরে বাস করে।</td></tr>
+    <tr><td class="num-cell">296</td><td>She burst <span class="prep-tag">into</span> tears when she heard the bad news.</td><td class="bangla">দুঃসংবাদ শুনে সে কান্নায় ভেঙে পড়ল।</td></tr>
+    <tr><td class="num-cell">297</td><td>He was struck <span class="prep-tag">by</span> lightning.</td><td class="bangla">তাকে বজ্রপাত আঘাত করল।</td></tr>
+    <tr><td class="num-cell">298</td><td>She is short <span class="prep-tag">of</span> money this month.</td><td class="bangla">এই মাসে তার টাকার টানাটানি।</td></tr>
+    <tr><td class="num-cell">299</td><td>He was elected <span class="prep-tag">as</span> the chairman.</td><td class="bangla">সে চেয়ারম্যান হিসেবে নির্বাচিত হলো।</td></tr>
+    <tr><td class="num-cell">300</td><td>She spoke <span class="prep-tag">on</span> the occasion of Independence Day.</td><td class="bangla">সে স্বাধীনতা দিবসের উপলক্ষে বক্তব্য রাখলেন।</td></tr>
+    <tr><td class="num-cell">301</td><td>He was surprised <span class="prep-tag">at</span> the sudden change.</td><td class="bangla">সে হঠাৎ পরিবর্তনে অবাক হলো।</td></tr>
+    <tr><td class="num-cell">302</td><td>She was grateful <span class="prep-tag">to</span> her teacher for guidance.</td><td class="bangla">পথপ্রদর্শনের জন্য সে তার শিক্ষকের প্রতি কৃতজ্ঞ ছিল।</td></tr>
+    <tr><td class="num-cell">303</td><td>He ran <span class="prep-tag">across</span> the field to catch the ball.</td><td class="bangla">বল ধরতে সে মাঠ জুড়ে দৌড়াল।</td></tr>
+    <tr><td class="num-cell">304</td><td>She is an authority <span class="prep-tag">on</span> Bengali literature.</td><td class="bangla">সে বাংলা সাহিত্যে একজন কর্তৃপক্ষ।</td></tr>
+    <tr><td class="num-cell">305</td><td>He was put <span class="prep-tag">in</span> charge of the project.</td><td class="bangla">তাকে প্রকল্পের দায়িত্বে রাখা হলো।</td></tr>
+  </tbody>
+</table>
+
+<!-- ══════════════════════════════════════════
+     PART 3 — HSC EXAM ANALYSIS
+══════════════════════════════════════════ -->
+<div class="part-header">
+  <div class="part-num">Part 3</div>
+  <h2>HSC Board Exam Analysis & 50 Solved Questions</h2>
+  <p>বিগত বছরের HSC প্রশ্নের ধরন, ফ্রিকোয়েন্সি ও সমাধান</p>
+</div>
+
+<div class="section-title">HSC Exam Pattern Analysis (পরীক্ষার ধরন বিশ্লেষণ)</div>
+
+<div class="tip-box">
+  <strong>📊 HSC Preposition Questions কীভাবে আসে?</strong><br>
+  HSC পরীক্ষায় সাধারণত একটি Passage দেওয়া হয় যেখানে কিছু শূন্যস্থান থাকে এবং সঠিক Preposition বসাতে হয়। মোট ৫-১০ নম্বর Preposition-এর জন্য বরাদ্দ থাকে।
+</div>
+
+<div class="section-title">Preposition Frequency Chart (কোনটি বেশি আসে)</div>
+<table>
+  <thead><tr><th>Preposition</th><th>Frequency in HSC</th><th>Common Patterns</th><th>Priority</th></tr></thead>
+  <tbody>
+    <tr><td><strong>IN</strong></td><td>Very High</td><td>in time, in place, in state, verb+in (succeed in, result in)</td><td><span class="freq-badge high">HIGH</span></td></tr>
+    <tr><td><strong>ON</strong></td><td>Very High</td><td>on day/date, on surface, on topic, depend on, insist on</td><td><span class="freq-badge high">HIGH</span></td></tr>
+    <tr><td><strong>AT</strong></td><td>High</td><td>at exact time, at place point, good/bad at, look/laugh at</td><td><span class="freq-badge high">HIGH</span></td></tr>
+    <tr><td><strong>FOR</strong></td><td>High</td><td>famous for, sorry for, responsible for, duration with for</td><td><span class="freq-badge high">HIGH</span></td></tr>
+    <tr><td><strong>OF</strong></td><td>High</td><td>afraid of, fond of, proud of, capable of, die of</td><td><span class="freq-badge high">HIGH</span></td></tr>
+    <tr><td><strong>TO</strong></td><td>High</td><td>kind to, listen to, accustomed to, superior to, belong to</td><td><span class="freq-badge high">HIGH</span></td></tr>
+    <tr><td><strong>BY</strong></td><td>Medium</td><td>passive voice agent, by bus/train, by chance, by mistake</td><td><span class="freq-badge med">MEDIUM</span></td></tr>
+    <tr><td><strong>WITH</strong></td><td>Medium</td><td>pleased with, satisfied with, tremble with, agree with</td><td><span class="freq-badge med">MEDIUM</span></td></tr>
+    <tr><td><strong>FROM</strong></td><td>Medium</td><td>suffer from, prevent from, different from, absent from</td><td><span class="freq-badge med">MEDIUM</span></td></tr>
+    <tr><td><strong>ABOUT</strong></td><td>Medium</td><td>worried about, talk about, think about, care about</td><td><span class="freq-badge med">MEDIUM</span></td></tr>
+    <tr><td><strong>AGAINST</strong></td><td>Low–Medium</td><td>protest against, fight against, lean against, vote against</td><td><span class="freq-badge low">LOW–MED</span></td></tr>
+    <tr><td><strong>SINCE / FOR</strong></td><td>Medium</td><td>Perfect tense: since (point) vs for (duration)</td><td><span class="freq-badge med">MEDIUM</span></td></tr>
+  </tbody>
+</table>
+
+<!-- VERB + PREPOSITION -->
+<div class="section-title">Most Important Verb + Preposition Combinations (Verb + Preposition)</div>
+<div class="tip-box"><strong>💡 HSC Tip:</strong> এই Combinations গুলো সরাসরি পরীক্ষায় ব্লাঙ্ক ফিলআপ হিসেবে আসে। এগুলো মুখস্থ করা আবশ্যিক।</div>
+
+<div class="pattern-grid">
+  <div class="pattern-card">
+    <h4>🔵 Verb + IN</h4>
+    <ul>
+      <li>succeed <span>in</span> doing</li>
+      <li>result <span>in</span> failure</li>
+      <li>engage <span>in</span> work</li>
+      <li>believe <span>in</span> God</li>
+      <li>interested <span>in</span> reading</li>
+      <li>well-versed <span>in</span></li>
+    </ul>
+  </div>
+  <div class="pattern-card">
+    <h4>🔵 Verb + ON</h4>
+    <ul>
+      <li>depend <span>on</span> parents</li>
+      <li>rely <span>on</span> facts</li>
+      <li>insist <span>on</span> going</li>
+      <li>congratulate <span>on</span></li>
+      <li>comment <span>on</span></li>
+      <li>embark <span>on</span> a journey</li>
+    </ul>
+  </div>
+  <div class="pattern-card">
+    <h4>🔵 Verb + AT</h4>
+    <ul>
+      <li>look <span>at</span> the board</li>
+      <li>laugh <span>at</span> others</li>
+      <li>aim <span>at</span> the target</li>
+      <li>surprised <span>at</span></li>
+      <li>shocked <span>at</span></li>
+      <li>good / bad <span>at</span></li>
+    </ul>
+  </div>
+  <div class="pattern-card">
+    <h4>🔵 Verb + FOR</h4>
+    <ul>
+      <li>apply <span>for</span> a job</li>
+      <li>sorry <span>for</span> mistake</li>
+      <li>search <span>for</span></li>
+      <li>responsible <span>for</span></li>
+      <li>famous <span>for</span></li>
+      <li>punished <span>for</span></li>
+    </ul>
+  </div>
+  <div class="pattern-card">
+    <h4>🔵 Verb + OF</h4>
+    <ul>
+      <li>afraid <span>of</span> snakes</li>
+      <li>proud <span>of</span> success</li>
+      <li>fond <span>of</span> music</li>
+      <li>capable <span>of</span></li>
+      <li>accused <span>of</span></li>
+      <li>die <span>of</span> illness</li>
+    </ul>
+  </div>
+  <div class="pattern-card">
+    <h4>🔵 Verb + TO</h4>
+    <ul>
+      <li>listen <span>to</span> music</li>
+      <li>accustomed <span>to</span></li>
+      <li>superior <span>to</span></li>
+      <li>married <span>to</span></li>
+      <li>loyal <span>to</span></li>
+      <li>devoted <span>to</span> work</li>
+    </ul>
+  </div>
+  <div class="pattern-card">
+    <h4>🔵 Verb + FROM</h4>
+    <ul>
+      <li>suffer <span>from</span> fever</li>
+      <li>prevent <span>from</span></li>
+      <li>different <span>from</span></li>
+      <li>absent <span>from</span></li>
+      <li>refrain <span>from</span></li>
+      <li>recover <span>from</span></li>
+    </ul>
+  </div>
+  <div class="pattern-card">
+    <h4>🔵 Verb + WITH</h4>
+    <ul>
+      <li>pleased <span>with</span></li>
+      <li>satisfied <span>with</span></li>
+      <li>agree <span>with</span></li>
+      <li>deal <span>with</span></li>
+      <li>cope <span>with</span></li>
+      <li>charged <span>with</span></li>
+    </ul>
+  </div>
+</div>
+
+<!-- 50 SOLVED EXAM QUESTIONS -->
+<div class="section-title">50 Solved HSC-Pattern Questions (HSC পরীক্ষার ধারায় ৫০টি সমাধান)</div>
+
+<div class="warn-box">
+  <strong>📝 পরীক্ষার নির্দেশনা:</strong> নিচের প্রতিটি প্রশ্নে শূন্যস্থানে সঠিক Preposition বসাতে হবে। সঠিক উত্তর <span style="color:var(--green); font-weight:700;">সবুজ রঙে</span> দেওয়া আছে এবং কারণ ব্যাখ্যা করা হয়েছে।
+</div>
+
+<div class="exam-q">
+  <div class="q-num">1</div>
+  <div class="question">He is good <span class="blank">______</span> mathematics.</div>
+  <div class="answer">✅ Answer: AT</div>
+  <div class="explanation">নিয়ম: Good/bad/skilled/expert + AT. "Good at" means skilled in a subject.</div>
+</div>
+
+<div class="exam-q">
+  <div class="q-num">2</div>
+  <div class="question">She is fond <span class="blank">______</span> reading novels.</div>
+  <div class="answer">✅ Answer: OF</div>
+  <div class="explanation">নিয়ম: Fond + OF. "Fond of" means having a liking for something.</div>
+</div>
+
+<div class="exam-q">
+  <div class="q-num">3</div>
+  <div class="question">He has been living in this city <span class="blank">______</span> 2015.</div>
+  <div class="answer">✅ Answer: SINCE</div>
+  <div class="explanation">নিয়ম: SINCE = নির্দিষ্ট সময় বা তারিখ থেকে (Perfect tense-এ)। FOR = একটি নির্দিষ্ট সময়কাল।</div>
+</div>
+
+<div class="exam-q">
+  <div class="q-num">4</div>
+  <div class="question">Bangladesh is famous <span class="blank">______</span> its natural beauty.</div>
+  <div class="answer">✅ Answer: FOR</div>
+  <div class="explanation">নিয়ম: Famous/known/noted + FOR. "Famous for" মানে যে কারণে বিখ্যাত।</div>
+</div>
+
+<div class="exam-q">
+  <div class="q-num">5</div>
+  <div class="question">The children are playing <span class="blank">______</span> the field.</div>
+  <div class="answer">✅ Answer: IN</div>
+  <div class="explanation">নিয়ম: একটি বৃহত্তর এলাকার মধ্যে থাকলে "in" ব্যবহার হয়।</div>
+</div>
+
+<div class="exam-q">
+  <div class="q-num">6</div>
+  <div class="question">The book is lying <span class="blank">______</span> the table.</div>
+  <div class="answer">✅ Answer: ON</div>
+  <div class="explanation">নিয়ম: কোনো পৃষ্ঠের (surface) উপরে থাকলে "on" ব্যবহার হয়।</div>
+</div>
+
+<div class="exam-q">
+  <div class="q-num">7</div>
+  <div class="question">He succeeded <span class="blank">______</span> his mission.</div>
+  <div class="answer">✅ Answer: IN</div>
+  <div class="explanation">নিয়ম: Succeed + IN. "Succeed in" মানে কোনো কাজে সফল হওয়া।</div>
+</div>
+
+<div class="exam-q">
+  <div class="q-num">8</div>
+  <div class="question">She is married <span class="blank">______</span> a rich man.</div>
+  <div class="answer">✅ Answer: TO</div>
+  <div class="explanation">নিয়ম: Married + TO. বাংলায় "কারো সাথে বিবাহিত" মানেই ইংরেজিতে "married to"।</div>
+</div>
+
+<div class="exam-q">
+  <div class="q-num">9</div>
+  <div class="question">He died <span class="blank">______</span> cancer last year.</div>
+  <div class="answer">✅ Answer: OF</div>
+  <div class="explanation">নিয়ম: Die + OF (রোগ বা কারণের জন্য)। Die "from" ব্যবহার হয় accident/wound-এর ক্ষেত্রে।</div>
+</div>
+
+<div class="exam-q">
+  <div class="q-num">10</div>
+  <div class="question">The teacher was angry <span class="blank">______</span> the students.</div>
+  <div class="answer">✅ Answer: WITH / AT</div>
+  <div class="explanation">নিয়ম: Angry with (person), Angry at (situation/thing). Both are acceptable for persons in HSC.</div>
+</div>
+
+<div class="exam-q">
+  <div class="q-num">11</div>
+  <div class="question">She is suffering <span class="blank">______</span> a serious disease.</div>
+  <div class="answer">✅ Answer: FROM</div>
+  <div class="explanation">নিয়ম: Suffer + FROM. "Suffering from" মানে রোগে ভোগা।</div>
+</div>
+
+<div class="exam-q">
+  <div class="q-num">12</div>
+  <div class="question">He was punished <span class="blank">______</span> his bad behaviour.</div>
+  <div class="answer">✅ Answer: FOR</div>
+  <div class="explanation">নিয়ম: Punished + FOR (কারণ দেখাতে)।</div>
+</div>
+
+<div class="exam-q">
+  <div class="q-num">13</div>
+  <div class="question">He is accustomed <span class="blank">______</span> getting up early.</div>
+  <div class="answer">✅ Answer: TO</div>
+  <div class="explanation">নিয়ম: Accustomed + TO + gerund (verb+ing)।</div>
+</div>
+
+<div class="exam-q">
+  <div class="q-num">14</div>
+  <div class="question">She looked <span class="blank">______</span> me and smiled.</div>
+  <div class="answer">✅ Answer: AT</div>
+  <div class="explanation">নিয়ম: Look + AT (দিকে তাকানো)। Look after = যত্ন নেওয়া। Look into = তদন্ত।</div>
+</div>
+
+<div class="exam-q">
+  <div class="q-num">15</div>
+  <div class="question">The novel was written <span class="blank">______</span> Humayun Ahmed.</div>
+  <div class="answer">✅ Answer: BY</div>
+  <div class="explanation">নিয়ম: Passive voice-এ agent (যে করেছে) দেখাতে "by" ব্যবহার হয়।</div>
+</div>
+
+<div class="exam-q">
+  <div class="q-num">16</div>
+  <div class="question">He is proud <span class="blank">______</span> his son's achievement.</div>
+  <div class="answer">✅ Answer: OF</div>
+  <div class="explanation">নিয়ম: Proud + OF. "Proud of" মানে কারো জন্য গর্বিত।</div>
+</div>
+
+<div class="exam-q">
+  <div class="q-num">17</div>
+  <div class="question">She was absent <span class="blank">______</span> class yesterday.</div>
+  <div class="answer">✅ Answer: FROM</div>
+  <div class="explanation">নিয়ম: Absent + FROM. "Absent from" মানে কোথাও না থাকা।</div>
+</div>
+
+<div class="exam-q">
+  <div class="q-num">18</div>
+  <div class="question">He apologized <span class="blank">______</span> his mistake.</div>
+  <div class="answer">✅ Answer: FOR</div>
+  <div class="explanation">নিয়ম: Apologize + FOR. কারণ উল্লেখে "for"।</div>
+</div>
+
+<div class="exam-q">
+  <div class="q-num">19</div>
+  <div class="question">They depend <span class="blank">______</span> farming for their livelihood.</div>
+  <div class="answer">✅ Answer: ON</div>
+  <div class="explanation">নিয়ম: Depend + ON. "Depend on" মানে নির্ভর করা।</div>
+</div>
+
+<div class="exam-q">
+  <div class="q-num">20</div>
+  <div class="question">She is capable <span class="blank">______</span> leading the team.</div>
+  <div class="answer">✅ Answer: OF</div>
+  <div class="explanation">নিয়ম: Capable + OF + gerund.</div>
+</div>
+
+<div class="exam-q">
+  <div class="q-num">21</div>
+  <div class="question">The train arrives <span class="blank">______</span> 8 o'clock.</div>
+  <div class="answer">✅ Answer: AT</div>
+  <div class="explanation">নিয়ম: Exact time-এর সাথে "at" ব্যবহার হয়।</div>
+</div>
+
+<div class="exam-q">
+  <div class="q-num">22</div>
+  <div class="question">He has been working here <span class="blank">______</span> five years.</div>
+  <div class="answer">✅ Answer: FOR</div>
+  <div class="explanation">নিয়ম: FOR = সময়কাল (duration)। Five years একটি duration, তাই "for"।</div>
+</div>
+
+<div class="exam-q">
+  <div class="q-num">23</div>
+  <div class="question">She is afraid <span class="blank">______</span> darkness.</div>
+  <div class="answer">✅ Answer: OF</div>
+  <div class="explanation">নিয়ম: Afraid + OF. "Afraid of" মানে কিছুকে ভয় পাওয়া।</div>
+</div>
+
+<div class="exam-q">
+  <div class="q-num">24</div>
+  <div class="question">He was born <span class="blank">______</span> a Sunday morning.</div>
+  <div class="answer">✅ Answer: ON</div>
+  <div class="explanation">নিয়ম: Day-এর সাথে "on" ব্যবহার হয়।</div>
+</div>
+
+<div class="exam-q">
+  <div class="q-num">25</div>
+  <div class="question">She was pleased <span class="blank">______</span> the gift.</div>
+  <div class="answer">✅ Answer: WITH</div>
+  <div class="explanation">নিয়ম: Pleased + WITH. "Pleased with" মানে কিছুতে সন্তুষ্ট।</div>
+</div>
+
+<div class="exam-q">
+  <div class="q-num">26</div>
+  <div class="question">He insists <span class="blank">______</span> telling the truth.</div>
+  <div class="answer">✅ Answer: ON</div>
+  <div class="explanation">নিয়ম: Insist + ON + gerund. "Insist on" মানে জোর দেওয়া।</div>
+</div>
+
+<div class="exam-q">
+  <div class="q-num">27</div>
+  <div class="question">She is different <span class="blank">______</span> her sister in nature.</div>
+  <div class="answer">✅ Answer: FROM</div>
+  <div class="explanation">নিয়ম: Different + FROM. "Different from" মানে আলাদা।</div>
+</div>
+
+<div class="exam-q">
+  <div class="q-num">28</div>
+  <div class="question">I am looking forward <span class="blank">______</span> your reply.</div>
+  <div class="answer">✅ Answer: TO</div>
+  <div class="explanation">নিয়ম: Look forward + TO + gerund/noun. এখানে "to" preposition, auxiliary verb নয়।</div>
+</div>
+
+<div class="exam-q">
+  <div class="q-num">29</div>
+  <div class="question">She was deprived <span class="blank">______</span> her rights.</div>
+  <div class="answer">✅ Answer: OF</div>
+  <div class="explanation">নিয়ম: Deprived + OF. "Deprived of" মানে বঞ্চিত করা।</div>
+</div>
+
+<div class="exam-q">
+  <div class="q-num">30</div>
+  <div class="question">He voted <span class="blank">______</span> the new policy.</div>
+  <div class="answer">✅ Answer: AGAINST</div>
+  <div class="explanation">নিয়ম: Vote against = বিরোধিতা করা। Vote for = সমর্থন করা। Context থেকে বোঝা যায়।</div>
+</div>
+
+<div class="exam-q">
+  <div class="q-num">31</div>
+  <div class="question">He was charged <span class="blank">______</span> robbery.</div>
+  <div class="answer">✅ Answer: WITH</div>
+  <div class="explanation">নিয়ম: Charged + WITH. "Charged with" মানে অভিযুক্ত করা।</div>
+</div>
+
+<div class="exam-q">
+  <div class="q-num">32</div>
+  <div class="question">The flower is famous <span class="blank">______</span> its sweet smell.</div>
+  <div class="answer">✅ Answer: FOR</div>
+  <div class="explanation">নিয়ম: Famous + FOR কারণ দেখায়।</div>
+</div>
+
+<div class="exam-q">
+  <div class="q-num">33</div>
+  <div class="question">She prevented him <span class="blank">______</span> going outside.</div>
+  <div class="answer">✅ Answer: FROM</div>
+  <div class="explanation">নিয়ম: Prevent + FROM + gerund. "Prevent from" মানে বাধা দেওয়া।</div>
+</div>
+
+<div class="exam-q">
+  <div class="q-num">34</div>
+  <div class="question">He agreed <span class="blank">______</span> my proposal.</div>
+  <div class="answer">✅ Answer: TO</div>
+  <div class="explanation">নিয়ম: Agree + TO (proposal/plan). Agree with (person). Agree on (decision).</div>
+</div>
+
+<div class="exam-q">
+  <div class="q-num">35</div>
+  <div class="question">The road was covered <span class="blank">______</span> snow.</div>
+  <div class="answer">✅ Answer: WITH</div>
+  <div class="explanation">নিয়ম: Covered + WITH. "Covered with" মানে কিছু দিয়ে ঢেকে যাওয়া।</div>
+</div>
+
+<div class="exam-q">
+  <div class="q-num">36</div>
+  <div class="question">She is aware <span class="blank">______</span> the problem.</div>
+  <div class="answer">✅ Answer: OF</div>
+  <div class="explanation">নিয়ম: Aware + OF. "Aware of" মানে সচেতন থাকা।</div>
+</div>
+
+<div class="exam-q">
+  <div class="q-num">37</div>
+  <div class="question">He is junior <span class="blank">______</span> me in service.</div>
+  <div class="answer">✅ Answer: TO</div>
+  <div class="explanation">নিয়ম: Junior/senior/superior/inferior + TO. Comparison-এ সবসময় "to"।</div>
+</div>
+
+<div class="exam-q">
+  <div class="q-num">38</div>
+  <div class="question">She burst <span class="blank">______</span> tears on hearing the news.</div>
+  <div class="answer">✅ Answer: INTO</div>
+  <div class="explanation">নিয়ম: Burst into tears = আচমকা কাঁদতে শুরু করা। "Burst into" একটি fixed phrase।</div>
+</div>
+
+<div class="exam-q">
+  <div class="q-num">39</div>
+  <div class="question">He is addicted <span class="blank">______</span> smoking.</div>
+  <div class="answer">✅ Answer: TO</div>
+  <div class="explanation">নিয়ম: Addicted + TO + gerund. "Addicted to" মানে আসক্ত।</div>
+</div>
+
+<div class="exam-q">
+  <div class="q-num">40</div>
+  <div class="question">She knocked <span class="blank">______</span> the door and waited.</div>
+  <div class="answer">✅ Answer: AT / ON</div>
+  <div class="explanation">নিয়ম: Knock at the door (traditional/correct) বা knock on the door (also acceptable)। HSC-তে "at" বেশি প্রত্যাশিত।</div>
+</div>
+
+<div class="exam-q">
+  <div class="q-num">41</div>
+  <div class="question">He was shocked <span class="blank">______</span> the result of the examination.</div>
+  <div class="answer">✅ Answer: AT</div>
+  <div class="explanation">নিয়ম: Shocked/surprised/astonished/amazed + AT (something unexpected)।</div>
+</div>
+
+<div class="exam-q">
+  <div class="q-num">42</div>
+  <div class="question">She lives <span class="blank">______</span> a small village in Rajshahi.</div>
+  <div class="answer">✅ Answer: IN</div>
+  <div class="explanation">নিয়ম: Enclosed space বা larger area-র মধ্যে থাকলে "in"।</div>
+</div>
+
+<div class="exam-q">
+  <div class="q-num">43</div>
+  <div class="question">He applied <span class="blank">______</span> a teaching post.</div>
+  <div class="answer">✅ Answer: FOR</div>
+  <div class="explanation">নিয়ম: Apply + FOR. "Apply for" মানে আবেদন করা।</div>
+</div>
+
+<div class="exam-q">
+  <div class="q-num">44</div>
+  <div class="question">The students were divided <span class="blank">______</span> two groups.</div>
+  <div class="answer">✅ Answer: INTO</div>
+  <div class="explanation">নিয়ম: Divided into = ভাগ করা হয় যখন দলে/অংশে ভাগ করা হয়।</div>
+</div>
+
+<div class="exam-q">
+  <div class="q-num">45</div>
+  <div class="question">She took care <span class="blank">______</span> the old man.</div>
+  <div class="answer">✅ Answer: OF</div>
+  <div class="explanation">নিয়ম: Take care + OF = যত্ন নেওয়া। "Look after" also means the same.</div>
+</div>
+
+<div class="exam-q">
+  <div class="q-num">46</div>
+  <div class="question">He is indifferent <span class="blank">______</span> politics.</div>
+  <div class="answer">✅ Answer: TO</div>
+  <div class="explanation">নিয়ম: Indifferent + TO. "Indifferent to" মানে উদাসীন।</div>
+</div>
+
+<div class="exam-q">
+  <div class="q-num">47</div>
+  <div class="question">The crops result <span class="blank">______</span> hard farming.</div>
+  <div class="answer">✅ Answer: FROM</div>
+  <div class="explanation">নিয়ম: "Result from" = কারণ থেকে উৎপন্ন হওয়া। "Result in" = পরিণতি।</div>
+</div>
+
+<div class="exam-q">
+  <div class="q-num">48</div>
+  <div class="question">He got the prize <span class="blank">______</span> dint of hard labour.</div>
+  <div class="answer">✅ Answer: BY</div>
+  <div class="explanation">নিয়ম: "By dint of" = কোনো গুণ বা শ্রমের জোরে। এটি একটি fixed phrase।</div>
+</div>
+
+<div class="exam-q">
+  <div class="q-num">49</div>
+  <div class="question">She is well-known <span class="blank">______</span> her kindness.</div>
+  <div class="answer">✅ Answer: FOR</div>
+  <div class="explanation">নিয়ম: Well-known/famous/notorious + FOR কারণ বোঝায়।</div>
+</div>
+
+<div class="exam-q">
+  <div class="q-num">50</div>
+  <div class="question">He is committed <span class="blank">______</span> serving his country.</div>
+  <div class="answer">✅ Answer: TO</div>
+  <div class="explanation">নিয়ম: Committed + TO + gerund. "Committed to" মানে দৃঢ়প্রতিজ্ঞ।</div>
+</div>
+
+<!-- MEMORIZATION SHORTCUTS -->
+<div class="section-title">⚡ Memorization Tricks & Shortcuts (মুখস্থের কৌশল)</div>
+
+<div class="rule-box">
+  <div class="rule-title">🎯 Trick 1: IN / ON / AT for TIME (সময়ের জন্য)</div>
+  <ul>
+    <li><strong>IN</strong> — বড় সময় (মাস, বছর, ঋতু): <em>in January, in 2020, in summer</em></li>
+    <li><strong>ON</strong> — মাঝারি সময় (দিন, তারিখ): <em>on Monday, on 5th March</em></li>
+    <li><strong>AT</strong> — ছোট সময় (নির্দিষ্ট ঘণ্টা): <em>at 5 PM, at noon, at midnight</em></li>
+    <li>🔑 মনে রাখার কৌশল: <strong>I – O – A</strong> = <strong>Large – Medium – Small</strong></li>
+  </ul>
+</div>
+
+<div class="rule-box">
+  <div class="rule-title">🎯 Trick 2: IN / ON / AT for PLACE (স্থানের জন্য)</div>
+  <ul>
+    <li><strong>IN</strong> — ঘেরা/বদ্ধ জায়গায়: <em>in a room, in a city, in Bangladesh</em></li>
+    <li><strong>ON</strong> — পৃষ্ঠের উপরে: <em>on the table, on the floor, on the roof</em></li>
+    <li><strong>AT</strong> — নির্দিষ্ট বিন্দু: <em>at the station, at the door, at the corner</em></li>
+  </ul>
+</div>
+
+<div class="rule-box">
+  <div class="rule-title">🎯 Trick 3: SINCE vs FOR (Perfect Tense)</div>
+  <ul>
+    <li><strong>SINCE</strong> — নির্দিষ্ট সময়/তারিখ থেকে: <em>since Monday, since 2018, since childhood</em></li>
+    <li><strong>FOR</strong> — সময়ের ব্যাপ্তি/পরিমাণ: <em>for two hours, for many years, for a long time</em></li>
+    <li>🔑 Test: প্রশ্ন করো "how long?" → FOR | "since when?" → SINCE</li>
+  </ul>
+</div>
+
+<div class="rule-box">
+  <div class="rule-title">🎯 Trick 4: BETWEEN vs AMONG</div>
+  <ul>
+    <li><strong>BETWEEN</strong> — শুধুমাত্র ২ জন বা ২টির মধ্যে: <em>between two brothers, between the two cities</em></li>
+    <li><strong>AMONG</strong> — ৩ বা তার বেশির মধ্যে: <em>among the students, among the children</em></li>
+    <li>🔑 মনে রাখো: BETWEEN = 2, AMONG = 3+</li>
+  </ul>
+</div>
+
+<div class="rule-box">
+  <div class="rule-title">🎯 Trick 5: Die OF vs Die FROM</div>
+  <ul>
+    <li><strong>Die OF</strong> — রোগ, দুঃখ, ক্ষুধা ইত্যাদি কারণে: <em>die of cancer, die of hunger, die of old age</em></li>
+    <li><strong>Die FROM</strong> — wound, accident, injury: <em>die from a wound, die from a car accident</em></li>
+  </ul>
+</div>
+
+<div class="rule-box">
+  <div class="rule-title">🎯 Trick 6: Comparison Prepositions</div>
+  <ul>
+    <li>Superior/Inferior/Senior/Junior/Prior/Preferable + <strong>TO</strong></li>
+    <li>ভুল ❌: He is superior <em>than</em> me. | সঠিক ✅: He is superior <em>to</em> me.</li>
+    <li>এই adjectives গুলোর সাথে <em>never "than"</em> — সবসময় <strong>TO</strong>।</li>
+  </ul>
+</div>
+
+<div class="rule-box">
+  <div class="rule-title">🎯 Trick 7: AGREE with / to / on</div>
+  <ul>
+    <li>Agree <strong>with</strong> + person: <em>I agree with you.</em></li>
+    <li>Agree <strong>to</strong> + plan/proposal: <em>He agreed to the terms.</em></li>
+    <li>Agree <strong>on</strong> + decision/topic: <em>They agreed on the date.</em></li>
+  </ul>
+</div>
+
+<div class="tip-box">
+  <strong>📌 Top 10 Most Repeated HSC Preposition Patterns:</strong><br>
+  1. Famous/known/noted <strong>for</strong> &nbsp;|&nbsp; 2. Succeed <strong>in</strong> &nbsp;|&nbsp; 3. Suffer <strong>from</strong> &nbsp;|&nbsp; 4. Die <strong>of</strong> &nbsp;|&nbsp; 5. Depend <strong>on</strong><br>
+  6. Accustomed <strong>to</strong> &nbsp;|&nbsp; 7. Afraid <strong>of</strong> &nbsp;|&nbsp; 8. Married <strong>to</strong> &nbsp;|&nbsp; 9. Different <strong>from</strong> &nbsp;|&nbsp; 10. Proud <strong>of</strong>
+</div>
+
+<!-- ADJECTIVE + PREPOSITION TABLE -->
+<div class="section-title">Adjective + Preposition Reference Table (Adjective + Preposition তালিকা)</div>
+<table>
+  <thead><tr><th>Adjective + Preposition</th><th>Example</th><th>Bangla</th></tr></thead>
+  <tbody>
+    <tr><td>Afraid <strong>of</strong></td><td>She is afraid of ghosts.</td><td class="bangla">সে ভূতকে ভয় পায়।</td></tr>
+    <tr><td>Angry <strong>with/at</strong></td><td>He is angry with me.</td><td class="bangla">সে আমার উপর রাগান্বিত।</td></tr>
+    <tr><td>Ashamed <strong>of</strong></td><td>She was ashamed of her lie.</td><td class="bangla">সে তার মিথ্যায় লজ্জিত।</td></tr>
+    <tr><td>Aware <strong>of</strong></td><td>Be aware of your surroundings.</td><td class="bangla">তোমার পারিপার্শ্বিকতা সম্পর্কে সচেতন থাকো।</td></tr>
+    <tr><td>Capable <strong>of</strong></td><td>He is capable of great things.</td><td class="bangla">সে মহৎ কাজ করতে সক্ষম।</td></tr>
+    <tr><td>Confident <strong>of/in</strong></td><td>She is confident of success.</td><td class="bangla">সে সাফল্য সম্পর্কে আত্মবিশ্বাসী।</td></tr>
+    <tr><td>Familiar <strong>with</strong></td><td>Are you familiar with this topic?</td><td class="bangla">তুমি কি এই বিষয়ের সাথে পরিচিত?</td></tr>
+    <tr><td>Famous <strong>for</strong></td><td>She is famous for her beauty.</td><td class="bangla">সে তার সৌন্দর্যের জন্য বিখ্যাত।</td></tr>
+    <tr><td>Fond <strong>of</strong></td><td>He is fond of cricket.</td><td class="bangla">সে ক্রিকেটের প্রতি অনুরাগী।</td></tr>
+    <tr><td>Good/Bad <strong>at</strong></td><td>She is good at maths.</td><td class="bangla">সে গণিতে ভালো।</td></tr>
+    <tr><td>Grateful <strong>to</strong></td><td>I am grateful to you.</td><td class="bangla">আমি তোমার কাছে কৃতজ্ঞ।</td></tr>
+    <tr><td>Hopeful <strong>of</strong></td><td>He is hopeful of victory.</td><td class="bangla">সে বিজয়ের বিষয়ে আশাবাদী।</td></tr>
+    <tr><td>Indifferent <strong>to</strong></td><td>She is indifferent to praise.</td><td class="bangla">সে প্রশংসার প্রতি উদাসীন।</td></tr>
+    <tr><td>Interested <strong>in</strong></td><td>He is interested in history.</td><td class="bangla">সে ইতিহাসে আগ্রহী।</td></tr>
+    <tr><td>Jealous <strong>of</strong></td><td>She is jealous of her sister.</td><td class="bangla">সে তার বোনকে ঈর্ষা করে।</td></tr>
+    <tr><td>Kind <strong>to</strong></td><td>He is kind to everyone.</td><td class="bangla">সে সবার প্রতি দয়ালু।</td></tr>
+    <tr><td>Loyal <strong>to</strong></td><td>She is loyal to her friends.</td><td class="bangla">সে তার বন্ধুদের প্রতি বিশ্বস্ত।</td></tr>
+    <tr><td>Pleased <strong>with</strong></td><td>I am pleased with your work.</td><td class="bangla">আমি তোমার কাজে সন্তুষ্ট।</td></tr>
+    <tr><td>Proud <strong>of</strong></td><td>Parents are proud of their children.</td><td class="bangla">বাবা-মা তাদের সন্তানদের নিয়ে গর্বিত।</td></tr>
+    <tr><td>Responsible <strong>for</strong></td><td>He is responsible for this error.</td><td class="bangla">সে এই ভুলের জন্য দায়ী।</td></tr>
+    <tr><td>Satisfied <strong>with</strong></td><td>She was satisfied with the result.</td><td class="bangla">সে ফলাফলে সন্তুষ্ট ছিল।</td></tr>
+    <tr><td>Sorry <strong>for</strong></td><td>I am sorry for the trouble.</td><td class="bangla">ঝামেলার জন্য আমি দুঃখিত।</td></tr>
+    <tr><td>Superior <strong>to</strong></td><td>He is superior to his classmates.</td><td class="bangla">সে তার সহপাঠীদের চেয়ে উন্নত।</td></tr>
+    <tr><td>Tired <strong>of</strong></td><td>She is tired of waiting.</td><td class="bangla">সে অপেক্ষা করতে করতে ক্লান্ত।</td></tr>
+    <tr><td>Worried <strong>about</strong></td><td>He is worried about the future.</td><td class="bangla">সে ভবিষ্যত নিয়ে চিন্তিত।</td></tr>
+  </tbody>
+</table>
+
+<div class="footer-note">
+  <strong>Best of luck for your HSC Examination! 🌟</strong><br>
+  তোমার HSC পরীক্ষার জন্য অনেক শুভকামনা! নিয়মিত চর্চা করলে অবশ্যই ভালো ফল হবে।<br><br>
+  <em>This guide covers 305+ examples, 50 solved exam questions, and 25+ rules for HSC Bangladesh.</em>
+</div>
+
+</div><!-- end page-wrapper -->
+</body>
+</html>

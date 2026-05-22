@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Day 2 — 1000 English Sentences for Bangla Speakers</title>
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Inter', sans-serif; background: #f0f2f5; color: #1a1a2e; }
+
+  .hero {
+    background: linear-gradient(135deg, #0f1923 0%, #1b3a6b 60%, #0d2e5a 100%);
+    color: white; padding: 40px 32px 32px; text-align: center;
+  }
+  .hero-tag {
+    display: inline-block; background: #f0a500; color: #0f1923;
+    font-size: 11px; font-weight: 800; letter-spacing: 2.5px;
+    text-transform: uppercase; padding: 5px 14px; border-radius: 3px; margin-bottom: 18px;
+  }
+  .hero h1 { font-size: 36px; font-weight: 800; line-height: 1.2; margin-bottom: 10px; }
+  .hero h1 span { color: #f0a500; }
+  .hero p { font-size: 15px; color: rgba(255,255,255,0.7); margin-bottom: 24px; }
+  .hero-badges { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; }
+  .badge {
+    background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);
+    color: rgba(255,255,255,0.9); font-size: 13px; font-weight: 600;
+    padding: 6px 16px; border-radius: 20px;
+  }
+  .badge strong { color: #f0a500; }
+
+  .top-bar {
+    background: white; border-bottom: 2px solid #e0e4ed;
+    padding: 10px 24px; display: flex; justify-content: space-between;
+    align-items: center; position: sticky; top: 0; z-index: 999;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  }
+  .top-bar span { font-size: 13px; color: #666; }
+  .btn-print {
+    background: #1b3a6b; color: white; border: none;
+    padding: 8px 20px; border-radius: 6px; font-size: 13px;
+    font-weight: 700; cursor: pointer; font-family: inherit;
+  }
+  .btn-print:hover { background: #2a5298; }
+
+  .howto {
+    max-width: 900px; margin: 24px auto 0;
+    background: #e8f5ee; border-left: 5px solid #1a7a4a;
+    border-radius: 0 8px 8px 0; padding: 16px 20px;
+    font-size: 14px; color: #0d3022;
+  }
+  .howto strong { display: block; color: #1a7a4a; font-size: 15px; margin-bottom: 8px; }
+  .howto ol { padding-left: 20px; }
+  .howto li { margin-bottom: 4px; line-height: 1.6; }
+
+  .content { max-width: 900px; margin: 0 auto; padding: 20px 16px 60px; }
+
+  .cat-block { margin-top: 36px; }
+  .cat-header {
+    display: flex; align-items: center; gap: 12px;
+    padding: 13px 20px; border-radius: 10px 10px 0 0; color: white;
+  }
+  .cat-icon { font-size: 20px; }
+  .cat-title { font-size: 16px; font-weight: 800; letter-spacing: 0.3px; }
+  .cat-range {
+    margin-left: auto; background: rgba(255,255,255,0.2);
+    font-size: 12px; font-weight: 700; padding: 3px 12px; border-radius: 12px;
+  }
+
+  table {
+    width: 100%; border-collapse: collapse; background: white;
+    border-radius: 0 0 10px 10px; overflow: hidden;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.07);
+  }
+  thead th {
+    background: #eef0f7; color: #4a5580; font-size: 11px;
+    font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
+    padding: 10px 16px; text-align: left;
+  }
+  thead th:first-child { text-align: center; width: 50px; }
+  tbody tr:nth-child(even) { background: #f8f9fc; }
+  tbody tr:hover { background: #eef3fb; }
+  tbody td {
+    padding: 11px 16px; border-bottom: 1px solid #eeeff5;
+    vertical-align: middle; font-size: 14.5px;
+  }
+  tbody tr:last-child td { border-bottom: none; }
+  .num { text-align: center; font-weight: 800; color: #2a5298; font-size: 13px; width: 50px; }
+  .eng { font-weight: 600; color: #1a1a2e; width: 50%; line-height: 1.5; }
+  .ban { font-family: 'Hind Siliguri', sans-serif; color: #1a2e1a; font-size: 15.5px; line-height: 1.7; width: 50%; }
+
+  .footer {
+    text-align: center; padding: 32px 20px 48px;
+    color: #888; font-size: 13px; border-top: 1px solid #ddd; margin-top: 40px;
+  }
+  .footer strong { color: #1b3a6b; }
+  .day-pills { display: flex; justify-content: center; gap: 8px; margin-top: 14px; flex-wrap: wrap; }
+  .pill { padding: 5px 16px; border-radius: 20px; font-size: 12px; font-weight: 700; background: #e0e8f4; color: #1b3a6b; }
+  .pill.done { background: #c8e6c9; color: #1b5e20; }
+  .pill.active { background: #1b3a6b; color: white; }
+
+  @media print {
+    body { background: white; }
+    .top-bar, .howto { display: none; }
+    .hero { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .cat-header { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    tbody tr:nth-child(even) { background: #f8f9fc !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-tag">English Speaking System</div>
+  <h1>1000 High-Frequency<br><span>English Sentences</span></h1>
+  <p>For Bangla-Speaking Learners &nbsp;·&nbsp; Practical Conversational English</p>
+  <div class="hero-badges">
+    <span class="badge">📅 <strong>Day 2</strong> of 5</span>
+    <span class="badge">🔢 Sentences <strong>201 – 400</strong></span>
+    <span class="badge">📂 <strong>9 Categories</strong></span>
+    <span class="badge">🌐 Open in Chrome or Firefox</span>
+  </div>
+</div>
+
+<div class="top-bar">
+  <span>💡 Tip: Press <strong>Ctrl+P</strong> to save as PDF anytime</span>
+  <button class="btn-print" onclick="window.print()">🖨️ Print / Save PDF</button>
+</div>
+
+<div class="content">
+
+  <div class="howto">
+    <strong>📖 How to Use This Sheet</strong>
+    <ol>
+      <li>Read each English sentence aloud <strong>3 times</strong>.</li>
+      <li>Cover the Bangla column and test yourself — say the meaning aloud.</li>
+      <li>Use at least <strong>10 sentences in real conversation</strong> today.</li>
+      <li>Revisit Day 1 this weekend to reinforce memory.</li>
+    </ol>
+  </div>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- CAT 1: WORK & OFFICE -->
+  <!-- ═══════════════════════════════════════════ -->
+  <div class="cat-block">
+    <div class="cat-header" style="background: #1a4332;">
+      <span class="cat-icon">💼</span>
+      <span class="cat-title">Category 1 — Work &amp; Office</span>
+      <span class="cat-range">201 – 225</span>
+    </div>
+    <table>
+      <thead><tr><th>#</th><th>English Sentence</th><th>বাংলা অর্থ</th></tr></thead>
+      <tbody>
+        <tr><td class="num">201</td><td class="eng">I have a meeting in ten minutes.</td><td class="ban">দশ মিনিটের মধ্যে আমার মিটিং আছে।</td></tr>
+        <tr><td class="num">202</td><td class="eng">Can you send me that report?</td><td class="ban">তুমি কি আমাকে সেই রিপোর্টটা পাঠাতে পারবে?</td></tr>
+        <tr><td class="num">203</td><td class="eng">I'm working on it right now.</td><td class="ban">আমি এখনই এটা নিয়ে কাজ করছি।</td></tr>
+        <tr><td class="num">204</td><td class="eng">The deadline is tomorrow.</td><td class="ban">ডেডলাইন আগামীকাল।</td></tr>
+        <tr><td class="num">205</td><td class="eng">I'll get back to you on this.</td><td class="ban">আমি এটা নিয়ে তোমার কাছে ফিরে আসব।</td></tr>
+        <tr><td class="num">206</td><td class="eng">Let's discuss this in the meeting.</td><td class="ban">চলো মিটিংয়ে এটা নিয়ে আলোচনা করি।</td></tr>
+        <tr><td class="num">207</td><td class="eng">I'm a little behind on this task.</td><td class="ban">এই কাজে আমি একটু পিছিয়ে আছি।</td></tr>
+        <tr><td class="num">208</td><td class="eng">Can you cover for me today?</td><td class="ban">আজ তুমি কি আমার হয়ে কাজটা সামলাতে পারবে?</td></tr>
+        <tr><td class="num">209</td><td class="eng">I need your approval on this.</td><td class="ban">এটায় আমার তোমার অনুমোদন দরকার।</td></tr>
+        <tr><td class="num">210</td><td class="eng">Good job on that presentation!</td><td class="ban">সেই উপস্থাপনায় তুমি ভালো করেছ!</td></tr>
+        <tr><td class="num">211</td><td class="eng">I'll handle this from here.</td><td class="ban">এখান থেকে আমি এটা সামলাব।</td></tr>
+        <tr><td class="num">212</td><td class="eng">Can we push the deadline by a day?</td><td class="ban">ডেডলাইন কি একদিন পেছানো যাবে?</td></tr>
+        <tr><td class="num">213</td><td class="eng">I'm waiting for a reply from the client.</td><td class="ban">আমি ক্লায়েন্টের কাছ থেকে উত্তরের জন্য অপেক্ষা করছি।</td></tr>
+        <tr><td class="num">214</td><td class="eng">This is urgent. Please prioritize it.</td><td class="ban">এটা জরুরি। দয়া করে এটাকে অগ্রাধিকার দাও।</td></tr>
+        <tr><td class="num">215</td><td class="eng">Let me check with my manager first.</td><td class="ban">আমাকে আগে আমার ম্যানেজারের সাথে দেখতে দাও।</td></tr>
+        <tr><td class="num">216</td><td class="eng">The project is on track.</td><td class="ban">প্রজেক্টটা ঠিকঠাক চলছে।</td></tr>
+        <tr><td class="num">217</td><td class="eng">We're running behind schedule.</td><td class="ban">আমরা সময়সূচি থেকে পিছিয়ে আছি।</td></tr>
+        <tr><td class="num">218</td><td class="eng">Can you join the call at three?</td><td class="ban">তুমি কি তিনটায় কলে যোগ দিতে পারবে?</td></tr>
+        <tr><td class="num">219</td><td class="eng">I'll forward you the email chain.</td><td class="ban">আমি তোমাকে ইমেইল চেইনটা ফরওয়ার্ড করব।</td></tr>
+        <tr><td class="num">220</td><td class="eng">Please cc me on that email.</td><td class="ban">ওই ইমেইলে আমাকে সিসি করো।</td></tr>
+        <tr><td class="num">221</td><td class="eng">The client loved the proposal.</td><td class="ban">ক্লায়েন্ট প্রস্তাবটা পছন্দ করেছে।</td></tr>
+        <tr><td class="num">222</td><td class="eng">I need a five-minute break.</td><td class="ban">আমার পাঁচ মিনিটের বিরতি দরকার।</td></tr>
+        <tr><td class="num">223</td><td class="eng">Who is responsible for this?</td><td class="ban">এর জন্য কে দায়িত্বশীল?</td></tr>
+        <tr><td class="num">224</td><td class="eng">Let's wrap up and call it a day.</td><td class="ban">চলো শেষ করি এবং আজকের মতো বিদায়।</td></tr>
+        <tr><td class="num">225</td><td class="eng">I'll finish this by end of day.</td><td class="ban">আমি এটা আজকের শেষের মধ্যে শেষ করব।</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- CAT 2: SCHOOL & LEARNING -->
+  <!-- ═══════════════════════════════════════════ -->
+  <div class="cat-block">
+    <div class="cat-header" style="background: #1e3a5f;">
+      <span class="cat-icon">📚</span>
+      <span class="cat-title">Category 2 — School &amp; Learning</span>
+      <span class="cat-range">226 – 250</span>
+    </div>
+    <table>
+      <thead><tr><th>#</th><th>English Sentence</th><th>বাংলা অর্থ</th></tr></thead>
+      <tbody>
+        <tr><td class="num">226</td><td class="eng">I didn't understand the lesson.</td><td class="ban">আমি পাঠটা বুঝতে পারিনি।</td></tr>
+        <tr><td class="num">227</td><td class="eng">Can you explain that again, please?</td><td class="ban">দয়া করে আবার বোঝাবে?</td></tr>
+        <tr><td class="num">228</td><td class="eng">I have an exam next week.</td><td class="ban">আগামী সপ্তাহে আমার পরীক্ষা আছে।</td></tr>
+        <tr><td class="num">229</td><td class="eng">I need to study more.</td><td class="ban">আমাকে আরও পড়াশোনা করতে হবে।</td></tr>
+        <tr><td class="num">230</td><td class="eng">Can I borrow your notes?</td><td class="ban">আমি কি তোমার নোট ধার নিতে পারি?</td></tr>
+        <tr><td class="num">231</td><td class="eng">I missed the class yesterday.</td><td class="ban">গতকাল আমি ক্লাস মিস করেছি।</td></tr>
+        <tr><td class="num">232</td><td class="eng">What is today's homework?</td><td class="ban">আজকের হোমওয়ার্ক কী?</td></tr>
+        <tr><td class="num">233</td><td class="eng">I got a good grade on my test!</td><td class="ban">আমার পরীক্ষায় ভালো নম্বর পেয়েছি!</td></tr>
+        <tr><td class="num">234</td><td class="eng">I'm having trouble with this topic.</td><td class="ban">এই বিষয়টা নিয়ে আমার সমস্যা হচ্ছে।</td></tr>
+        <tr><td class="num">235</td><td class="eng">Can we study together?</td><td class="ban">আমরা কি একসাথে পড়তে পারি?</td></tr>
+        <tr><td class="num">236</td><td class="eng">I'll look it up online.</td><td class="ban">আমি অনলাইনে এটা খুঁজে দেখব।</td></tr>
+        <tr><td class="num">237</td><td class="eng">The teacher gave us a lot of work.</td><td class="ban">শিক্ষক আমাদের অনেক কাজ দিয়েছেন।</td></tr>
+        <tr><td class="num">238</td><td class="eng">I need to hand in this assignment.</td><td class="ban">আমাকে এই অ্যাসাইনমেন্ট জমা দিতে হবে।</td></tr>
+        <tr><td class="num">239</td><td class="eng">What chapter are we on?</td><td class="ban">আমরা কোন অধ্যায়ে আছি?</td></tr>
+        <tr><td class="num">240</td><td class="eng">I find this subject really interesting.</td><td class="ban">আমি এই বিষয়টা সত্যিই আকর্ষণীয় মনে করি।</td></tr>
+        <tr><td class="num">241</td><td class="eng">I'm going to the library to study.</td><td class="ban">আমি পড়াশোনা করতে লাইব্রেরিতে যাচ্ছি।</td></tr>
+        <tr><td class="num">242</td><td class="eng">Is this going to be on the exam?</td><td class="ban">এটা কি পরীক্ষায় আসবে?</td></tr>
+        <tr><td class="num">243</td><td class="eng">I failed the test. I need to redo it.</td><td class="ban">আমি পরীক্ষায় ফেল করেছি। আবার দিতে হবে।</td></tr>
+        <tr><td class="num">244</td><td class="eng">Practice makes perfect.</td><td class="ban">অনুশীলনেই দক্ষতা আসে।</td></tr>
+        <tr><td class="num">245</td><td class="eng">I learn best by doing, not just reading.</td><td class="ban">আমি শুধু পড়ে নয়, করে করে সবচেয়ে ভালো শিখি।</td></tr>
+        <tr><td class="num">246</td><td class="eng">Could you recommend a good book?</td><td class="ban">তুমি কি একটা ভালো বই সুপারিশ করতে পারবে?</td></tr>
+        <tr><td class="num">247</td><td class="eng">I watched a video to understand this.</td><td class="ban">এটা বোঝার জন্য আমি একটা ভিডিও দেখলাম।</td></tr>
+        <tr><td class="num">248</td><td class="eng">I'm learning English every day.</td><td class="ban">আমি প্রতিদিন ইংরেজি শিখছি।</td></tr>
+        <tr><td class="num">249</td><td class="eng">Don't give up. You're doing great.</td><td class="ban">হাল ছেড়ো না। তুমি দারুণ করছ।</td></tr>
+        <tr><td class="num">250</td><td class="eng">I'm proud of how much I've improved.</td><td class="ban">আমি কতটা উন্নতি করেছি তা নিয়ে গর্বিত।</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- CAT 3: HEALTH & DOCTOR -->
+  <!-- ═══════════════════════════════════════════ -->
+  <div class="cat-block">
+    <div class="cat-header" style="background: #5b2333;">
+      <span class="cat-icon">🏥</span>
+      <span class="cat-title">Category 3 — Health &amp; Doctor</span>
+      <span class="cat-range">251 – 280</span>
+    </div>
+    <table>
+      <thead><tr><th>#</th><th>English Sentence</th><th>বাংলা অর্থ</th></tr></thead>
+      <tbody>
+        <tr><td class="num">251</td><td class="eng">I'm not feeling well today.</td><td class="ban">আজ আমি ভালো অনুভব করছি না।</td></tr>
+        <tr><td class="num">252</td><td class="eng">I have a fever.</td><td class="ban">আমার জ্বর আছে।</td></tr>
+        <tr><td class="num">253</td><td class="eng">My throat is sore.</td><td class="ban">আমার গলা ব্যথা করছে।</td></tr>
+        <tr><td class="num">254</td><td class="eng">I've had a cough for three days.</td><td class="ban">তিন দিন ধরে আমার কাশি হচ্ছে।</td></tr>
+        <tr><td class="num">255</td><td class="eng">I need to see a doctor.</td><td class="ban">আমাকে ডাক্তার দেখাতে হবে।</td></tr>
+        <tr><td class="num">256</td><td class="eng">Can I book an appointment?</td><td class="ban">আমি কি একটা অ্যাপয়েন্টমেন্ট নিতে পারি?</td></tr>
+        <tr><td class="num">257</td><td class="eng">Where does it hurt?</td><td class="ban">কোথায় ব্যথা করছে?</td></tr>
+        <tr><td class="num">258</td><td class="eng">It started two days ago.</td><td class="ban">এটা দুদিন আগে শুরু হয়েছে।</td></tr>
+        <tr><td class="num">259</td><td class="eng">I'm allergic to penicillin.</td><td class="ban">আমার পেনিসিলিনে অ্যালার্জি আছে।</td></tr>
+        <tr><td class="num">260</td><td class="eng">The pain is getting worse.</td><td class="ban">ব্যথাটা আরও বাড়ছে।</td></tr>
+        <tr><td class="num">261</td><td class="eng">I feel dizzy.</td><td class="ban">আমার মাথা ঘুরছে।</td></tr>
+        <tr><td class="num">262</td><td class="eng">I haven't slept properly for days.</td><td class="ban">কয়েকদিন ধরে আমার ঠিকমতো ঘুম হচ্ছে না।</td></tr>
+        <tr><td class="num">263</td><td class="eng">Can you prescribe something for the pain?</td><td class="ban">ব্যথার জন্য কিছু লিখে দিতে পারবেন?</td></tr>
+        <tr><td class="num">264</td><td class="eng">How many times should I take this medicine?</td><td class="ban">এই ওষুধটা কতবার খেতে হবে?</td></tr>
+        <tr><td class="num">265</td><td class="eng">Do I need a blood test?</td><td class="ban">আমার কি রক্ত পরীক্ষা দরকার?</td></tr>
+        <tr><td class="num">266</td><td class="eng">I feel much better after the medicine.</td><td class="ban">ওষুধ খাওয়ার পর অনেক ভালো লাগছে।</td></tr>
+        <tr><td class="num">267</td><td class="eng">Rest and drink plenty of water.</td><td class="ban">বিশ্রাম নাও এবং প্রচুর পানি পান করো।</td></tr>
+        <tr><td class="num">268</td><td class="eng">Is this contagious?</td><td class="ban">এটা কি ছোঁয়াচে?</td></tr>
+        <tr><td class="num">269</td><td class="eng">I need to get vaccinated.</td><td class="ban">আমাকে টিকা নিতে হবে।</td></tr>
+        <tr><td class="num">270</td><td class="eng">My stomach hurts after eating.</td><td class="ban">খাওয়ার পর আমার পেটে ব্যথা করছে।</td></tr>
+        <tr><td class="num">271</td><td class="eng">I think I've sprained my ankle.</td><td class="ban">মনে হচ্ছে আমার গোড়ালি মচকেছে।</td></tr>
+        <tr><td class="num">272</td><td class="eng">Should I go to the emergency room?</td><td class="ban">আমার কি জরুরি বিভাগে যাওয়া উচিত?</td></tr>
+        <tr><td class="num">273</td><td class="eng">I'm feeling much better now, thank you.</td><td class="ban">এখন আমি অনেক ভালো অনুভব করছি, ধন্যবাদ।</td></tr>
+        <tr><td class="num">274</td><td class="eng">I need to take care of my health.</td><td class="ban">আমাকে আমার স্বাস্থ্যের যত্ন নিতে হবে।</td></tr>
+        <tr><td class="num">275</td><td class="eng">I've been under a lot of stress lately.</td><td class="ban">ইদানীং আমি অনেক মানসিক চাপে আছি।</td></tr>
+        <tr><td class="num">276</td><td class="eng">I need to exercise more regularly.</td><td class="ban">আমাকে আরও নিয়মিত ব্যায়াম করতে হবে।</td></tr>
+        <tr><td class="num">277</td><td class="eng">I'm trying to eat healthier.</td><td class="ban">আমি আরও স্বাস্থ্যকর খাবার খাওয়ার চেষ্টা করছি।</td></tr>
+        <tr><td class="num">278</td><td class="eng">I quit smoking six months ago.</td><td class="ban">ছয় মাস আগে আমি ধূমপান ছেড়ে দিয়েছি।</td></tr>
+        <tr><td class="num">279</td><td class="eng">My blood pressure is a bit high.</td><td class="ban">আমার রক্তচাপ একটু বেশি।</td></tr>
+        <tr><td class="num">280</td><td class="eng">Take care of yourself. Health is wealth.</td><td class="ban">নিজের যত্ন নাও। স্বাস্থ্যই সম্পদ।</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- CAT 4: AGREEING & DISAGREEING -->
+  <!-- ═══════════════════════════════════════════ -->
+  <div class="cat-block">
+    <div class="cat-header" style="background: #2d4a22;">
+      <span class="cat-icon">🤔</span>
+      <span class="cat-title">Category 4 — Agreeing, Disagreeing &amp; Opinions</span>
+      <span class="cat-range">281 – 310</span>
+    </div>
+    <table>
+      <thead><tr><th>#</th><th>English Sentence</th><th>বাংলা অর্থ</th></tr></thead>
+      <tbody>
+        <tr><td class="num">281</td><td class="eng">I completely agree with you.</td><td class="ban">আমি তোমার সাথে সম্পূর্ণ একমত।</td></tr>
+        <tr><td class="num">282</td><td class="eng">That's exactly what I think.</td><td class="ban">আমিও ঠিক এটাই মনে করি।</td></tr>
+        <tr><td class="num">283</td><td class="eng">You have a point there.</td><td class="ban">সেখানে তোমার কথায় যুক্তি আছে।</td></tr>
+        <tr><td class="num">284</td><td class="eng">I'm not sure I agree with that.</td><td class="ban">আমি নিশ্চিত না যে এটায় আমি একমত।</td></tr>
+        <tr><td class="num">285</td><td class="eng">I see your point, but I disagree.</td><td class="ban">তোমার কথা বুঝতে পারছি, কিন্তু আমি একমত না।</td></tr>
+        <tr><td class="num">286</td><td class="eng">I think there's a better way to do this.</td><td class="ban">আমার মনে হয় এটা করার আরও ভালো উপায় আছে।</td></tr>
+        <tr><td class="num">287</td><td class="eng">That makes a lot of sense.</td><td class="ban">এটা অনেক যুক্তিসংগত।</td></tr>
+        <tr><td class="num">288</td><td class="eng">To be honest, I'm not sure about this.</td><td class="ban">সত্যি কথা বলতে, আমি এটা নিয়ে নিশ্চিত না।</td></tr>
+        <tr><td class="num">289</td><td class="eng">In my opinion, that's not a good idea.</td><td class="ban">আমার মতে, এটা ভালো ধারণা না।</td></tr>
+        <tr><td class="num">290</td><td class="eng">I could be wrong, but I think...</td><td class="ban">আমি ভুল হতে পারি, কিন্তু আমি মনে করি...</td></tr>
+        <tr><td class="num">291</td><td class="eng">Let's agree to disagree.</td><td class="ban">চলো মেনে নিই যে আমরা একমত না।</td></tr>
+        <tr><td class="num">292</td><td class="eng">That's a great idea!</td><td class="ban">এটা দারুণ ধারণা!</td></tr>
+        <tr><td class="num">293</td><td class="eng">I'm not convinced yet.</td><td class="ban">আমি এখনো নিশ্চিত হইনি।</td></tr>
+        <tr><td class="num">294</td><td class="eng">Can you back that up with evidence?</td><td class="ban">তুমি কি এটা প্রমাণ দিয়ে সমর্থন করতে পারবে?</td></tr>
+        <tr><td class="num">295</td><td class="eng">I think we should reconsider this.</td><td class="ban">আমি মনে করি আমাদের এটা পুনর্বিবেচনা করা উচিত।</td></tr>
+        <tr><td class="num">296</td><td class="eng">That's a valid concern.</td><td class="ban">এটা একটা সঠিক উদ্বেগ।</td></tr>
+        <tr><td class="num">297</td><td class="eng">Personally, I prefer the first option.</td><td class="ban">ব্যক্তিগতভাবে, আমি প্রথম বিকল্পটা পছন্দ করি।</td></tr>
+        <tr><td class="num">298</td><td class="eng">I hadn't thought of it that way.</td><td class="ban">আমি এভাবে ভাবিনি।</td></tr>
+        <tr><td class="num">299</td><td class="eng">You're absolutely right.</td><td class="ban">তুমি একদম ঠিক বলেছ।</td></tr>
+        <tr><td class="num">300</td><td class="eng">I'll have to think about that.</td><td class="ban">এটা নিয়ে আমাকে ভাবতে হবে।</td></tr>
+        <tr><td class="num">301</td><td class="eng">That's not what I meant.</td><td class="ban">আমি এটা বলতে চাইনি।</td></tr>
+        <tr><td class="num">302</td><td class="eng">What I'm trying to say is...</td><td class="ban">আমি যা বোঝাতে চাইছি তা হলো...</td></tr>
+        <tr><td class="num">303</td><td class="eng">Can I add something here?</td><td class="ban">আমি কি এখানে কিছু যোগ করতে পারি?</td></tr>
+        <tr><td class="num">304</td><td class="eng">Let me put it another way.</td><td class="ban">আমাকে অন্যভাবে বলতে দাও।</td></tr>
+        <tr><td class="num">305</td><td class="eng">I support your decision.</td><td class="ban">আমি তোমার সিদ্ধান্তকে সমর্থন করি।</td></tr>
+        <tr><td class="num">306</td><td class="eng">I understand where you're coming from.</td><td class="ban">তুমি কোথা থেকে বলছ তা আমি বুঝতে পারছি।</td></tr>
+        <tr><td class="num">307</td><td class="eng">That's fair enough.</td><td class="ban">এটা যথেষ্ট ন্যায্য।</td></tr>
+        <tr><td class="num">308</td><td class="eng">We'll have to find a middle ground.</td><td class="ban">আমাদের মাঝামাঝি একটা জায়গা খুঁজে বের করতে হবে।</td></tr>
+        <tr><td class="num">309</td><td class="eng">I respect your opinion.</td><td class="ban">আমি তোমার মতামতকে সম্মান করি।</td></tr>
+        <tr><td class="num">310</td><td class="eng">Let's not argue about this.</td><td class="ban">চলো এটা নিয়ে তর্ক না করি।</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- CAT 5: COMPLIMENTS & ENCOURAGEMENT -->
+  <!-- ═══════════════════════════════════════════ -->
+  <div class="cat-block">
+    <div class="cat-header" style="background: #3d2b6e;">
+      <span class="cat-icon">✨</span>
+      <span class="cat-title">Category 5 — Compliments &amp; Encouragement</span>
+      <span class="cat-range">311 – 330</span>
+    </div>
+    <table>
+      <thead><tr><th>#</th><th>English Sentence</th><th>বাংলা অর্থ</th></tr></thead>
+      <tbody>
+        <tr><td class="num">311</td><td class="eng">You look great today!</td><td class="ban">আজ তোমাকে দারুণ দেখাচ্ছে!</td></tr>
+        <tr><td class="num">312</td><td class="eng">That outfit suits you perfectly.</td><td class="ban">এই পোশাকটা তোমাকে একদম মানিয়েছে।</td></tr>
+        <tr><td class="num">313</td><td class="eng">You did an amazing job!</td><td class="ban">তুমি অসাধারণ কাজ করেছ!</td></tr>
+        <tr><td class="num">314</td><td class="eng">I'm really impressed.</td><td class="ban">আমি সত্যিই মুগ্ধ হয়েছি।</td></tr>
+        <tr><td class="num">315</td><td class="eng">You're so talented!</td><td class="ban">তুমি অনেক প্রতিভাবান!</td></tr>
+        <tr><td class="num">316</td><td class="eng">That was really well done.</td><td class="ban">এটা সত্যিই ভালোভাবে করা হয়েছে।</td></tr>
+        <tr><td class="num">317</td><td class="eng">Thank you, that means a lot to me.</td><td class="ban">ধন্যবাদ, এটা আমার কাছে অনেক মূল্যবান।</td></tr>
+        <tr><td class="num">318</td><td class="eng">You're too kind!</td><td class="ban">তুমি অনেক দয়ালু!</td></tr>
+        <tr><td class="num">319</td><td class="eng">I couldn't have done it without you.</td><td class="ban">তোমাকে ছাড়া আমি এটা করতে পারতাম না।</td></tr>
+        <tr><td class="num">320</td><td class="eng">Keep it up! You're on the right track.</td><td class="ban">চালিয়ে যাও! তুমি সঠিক পথেই আছ।</td></tr>
+        <tr><td class="num">321</td><td class="eng">Your English has improved so much!</td><td class="ban">তোমার ইংরেজি অনেক উন্নত হয়েছে!</td></tr>
+        <tr><td class="num">322</td><td class="eng">That was a brilliant idea.</td><td class="ban">এটা একটা চমৎকার ধারণা ছিল।</td></tr>
+        <tr><td class="num">323</td><td class="eng">You should be proud of yourself.</td><td class="ban">তোমার নিজেকে নিয়ে গর্বিত হওয়া উচিত।</td></tr>
+        <tr><td class="num">324</td><td class="eng">I love what you've done with this.</td><td class="ban">এটা নিয়ে তুমি যা করেছ আমি পছন্দ করেছি।</td></tr>
+        <tr><td class="num">325</td><td class="eng">You always know the right thing to say.</td><td class="ban">তুমি সবসময় সঠিক কথাটা বলতে জানো।</td></tr>
+        <tr><td class="num">326</td><td class="eng">Your cooking is absolutely delicious!</td><td class="ban">তোমার রান্না অসাধারণ সুস্বাদু!</td></tr>
+        <tr><td class="num">327</td><td class="eng">You explain things so clearly.</td><td class="ban">তুমি জিনিসগুলো এত পরিষ্কারভাবে বোঝাও।</td></tr>
+        <tr><td class="num">328</td><td class="eng">Wow, that was unexpected! Well done.</td><td class="ban">ওয়াও, এটা অপ্রত্যাশিত ছিল! ভালো করেছ।</td></tr>
+        <tr><td class="num">329</td><td class="eng">You're a natural at this.</td><td class="ban">তুমি এটায় স্বাভাবিকভাবেই পারদর্শী।</td></tr>
+        <tr><td class="num">330</td><td class="eng">I really admire your dedication.</td><td class="ban">আমি সত্যিই তোমার নিষ্ঠার প্রশংসা করি।</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- CAT 6: APOLOGIZING & FORGIVING -->
+  <!-- ═══════════════════════════════════════════ -->
+  <div class="cat-block">
+    <div class="cat-header" style="background: #1a4a5a;">
+      <span class="cat-icon">🤝</span>
+      <span class="cat-title">Category 6 — Apologizing &amp; Forgiving</span>
+      <span class="cat-range">331 – 350</span>
+    </div>
+    <table>
+      <thead><tr><th>#</th><th>English Sentence</th><th>বাংলা অর্থ</th></tr></thead>
+      <tbody>
+        <tr><td class="num">331</td><td class="eng">I'm so sorry about that.</td><td class="ban">এটার জন্য আমি সত্যিই দুঃখিত।</td></tr>
+        <tr><td class="num">332</td><td class="eng">Please forgive me.</td><td class="ban">দয়া করে আমাকে ক্ষমা করো।</td></tr>
+        <tr><td class="num">333</td><td class="eng">I didn't mean to hurt you.</td><td class="ban">আমি তোমাকে আঘাত করতে চাইনি।</td></tr>
+        <tr><td class="num">334</td><td class="eng">It was my fault. I take full responsibility.</td><td class="ban">এটা আমার দোষ। আমি সম্পূর্ণ দায়িত্ব নিচ্ছি।</td></tr>
+        <tr><td class="num">335</td><td class="eng">I should have been more careful.</td><td class="ban">আমার আরও সাবধান হওয়া উচিত ছিল।</td></tr>
+        <tr><td class="num">336</td><td class="eng">I promise it won't happen again.</td><td class="ban">আমি প্রতিশ্রুতি দিচ্ছি এটা আর হবে না।</td></tr>
+        <tr><td class="num">337</td><td class="eng">I apologize for the misunderstanding.</td><td class="ban">ভুল বোঝাবুঝির জন্য আমি ক্ষমা চাইছি।</td></tr>
+        <tr><td class="num">338</td><td class="eng">No worries, it happens.</td><td class="ban">চিন্তা করো না, এরকম হয়।</td></tr>
+        <tr><td class="num">339</td><td class="eng">I forgive you. Let's move on.</td><td class="ban">আমি তোমাকে ক্ষমা করেছি। এগিয়ে যাই।</td></tr>
+        <tr><td class="num">340</td><td class="eng">It's okay. Don't worry about it.</td><td class="ban">ঠিক আছে। এটা নিয়ে চিন্তা করো না।</td></tr>
+        <tr><td class="num">341</td><td class="eng">I was wrong and I admit it.</td><td class="ban">আমি ভুল ছিলাম এবং আমি স্বীকার করছি।</td></tr>
+        <tr><td class="num">342</td><td class="eng">Let's put this behind us.</td><td class="ban">চলো এটাকে পেছনে ফেলে আসি।</td></tr>
+        <tr><td class="num">343</td><td class="eng">I'm sorry I was late.</td><td class="ban">দেরি করার জন্য আমি দুঃখিত।</td></tr>
+        <tr><td class="num">344</td><td class="eng">I'm sorry for interrupting you.</td><td class="ban">তোমাকে থামানোর জন্য আমি দুঃখিত।</td></tr>
+        <tr><td class="num">345</td><td class="eng">That wasn't fair to you. I'm sorry.</td><td class="ban">এটা তোমার প্রতি ন্যায্য ছিল না। আমি দুঃখিত।</td></tr>
+        <tr><td class="num">346</td><td class="eng">Apology accepted. Thanks for saying that.</td><td class="ban">ক্ষমা গৃহীত হলো। বলার জন্য ধন্যবাদ।</td></tr>
+        <tr><td class="num">347</td><td class="eng">We all make mistakes.</td><td class="ban">আমরা সবাই ভুল করি।</td></tr>
+        <tr><td class="num">348</td><td class="eng">I should have listened to you.</td><td class="ban">আমার তোমার কথা শোনা উচিত ছিল।</td></tr>
+        <tr><td class="num">349</td><td class="eng">I didn't realize how that made you feel.</td><td class="ban">এটা তোমাকে কেমন অনুভব করিয়েছে তা আমি বুঝতে পারিনি।</td></tr>
+        <tr><td class="num">350</td><td class="eng">Thank you for your patience.</td><td class="ban">তোমার ধৈর্যের জন্য ধন্যবাদ।</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- CAT 7: FOOD & RESTAURANT -->
+  <!-- ═══════════════════════════════════════════ -->
+  <div class="cat-block">
+    <div class="cat-header" style="background: #5a3200;">
+      <span class="cat-icon">🍽️</span>
+      <span class="cat-title">Category 7 — Food &amp; Restaurant</span>
+      <span class="cat-range">351 – 370</span>
+    </div>
+    <table>
+      <thead><tr><th>#</th><th>English Sentence</th><th>বাংলা অর্থ</th></tr></thead>
+      <tbody>
+        <tr><td class="num">351</td><td class="eng">A table for two, please.</td><td class="ban">দুজনের জন্য একটা টেবিল দিন।</td></tr>
+        <tr><td class="num">352</td><td class="eng">Can I see the menu?</td><td class="ban">আমি কি মেনুটা দেখতে পারি?</td></tr>
+        <tr><td class="num">353</td><td class="eng">What do you recommend?</td><td class="ban">তুমি কী সুপারিশ করবে?</td></tr>
+        <tr><td class="num">354</td><td class="eng">I'll have the chicken rice, please.</td><td class="ban">আমি চিকেন রাইস নেব।</td></tr>
+        <tr><td class="num">355</td><td class="eng">Is this dish spicy?</td><td class="ban">এই পদটা কি ঝাল?</td></tr>
+        <tr><td class="num">356</td><td class="eng">Can you make it less spicy?</td><td class="ban">একটু কম ঝাল করে দিতে পারবে?</td></tr>
+        <tr><td class="num">357</td><td class="eng">I'm vegetarian. What can I eat?</td><td class="ban">আমি নিরামিষভোজী। আমি কী খেতে পারব?</td></tr>
+        <tr><td class="num">358</td><td class="eng">Excuse me, I didn't order this.</td><td class="ban">মাফ করবেন, আমি এটা অর্ডার করিনি।</td></tr>
+        <tr><td class="num">359</td><td class="eng">Can we get the bill, please?</td><td class="ban">আমরা কি বিল পেতে পারি?</td></tr>
+        <tr><td class="num">360</td><td class="eng">Is service charge included?</td><td class="ban">সার্ভিস চার্জ কি অন্তর্ভুক্ত?</td></tr>
+        <tr><td class="num">361</td><td class="eng">This food is absolutely delicious!</td><td class="ban">এই খাবারটা অসাধারণ সুস্বাদু!</td></tr>
+        <tr><td class="num">362</td><td class="eng">Can I get some extra napkins?</td><td class="ban">আমি কি কিছু অতিরিক্ত ন্যাপকিন পেতে পারি?</td></tr>
+        <tr><td class="num">363</td><td class="eng">We'd like to split the bill.</td><td class="ban">আমরা বিল ভাগ করে দিতে চাই।</td></tr>
+        <tr><td class="num">364</td><td class="eng">Could I get a takeaway box?</td><td class="ban">আমি কি একটা টেকঅ্যাওয়ে বক্স পেতে পারি?</td></tr>
+        <tr><td class="num">365</td><td class="eng">Do you have a kids' menu?</td><td class="ban">তোমাদের কি বাচ্চাদের মেনু আছে?</td></tr>
+        <tr><td class="num">366</td><td class="eng">I'd like to order something to drink.</td><td class="ban">আমি পানীয় হিসেবে কিছু অর্ডার করতে চাই।</td></tr>
+        <tr><td class="num">367</td><td class="eng">How long will the food take?</td><td class="ban">খাবার আসতে কতক্ষণ লাগবে?</td></tr>
+        <tr><td class="num">368</td><td class="eng">My compliments to the chef!</td><td class="ban">শেফকে আমার অভিনন্দন জানাবেন!</td></tr>
+        <tr><td class="num">369</td><td class="eng">I'll definitely come back here again.</td><td class="ban">আমি নিশ্চিতভাবে এখানে আবার আসব।</td></tr>
+        <tr><td class="num">370</td><td class="eng">Can I make a reservation for tonight?</td><td class="ban">আজ রাতের জন্য আমি কি সংরক্ষণ করতে পারি?</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- CAT 8: SMALL TALK & SOCIAL -->
+  <!-- ═══════════════════════════════════════════ -->
+  <div class="cat-block">
+    <div class="cat-header" style="background: #2a1a4a;">
+      <span class="cat-icon">🎉</span>
+      <span class="cat-title">Category 8 — Small Talk &amp; Social Situations</span>
+      <span class="cat-range">371 – 390</span>
+    </div>
+    <table>
+      <thead><tr><th>#</th><th>English Sentence</th><th>বাংলা অর্থ</th></tr></thead>
+      <tbody>
+        <tr><td class="num">371</td><td class="eng">What a beautiful day!</td><td class="ban">কী সুন্দর দিন!</td></tr>
+        <tr><td class="num">372</td><td class="eng">It's really hot out there today.</td><td class="ban">আজ বাইরে অনেক গরম।</td></tr>
+        <tr><td class="num">373</td><td class="eng">Happy birthday! Hope you have a great day.</td><td class="ban">জন্মদিনের শুভেচ্ছা! আশা করি সুন্দর দিন কাটাবে।</td></tr>
+        <tr><td class="num">374</td><td class="eng">Congratulations on your promotion!</td><td class="ban">পদোন্নতির জন্য অভিনন্দন!</td></tr>
+        <tr><td class="num">375</td><td class="eng">I heard you got married. Congratulations!</td><td class="ban">শুনলাম তুমি বিয়ে করেছ। অভিনন্দন!</td></tr>
+        <tr><td class="num">376</td><td class="eng">I'm so sorry for your loss.</td><td class="ban">তোমার ক্ষতিতে আমি সত্যিই দুঃখিত।</td></tr>
+        <tr><td class="num">377</td><td class="eng">What are your hobbies?</td><td class="ban">তোমার শখ কী কী?</td></tr>
+        <tr><td class="num">378</td><td class="eng">Do you like watching movies?</td><td class="ban">তুমি কি সিনেমা দেখতে পছন্দ করো?</td></tr>
+        <tr><td class="num">379</td><td class="eng">What kind of music do you listen to?</td><td class="ban">তুমি কোন ধরনের সঙ্গীত শোনো?</td></tr>
+        <tr><td class="num">380</td><td class="eng">Have you ever traveled abroad?</td><td class="ban">তুমি কি কখনো বিদেশ ভ্রমণ করেছ?</td></tr>
+        <tr><td class="num">381</td><td class="eng">What's your favorite food?</td><td class="ban">তোমার প্রিয় খাবার কী?</td></tr>
+        <tr><td class="num">382</td><td class="eng">This party is really fun!</td><td class="ban">এই পার্টিটা সত্যিই মজার!</td></tr>
+        <tr><td class="num">383</td><td class="eng">Do you know anyone here?</td><td class="ban">তুমি কি এখানে কাউকে চেনো?</td></tr>
+        <tr><td class="num">384</td><td class="eng">Let me introduce you to a friend of mine.</td><td class="ban">আমার একজন বন্ধুর সাথে তোমাকে পরিচয় করিয়ে দিই।</td></tr>
+        <tr><td class="num">385</td><td class="eng">We should hang out sometime.</td><td class="ban">আমাদের কোনো একদিন আড্ডা দেওয়া উচিত।</td></tr>
+        <tr><td class="num">386</td><td class="eng">It was so good catching up with you!</td><td class="ban">তোমার সাথে আবার যোগাযোগ করতে পেরে খুব ভালো লাগল!</td></tr>
+        <tr><td class="num">387</td><td class="eng">How's the family?</td><td class="ban">পরিবার কেমন আছে?</td></tr>
+        <tr><td class="num">388</td><td class="eng">How old are your kids now?</td><td class="ban">তোমার বাচ্চারা এখন কত বছর?</td></tr>
+        <tr><td class="num">389</td><td class="eng">Time flies when you're having fun!</td><td class="ban">মজা করলে সময় কত তাড়াতাড়ি চলে যায়!</td></tr>
+        <tr><td class="num">390</td><td class="eng">I'll see you at the event next week!</td><td class="ban">আগামী সপ্তাহে অনুষ্ঠানে দেখা হবে!</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- CAT 9: ADVANCED NATURAL CONVERSATION -->
+  <!-- ═══════════════════════════════════════════ -->
+  <div class="cat-block">
+    <div class="cat-header" style="background: #1a3a4a;">
+      <span class="cat-icon">🚀</span>
+      <span class="cat-title">Category 9 — Advanced &amp; Natural Conversation</span>
+      <span class="cat-range">391 – 400</span>
+    </div>
+    <table>
+      <thead><tr><th>#</th><th>English Sentence</th><th>বাংলা অর্থ</th></tr></thead>
+      <tbody>
+        <tr><td class="num">391</td><td class="eng">That really got me thinking.</td><td class="ban">এটা আমাকে সত্যিই ভাবিয়ে তুলেছে।</td></tr>
+        <tr><td class="num">392</td><td class="eng">I didn't see that coming!</td><td class="ban">এটা আমি একদম আশা করিনি!</td></tr>
+        <tr><td class="num">393</td><td class="eng">You're telling me! I felt the same way.</td><td class="ban">তুমি যা বলছ ঠিকই! আমিও একইরকম অনুভব করেছিলাম।</td></tr>
+        <tr><td class="num">394</td><td class="eng">At the end of the day, family matters most.</td><td class="ban">দিনের শেষে, পরিবারই সবচেয়ে গুরুত্বপূর্ণ।</td></tr>
+        <tr><td class="num">395</td><td class="eng">Don't take it personally — it's just business.</td><td class="ban">ব্যক্তিগতভাবে নিয়ো না — এটা শুধু ব্যবসা।</td></tr>
+        <tr><td class="num">396</td><td class="eng">I've been meaning to ask you something.</td><td class="ban">আমি তোমাকে কিছু জিজ্ঞেস করার কথা ভাবছিলাম।</td></tr>
+        <tr><td class="num">397</td><td class="eng">Now that you mention it, I remember.</td><td class="ban">এখন যখন বলছ, মনে পড়ছে।</td></tr>
+        <tr><td class="num">398</td><td class="eng">It's not a big deal, honestly.</td><td class="ban">সত্যিই এটা বড় বিষয় না।</td></tr>
+        <tr><td class="num">399</td><td class="eng">That's easier said than done.</td><td class="ban">বলা সহজ, করা কঠিন।</td></tr>
+        <tr><td class="num">400</td><td class="eng">Every little bit helps. Keep going!</td><td class="ban">ছোট ছোট প্রচেষ্টাও কাজে আসে। চালিয়ে যাও!</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <strong>1000 High-Frequency English Sentences for Bangla Speakers</strong><br>
+    Memorize · Practice · Speak with Confidence
+    <div class="day-pills">
+      <span class="pill"><a href="Day1_English_Sentences.html">Day 1</a></span>
+      <span class="pill active">Day 2 ← You are here</span>
+      <span class="pill"><a href="Day3_English_Sentences.html">Day 3</a></span>
+      <span class="pill"><a href="Day4_English_Sentences.html">Day 4</a></span>
+      <span class="pill"><a href="Day5_English_Sentences.html">Day 5</a></span>
+    </div>
+    <p style="margin-top:12px; font-size:12px; color:#aaa;">
+      Days 3–5 cover: Describing People &amp; Things · Giving Directions · Emergencies · Idioms &amp; Phrases · Advanced Real-Life Conversations
+    </p>
+  </div>
+
+</div>
+</body>
+</html>

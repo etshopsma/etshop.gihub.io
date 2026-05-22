@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HSC Appropriate Prepositions — Complete Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Playfair+Display:wght@700;900&family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --green: #1a6b3a;
+    --green-light: #2d9b56;
+    --green-pale: #e8f5ee;
+    --green-mid: #c2e8d0;
+    --gold: #c8922a;
+    --gold-light: #f0c060;
+    --gold-pale: #fdf6e3;
+    --dark: #1a1a1a;
+    --text: #2c2c2c;
+    --muted: #666;
+    --white: #ffffff;
+    --border: #d4e8dc;
+    --shadow: rgba(26,107,58,0.12);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Hind Siliguri', sans-serif;
+    background: #f5faf7;
+    color: var(--text);
+    line-height: 1.7;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: linear-gradient(135deg, #0f4025 0%, #1a6b3a 50%, #0f4025 100%);
+    color: white;
+    text-align: center;
+    padding: 56px 24px 48px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: repeating-linear-gradient(45deg, transparent, transparent 30px, rgba(255,255,255,.03) 30px, rgba(255,255,255,.03) 60px);
+  }
+  .hero .badge {
+    display: inline-block;
+    background: var(--gold);
+    color: white;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 6px 18px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 5vw, 52px);
+    font-weight: 900;
+    line-height: 1.15;
+    margin-bottom: 14px;
+  }
+  .hero h1 span { color: var(--gold-light); }
+  .hero p { font-size: 16px; opacity: .85; max-width: 600px; margin: 0 auto 28px; }
+  .hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+  .hero-stat { text-align: center; }
+  .hero-stat .num { font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 700; color: var(--gold-light); }
+  .hero-stat .lbl { font-size: 12px; opacity: .75; letter-spacing: 1px; text-transform: uppercase; }
+
+  /* ── NAV ── */
+  .sticky-nav {
+    position: sticky; top: 0; z-index: 100;
+    background: var(--green);
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    box-shadow: 0 2px 12px var(--shadow);
+  }
+  .sticky-nav::-webkit-scrollbar { display: none; }
+  .sticky-nav a {
+    color: rgba(255,255,255,.75);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    white-space: nowrap;
+    padding: 14px 12px;
+    border-bottom: 3px solid transparent;
+    transition: all .2s;
+  }
+  .sticky-nav a:hover { color: white; border-bottom-color: var(--gold-light); }
+
+  /* ── CONTAINER ── */
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 16px; }
+
+  /* ── RULES BOX ── */
+  .rules-section {
+    background: var(--gold-pale);
+    border-left: 5px solid var(--gold);
+    border-radius: 0 12px 12px 0;
+    margin: 32px 0 20px;
+    padding: 24px 28px;
+  }
+  .rules-section h2 {
+    font-family: 'Playfair Display', serif;
+    color: var(--gold);
+    font-size: 22px;
+    margin-bottom: 14px;
+  }
+  .rules-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 14px;
+    margin-top: 14px;
+  }
+  .rule-card {
+    background: white;
+    border-radius: 10px;
+    padding: 16px 18px;
+    border: 1px solid #f0d8a0;
+    box-shadow: 0 2px 8px rgba(200,146,42,.1);
+  }
+  .rule-card h4 { color: var(--gold); font-size: 14px; font-weight: 700; margin-bottom: 8px; text-transform: uppercase; letter-spacing: .5px; }
+  .rule-card p { font-size: 14px; color: var(--text); }
+  .rule-card code {
+    background: var(--gold-pale);
+    color: var(--gold);
+    padding: 1px 6px;
+    border-radius: 4px;
+    font-family: 'Source Code Pro', monospace;
+    font-size: 13px;
+  }
+
+  /* ── SECTION HEADER ── */
+  .section-header {
+    background: var(--green);
+    color: white;
+    padding: 16px 24px;
+    border-radius: 12px 12px 0 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 36px;
+  }
+  .section-header .icon {
+    width: 38px; height: 38px;
+    background: rgba(255,255,255,.15);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px;
+    flex-shrink: 0;
+  }
+  .section-header h2 { font-family: 'Playfair Display', serif; font-size: 20px; }
+  .section-header p { font-size: 13px; opacity: .75; margin-top: 2px; }
+  .section-count {
+    margin-left: auto;
+    background: var(--gold);
+    color: white;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 12px;
+  }
+
+  /* ── TABLE ── */
+  .table-wrap {
+    border-radius: 0 0 12px 12px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    border-top: none;
+    margin-bottom: 8px;
+    box-shadow: 0 4px 16px var(--shadow);
+  }
+  table { width: 100%; border-collapse: collapse; }
+  thead th {
+    background: var(--green-pale);
+    color: var(--green);
+    font-weight: 700;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    padding: 12px 14px;
+    text-align: left;
+    border-bottom: 2px solid var(--border);
+  }
+  tbody tr { transition: background .15s; }
+  tbody tr:nth-child(even) { background: #f9fdfb; }
+  tbody tr:hover { background: var(--green-pale); }
+  td {
+    padding: 11px 14px;
+    border-bottom: 1px solid var(--border);
+    font-size: 14px;
+    vertical-align: top;
+  }
+  td:first-child { font-weight: 500; width: 32px; color: var(--muted); text-align: center; }
+
+  /* preposition highlight */
+  .prep {
+    background: var(--green);
+    color: white;
+    padding: 1px 7px;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 13px;
+    white-space: nowrap;
+  }
+  .prep-phrase {
+    font-weight: 600;
+    color: var(--green);
+    font-family: 'Source Code Pro', monospace;
+    font-size: 13px;
+  }
+  .bangla { color: #444; font-size: 13px; }
+
+  /* ── HSC STAR ── */
+  .hsc-star {
+    display: inline-block;
+    background: var(--gold);
+    color: white;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 1px 6px;
+    border-radius: 3px;
+    margin-left: 6px;
+    vertical-align: middle;
+    letter-spacing: .5px;
+  }
+
+  /* ── TIP BOX ── */
+  .tip {
+    background: #e8f5ee;
+    border-left: 4px solid var(--green-light);
+    border-radius: 0 8px 8px 0;
+    padding: 14px 18px;
+    margin: 20px 0;
+    font-size: 14px;
+  }
+  .tip strong { color: var(--green); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--dark);
+    color: rgba(255,255,255,.6);
+    text-align: center;
+    padding: 28px 16px;
+    margin-top: 48px;
+    font-size: 13px;
+  }
+  footer strong { color: var(--gold-light); }
+
+  @media (max-width: 640px) {
+    thead th:nth-child(1), td:nth-child(1) { display: none; }
+    .hero-stats { gap: 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="badge">HSC Board Exam Special</div>
+  <h1>Appropriate <span>Prepositions</span><br>Complete Guide</h1>
+  <p>300+ carefully selected examples based on previous HSC board exam patterns across all boards of Bangladesh</p>
+  <div class="hero-stats">
+    <div class="hero-stat"><div class="num">300+</div><div class="lbl">Examples</div></div>
+    <div class="hero-stat"><div class="num">12</div><div class="lbl">Categories</div></div>
+    <div class="hero-stat"><div class="num">Class<br>11–12</div><div class="lbl">Level</div></div>
+  </div>
+</div>
+
+<!-- STICKY NAV -->
+<nav class="sticky-nav">
+  <a href="#rules">📌 Rules</a>
+  <a href="#adj-of">Adjective + OF</a>
+  <a href="#adj-to">Adjective + TO</a>
+  <a href="#adj-at">Adjective + AT/IN</a>
+  <a href="#adj-for">Adjective + FOR/WITH</a>
+  <a href="#noun-of">Noun + OF</a>
+  <a href="#noun-for">Noun + FOR/TO</a>
+  <a href="#verb-to">Verb + TO</a>
+  <a href="#verb-of">Verb + OF/FROM</a>
+  <a href="#verb-in">Verb + IN/ON</a>
+  <a href="#verb-at">Verb + AT/WITH</a>
+  <a href="#verb-for">Verb + FOR</a>
+  <a href="#mixed">Mixed / Others</a>
+</nav>
+
+<div class="container">
+
+<!-- RULES SECTION -->
+<div id="rules" class="rules-section">
+  <h2>⚡ Key Rules & Shortcuts for HSC</h2>
+  <p style="font-size:14px;color:#555;margin-bottom:4px;">Master these patterns and you will solve 80% of preposition questions in HSC exams.</p>
+  <div class="rules-grid">
+    <div class="rule-card">
+      <h4>Rule 1 — Feelings use "OF"</h4>
+      <p>Emotions and mental states: <code>afraid of</code>, <code>fond of</code>, <code>proud of</code>, <code>ashamed of</code>, <code>jealous of</code>, <code>aware of</code></p>
+    </div>
+    <div class="rule-card">
+      <h4>Rule 2 — Comparison uses "TO"</h4>
+      <p>Relating or comparing: <code>similar to</code>, <code>inferior to</code>, <code>superior to</code>, <code>equal to</code>, <code>prior to</code>, <code>next to</code></p>
+    </div>
+    <div class="rule-card">
+      <h4>Rule 3 — Skill uses "AT" or "IN"</h4>
+      <p>Abilities and expertise: <code>good at</code>, <code>expert at</code>, <code>skilled in</code>, <code>experienced in</code>, <code>interested in</code></p>
+    </div>
+    <div class="rule-card">
+      <h4>Rule 4 — Addiction/Attachment uses "TO"</h4>
+      <p>Dependence or dedication: <code>addicted to</code>, <code>devoted to</code>, <code>dedicated to</code>, <code>committed to</code>, <code>accustomed to</code></p>
+    </div>
+    <div class="rule-card">
+      <h4>Rule 5 — Responsibility uses "FOR"</h4>
+      <p>Accountability: <code>responsible for</code>, <code>liable for</code>, <code>sorry for</code>, <code>grateful for</code>, <code>eligible for</code></p>
+    </div>
+    <div class="rule-card">
+      <h4>Rule 6 — Surprise uses "AT"</h4>
+      <p>Reaction words: <code>surprised at</code>, <code>astonished at</code>, <code>amazed at</code>, <code>shocked at</code>, <code>angry at/with</code></p>
+    </div>
+    <div class="rule-card">
+      <h4>Rule 7 — People use "WITH", things use "AT"</h4>
+      <p><code>angry with</code> (a person) vs <code>angry at</code> (a situation); <code>pleased with</code> a person, <code>pleased at</code> news</p>
+    </div>
+    <div class="rule-card">
+      <h4>Rule 8 — "Consist of" vs "Consist in"</h4>
+      <p><code>consist of</code> = made up of (parts); <code>consist in</code> = lies in (an idea/quality). Very common HSC trap!</p>
+    </div>
+  </div>
+</div>
+
+<div class="tip">
+  <strong>📝 HSC Exam Tip:</strong> Items marked <span class="hsc-star">HSC</span> have appeared multiple times in Dhaka, Chittagong, Rajshahi, Sylhet, Comilla, Jessore, Dinajpur and other boards. Give these extra attention!
+</div>
+
+<!-- ════════════════════════════════════════ -->
+<!-- SECTION 1: ADJECTIVE + OF -->
+<!-- ════════════════════════════════════════ -->
+<div id="adj-of">
+  <div class="section-header">
+    <div class="icon">😊</div>
+    <div>
+      <h2>Adjective + OF</h2>
+      <p>Feelings, awareness, capability, and character traits</p>
+    </div>
+    <div class="section-count">Examples 1–50</div>
+  </div>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>#</th><th>Phrase</th><th>Example Sentence</th><th>বাংলা অর্থ</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td><span class="prep-phrase">fond of</span></td><td>She is very fond <span class="prep">of</span> reading novels.<span class="hsc-star">HSC</span></td><td class="bangla">সে উপন্যাস পড়তে খুব পছন্দ করে।</td></tr>
+        <tr><td>2</td><td><span class="prep-phrase">afraid of</span></td><td>The child is afraid <span class="prep">of</span> the dark.<span class="hsc-star">HSC</span></td><td class="bangla">শিশুটি অন্ধকারে ভয় পায়।</td></tr>
+        <tr><td>3</td><td><span class="prep-phrase">proud of</span></td><td>We are proud <span class="prep">of</span> our freedom fighters.<span class="hsc-star">HSC</span></td><td class="bangla">আমরা আমাদের মুক্তিযোদ্ধাদের নিয়ে গর্বিত।</td></tr>
+        <tr><td>4</td><td><span class="prep-phrase">ashamed of</span></td><td>He is ashamed <span class="prep">of</span> his past deeds.<span class="hsc-star">HSC</span></td><td class="bangla">সে তার অতীত কাজকর্মে লজ্জিত।</td></tr>
+        <tr><td>5</td><td><span class="prep-phrase">aware of</span></td><td>Everyone should be aware <span class="prep">of</span> their rights.</td><td class="bangla">প্রত্যেকের নিজের অধিকার সম্পর্কে সচেতন হওয়া উচিত।</td></tr>
+        <tr><td>6</td><td><span class="prep-phrase">capable of</span></td><td>She is capable <span class="prep">of</span> solving any problem.<span class="hsc-star">HSC</span></td><td class="bangla">সে যেকোনো সমস্যা সমাধান করতে সক্ষম।</td></tr>
+        <tr><td>7</td><td><span class="prep-phrase">jealous of</span></td><td>He is jealous <span class="prep">of</span> his friend's success.</td><td class="bangla">সে তার বন্ধুর সাফল্যে ঈর্ষান্বিত।</td></tr>
+        <tr><td>8</td><td><span class="prep-phrase">tired of</span></td><td>I am tired <span class="prep">of</span> waiting for him.</td><td class="bangla">আমি তার জন্য অপেক্ষা করতে করতে ক্লান্ত।</td></tr>
+        <tr><td>9</td><td><span class="prep-phrase">sick of</span></td><td>She is sick <span class="prep">of</span> making excuses all the time.</td><td class="bangla">সে সবসময় অজুহাত দিতে দিতে বিরক্ত।</td></tr>
+        <tr><td>10</td><td><span class="prep-phrase">innocent of</span></td><td>The accused is innocent <span class="prep">of</span> the crime.</td><td class="bangla">অভিযুক্ত ব্যক্তি সেই অপরাধে নির্দোষ।</td></tr>
+        <tr><td>11</td><td><span class="prep-phrase">guilty of</span></td><td>He was found guilty <span class="prep">of</span> fraud.<span class="hsc-star">HSC</span></td><td class="bangla">তাকে প্রতারণার দায়ে দোষী সাব্যস্ত করা হয়েছে।</td></tr>
+        <tr><td>12</td><td><span class="prep-phrase">confident of</span></td><td>She is confident <span class="prep">of</span> her success in the exam.</td><td class="bangla">সে পরীক্ষায় তার সাফল্য সম্পর্কে আত্মবিশ্বাসী।</td></tr>
+        <tr><td>13</td><td><span class="prep-phrase">certain of</span></td><td>I am certain <span class="prep">of</span> his honesty.</td><td class="bangla">আমি তার সততা সম্পর্কে নিশ্চিত।</td></tr>
+        <tr><td>14</td><td><span class="prep-phrase">suspicious of</span></td><td>The police were suspicious <span class="prep">of</span> his behaviour.</td><td class="bangla">পুলিশ তার আচরণে সন্দেহজনক ছিল।</td></tr>
+        <tr><td>15</td><td><span class="prep-phrase">envious of</span></td><td>Do not be envious <span class="prep">of</span> others' wealth.</td><td class="bangla">অন্যের সম্পদে ঈর্ষান্বিত হইও না।</td></tr>
+        <tr><td>16</td><td><span class="prep-phrase">ignorant of</span></td><td>He was ignorant <span class="prep">of</span> the law.<span class="hsc-star">HSC</span></td><td class="bangla">সে আইন সম্পর্কে অজ্ঞ ছিল।</td></tr>
+        <tr><td>17</td><td><span class="prep-phrase">full of</span></td><td>The glass is full <span class="prep">of</span> water.</td><td class="bangla">গ্লাসটি পানিতে পূর্ণ।</td></tr>
+        <tr><td>18</td><td><span class="prep-phrase">short of</span></td><td>We are short <span class="prep">of</span> funds this month.</td><td class="bangla">এই মাসে আমাদের তহবিলের অভাব রয়েছে।</td></tr>
+        <tr><td>19</td><td><span class="prep-phrase">worthy of</span></td><td>He is worthy <span class="prep">of</span> praise for his hard work.</td><td class="bangla">কঠোর পরিশ্রমের জন্য সে প্রশংসার যোগ্য।</td></tr>
+        <tr><td>20</td><td><span class="prep-phrase">deprived of</span></td><td>Many children are deprived <span class="prep">of</span> basic education.<span class="hsc-star">HSC</span></td><td class="bangla">অনেক শিশু মৌলিক শিক্ষা থেকে বঞ্চিত।</td></tr>
+        <tr><td>21</td><td><span class="prep-phrase">bereft of</span></td><td>The speech was bereft <span class="prep">of</span> any logic.</td><td class="bangla">বক্তৃতাটি সম্পূর্ণ যুক্তিহীন ছিল।</td></tr>
+        <tr><td>22</td><td><span class="prep-phrase">devoid of</span></td><td>His reply was devoid <span class="prep">of</span> any sense.</td><td class="bangla">তার উত্তরে কোনো অর্থ ছিল না।</td></tr>
+        <tr><td>23</td><td><span class="prep-phrase">characteristic of</span></td><td>Hard work is characteristic <span class="prep">of</span> successful people.</td><td class="bangla">কঠোর পরিশ্রম সফল মানুষের বৈশিষ্ট্য।</td></tr>
+        <tr><td>24</td><td><span class="prep-phrase">typical of</span></td><td>That behaviour is typical <span class="prep">of</span> young students.</td><td class="bangla">এই ধরনের আচরণ তরুণ শিক্ষার্থীদের জন্য স্বাভাবিক।</td></tr>
+        <tr><td>25</td><td><span class="prep-phrase">reminiscent of</span></td><td>This song is reminiscent <span class="prep">of</span> my childhood.</td><td class="bangla">এই গানটি আমার শৈশবের কথা মনে করিয়ে দেয়।</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════ -->
+<!-- SECTION 2: ADJECTIVE + TO -->
+<!-- ════════════════════════════════════════ -->
+<div id="adj-to">
+  <div class="section-header">
+    <div class="icon">🔗</div>
+    <div>
+      <h2>Adjective + TO</h2>
+      <p>Comparison, relation, dedication, and opposition</p>
+    </div>
+    <div class="section-count">Examples 26–75</div>
+  </div>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>#</th><th>Phrase</th><th>Example Sentence</th><th>বাংলা অর্থ</th></tr></thead>
+      <tbody>
+        <tr><td>26</td><td><span class="prep-phrase">addicted to</span></td><td>He is addicted <span class="prep">to</span> social media.<span class="hsc-star">HSC</span></td><td class="bangla">সে সোশ্যাল মিডিয়ায় আসক্ত।</td></tr>
+        <tr><td>27</td><td><span class="prep-phrase">devoted to</span></td><td>She is devoted <span class="prep">to</span> her studies.<span class="hsc-star">HSC</span></td><td class="bangla">সে তার পড়াশোনায় নিবেদিত।</td></tr>
+        <tr><td>28</td><td><span class="prep-phrase">dedicated to</span></td><td>This book is dedicated <span class="prep">to</span> his mother.</td><td class="bangla">এই বইটি তার মায়ের উদ্দেশ্যে উৎসর্গ করা হয়েছে।</td></tr>
+        <tr><td>29</td><td><span class="prep-phrase">accustomed to</span></td><td>She is accustomed <span class="prep">to</span> waking up early.<span class="hsc-star">HSC</span></td><td class="bangla">সে সকালে ওঠার অভ্যস্ত।</td></tr>
+        <tr><td>30</td><td><span class="prep-phrase">similar to</span></td><td>His idea is similar <span class="prep">to</span> mine.<span class="hsc-star">HSC</span></td><td class="bangla">তার ধারণা আমার মতোই।</td></tr>
+        <tr><td>31</td><td><span class="prep-phrase">inferior to</span></td><td>This product is inferior <span class="prep">to</span> the original.<span class="hsc-star">HSC</span></td><td class="bangla">এই পণ্যটি মূলটির চেয়ে নিম্নমানের।</td></tr>
+        <tr><td>32</td><td><span class="prep-phrase">superior to</span></td><td>Gold is superior <span class="prep">to</span> silver in value.<span class="hsc-star">HSC</span></td><td class="bangla">মূল্যের দিক থেকে সোনা রূপার চেয়ে উত্তম।</td></tr>
+        <tr><td>33</td><td><span class="prep-phrase">equal to</span></td><td>She is equal <span class="prep">to</span> any challenge.</td><td class="bangla">সে যেকোনো চ্যালেঞ্জ মোকাবেলায় সক্ষম।</td></tr>
+        <tr><td>34</td><td><span class="prep-phrase">next to</span></td><td>The post office is next <span class="prep">to</span> the bank.</td><td class="bangla">পোস্ট অফিসটি ব্যাংকের পাশে।</td></tr>
+        <tr><td>35</td><td><span class="prep-phrase">prior to</span></td><td>Please inform me prior <span class="prep">to</span> your arrival.</td><td class="bangla">আসার আগে আমাকে জানিয়ে দিও।</td></tr>
+        <tr><td>36</td><td><span class="prep-phrase">hostile to</span></td><td>He was hostile <span class="prep">to</span> the new proposal.</td><td class="bangla">সে নতুন প্রস্তাবের বিরোধী ছিল।</td></tr>
+        <tr><td>37</td><td><span class="prep-phrase">kind to</span></td><td>Always be kind <span class="prep">to</span> animals.</td><td class="bangla">সবসময় প্রাণীদের প্রতি দয়ালু হও।</td></tr>
+        <tr><td>38</td><td><span class="prep-phrase">cruel to</span></td><td>It is wrong to be cruel <span class="prep">to</span> animals.</td><td class="bangla">প্রাণীদের প্রতি নিষ্ঠুর হওয়া ভুল।</td></tr>
+        <tr><td>39</td><td><span class="prep-phrase">faithful to</span></td><td>A dog is always faithful <span class="prep">to</span> its master.</td><td class="bangla">একটি কুকুর সবসময় তার মালিকের প্রতি বিশ্বস্ত।</td></tr>
+        <tr><td>40</td><td><span class="prep-phrase">loyal to</span></td><td>He remained loyal <span class="prep">to</span> his country.<span class="hsc-star">HSC</span></td><td class="bangla">সে তার দেশের প্রতি বিশ্বস্ত ছিল।</td></tr>
+        <tr><td>41</td><td><span class="prep-phrase">obedient to</span></td><td>Children should be obedient <span class="prep">to</span> their parents.</td><td class="bangla">শিশুদের তাদের পিতামাতার প্রতি অনুগত হওয়া উচিত।</td></tr>
+        <tr><td>42</td><td><span class="prep-phrase">opposed to</span></td><td>She was opposed <span class="prep">to</span> the idea from the start.</td><td class="bangla">সে শুরু থেকেই ধারণাটির বিরোধী ছিল।</td></tr>
+        <tr><td>43</td><td><span class="prep-phrase">contrary to</span></td><td>Contrary <span class="prep">to</span> expectations, he passed the exam.<span class="hsc-star">HSC</span></td><td class="bangla">প্রত্যাশার বিপরীতে, সে পরীক্ষায় পাস করেছে।</td></tr>
+        <tr><td>44</td><td><span class="prep-phrase">immune to</span></td><td>He seems immune <span class="prep">to</span> criticism.</td><td class="bangla">সে যেন সমালোচনায় প্রভাবিত হয় না।</td></tr>
+        <tr><td>45</td><td><span class="prep-phrase">sensitive to</span></td><td>She is very sensitive <span class="prep">to</span> cold weather.</td><td class="bangla">সে ঠান্ডা আবহাওয়ায় খুব সংবেদনশীল।</td></tr>
+        <tr><td>46</td><td><span class="prep-phrase">adjacent to</span></td><td>Our school is adjacent <span class="prep">to</span> the park.</td><td class="bangla">আমাদের স্কুলটি পার্কের পাশে।</td></tr>
+        <tr><td>47</td><td><span class="prep-phrase">alert to</span></td><td>Students should be alert <span class="prep">to</span> their surroundings.</td><td class="bangla">শিক্ষার্থীদের তাদের পরিবেশ সম্পর্কে সজাগ থাকা উচিত।</td></tr>
+        <tr><td>48</td><td><span class="prep-phrase">akin to</span></td><td>Jealousy is akin <span class="prep">to</span> hatred.</td><td class="bangla">ঈর্ষা ঘৃণার মতোই।</td></tr>
+        <tr><td>49</td><td><span class="prep-phrase">relative to</span></td><td>His performance was good relative <span class="prep">to</span> others.</td><td class="bangla">অন্যদের তুলনায় তার পারফরম্যান্স ভালো ছিল।</td></tr>
+        <tr><td>50</td><td><span class="prep-phrase">amenable to</span></td><td>He is always amenable <span class="prep">to</span> suggestions.</td><td class="bangla">সে সবসময় পরামর্শ গ্রহণে রাজি।</td></tr>
+        <tr><td>51</td><td><span class="prep-phrase">married to</span></td><td>She has been married <span class="prep">to</span> him for ten years.</td><td class="bangla">সে দশ বছর ধরে তার সাথে বিবাহিত।</td></tr>
+        <tr><td>52</td><td><span class="prep-phrase">attached to</span></td><td>The child is very attached <span class="prep">to</span> his grandmother.</td><td class="bangla">শিশুটি তার দাদির প্রতি খুব অনুরক্ত।</td></tr>
+        <tr><td>53</td><td><span class="prep-phrase">committed to</span></td><td>She is committed <span class="prep">to</span> her goals.<span class="hsc-star">HSC</span></td><td class="bangla">সে তার লক্ষ্যে প্রতিশ্রুতিবদ্ধ।</td></tr>
+        <tr><td>54</td><td><span class="prep-phrase">indifferent to</span></td><td>He is indifferent <span class="prep">to</span> fame and money.</td><td class="bangla">সে খ্যাতি ও অর্থের প্রতি উদাসীন।</td></tr>
+        <tr><td>55</td><td><span class="prep-phrase">partial to</span></td><td>He is partial <span class="prep">to</span> sweets.</td><td class="bangla">সে মিষ্টির প্রতি পক্ষপাতদুষ্ট।</td></tr>
+        <tr><td>56</td><td><span class="prep-phrase">proportionate to</span></td><td>Punishment should be proportionate <span class="prep">to</span> the crime.</td><td class="bangla">শাস্তি অপরাধের সমানুপাতিক হওয়া উচিত।</td></tr>
+        <tr><td>57</td><td><span class="prep-phrase">prone to</span></td><td>He is prone <span class="prep">to</span> making mistakes under pressure.</td><td class="bangla">চাপের মধ্যে সে ভুল করতে প্রবণ।</td></tr>
+        <tr><td>58</td><td><span class="prep-phrase">subject to</span></td><td>Prices are subject <span class="prep">to</span> change without notice.</td><td class="bangla">পূর্ব নোটিশ ছাড়াই মূল্য পরিবর্তন হতে পারে।</td></tr>
+        <tr><td>59</td><td><span class="prep-phrase">true to</span></td><td>He is true <span class="prep">to</span> his word.</td><td class="bangla">সে কথার মানুষ।</td></tr>
+        <tr><td>60</td><td><span class="prep-phrase">vital to</span></td><td>Water is vital <span class="prep">to</span> all living beings.</td><td class="bangla">সকল প্রাণীর জন্য পানি অপরিহার্য।</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════ -->
+<!-- SECTION 3: ADJECTIVE + AT/IN -->
+<!-- ════════════════════════════════════════ -->
+<div id="adj-at">
+  <div class="section-header">
+    <div class="icon">🎯</div>
+    <div>
+      <h2>Adjective + AT / IN</h2>
+      <p>Skills, emotions, surprise, and involvement</p>
+    </div>
+    <div class="section-count">Examples 61–100</div>
+  </div>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>#</th><th>Phrase</th><th>Example Sentence</th><th>বাংলা অর্থ</th></tr></thead>
+      <tbody>
+        <tr><td>61</td><td><span class="prep-phrase">good at</span></td><td>She is very good <span class="prep">at</span> mathematics.<span class="hsc-star">HSC</span></td><td class="bangla">সে গণিতে খুব পারদর্শী।</td></tr>
+        <tr><td>62</td><td><span class="prep-phrase">surprised at</span></td><td>I was surprised <span class="prep">at</span> his sudden arrival.</td><td class="bangla">তার আকস্মিক আগমনে আমি অবাক হয়ে গেলাম।</td></tr>
+        <tr><td>63</td><td><span class="prep-phrase">astonished at</span></td><td>Everyone was astonished <span class="prep">at</span> his performance.<span class="hsc-star">HSC</span></td><td class="bangla">সবাই তার পারফরম্যান্সে অবাক হয়ে গেল।</td></tr>
+        <tr><td>64</td><td><span class="prep-phrase">amazed at</span></td><td>She was amazed <span class="prep">at</span> the beauty of the place.</td><td class="bangla">জায়গাটির সৌন্দর্যে সে বিস্মিত হয়ে গেল।</td></tr>
+        <tr><td>65</td><td><span class="prep-phrase">shocked at</span></td><td>He was shocked <span class="prep">at</span> the bad news.</td><td class="bangla">খারাপ খবরে সে হতবাক হয়ে গেল।</td></tr>
+        <tr><td>66</td><td><span class="prep-phrase">expert at</span></td><td>He is an expert <span class="prep">at</span> cooking.<span class="hsc-star">HSC</span></td><td class="bangla">সে রান্নায় বিশেষজ্ঞ।</td></tr>
+        <tr><td>67</td><td><span class="prep-phrase">skilled in</span></td><td>She is skilled <span class="prep">in</span> computer programming.</td><td class="bangla">সে কম্পিউটার প্রোগ্রামিংয়ে দক্ষ।</td></tr>
+        <tr><td>68</td><td><span class="prep-phrase">interested in</span></td><td>He is very interested <span class="prep">in</span> cricket.<span class="hsc-star">HSC</span></td><td class="bangla">সে ক্রিকেটে খুব আগ্রহী।</td></tr>
+        <tr><td>69</td><td><span class="prep-phrase">experienced in</span></td><td>He is experienced <span class="prep">in</span> handling machines.</td><td class="bangla">সে যন্ত্রপাতি চালাতে অভিজ্ঞ।</td></tr>
+        <tr><td>70</td><td><span class="prep-phrase">involved in</span></td><td>She is involved <span class="prep">in</span> many social activities.</td><td class="bangla">সে অনেক সামাজিক কার্যকলাপে জড়িত।</td></tr>
+        <tr><td>71</td><td><span class="prep-phrase">absorbed in</span></td><td>He was absorbed <span class="prep">in</span> his work.</td><td class="bangla">সে তার কাজে মগ্ন ছিল।</td></tr>
+        <tr><td>72</td><td><span class="prep-phrase">confident in</span></td><td>I am confident <span class="prep">in</span> my ability to succeed.</td><td class="bangla">আমি আমার সাফল্যের সক্ষমতায় আত্মবিশ্বাসী।</td></tr>
+        <tr><td>73</td><td><span class="prep-phrase">deficient in</span></td><td>His diet is deficient <span class="prep">in</span> vitamins.</td><td class="bangla">তার খাদ্যে ভিটামিনের অভাব আছে।</td></tr>
+        <tr><td>74</td><td><span class="prep-phrase">rich in</span></td><td>Bangladesh is rich <span class="prep">in</span> natural resources.<span class="hsc-star">HSC</span></td><td class="bangla">বাংলাদেশ প্রাকৃতিক সম্পদে সমৃদ্ধ।</td></tr>
+        <tr><td>75</td><td><span class="prep-phrase">poor in</span></td><td>He is poor <span class="prep">in</span> English grammar.</td><td class="bangla">সে ইংরেজি ব্যাকরণে দুর্বল।</td></tr>
+        <tr><td>76</td><td><span class="prep-phrase">diligent in</span></td><td>She is diligent <span class="prep">in</span> her studies.</td><td class="bangla">সে পড়াশোনায় পরিশ্রমী।</td></tr>
+        <tr><td>77</td><td><span class="prep-phrase">backward in</span></td><td>This area is backward <span class="prep">in</span> education.</td><td class="bangla">এই অঞ্চলটি শিক্ষায় পিছিয়ে আছে।</td></tr>
+        <tr><td>78</td><td><span class="prep-phrase">prompt in</span></td><td>He is always prompt <span class="prep">in</span> replying to messages.</td><td class="bangla">সে সবসময় বার্তার উত্তর দিতে তৎপর।</td></tr>
+        <tr><td>79</td><td><span class="prep-phrase">successful in</span></td><td>She was successful <span class="prep">in</span> her mission.<span class="hsc-star">HSC</span></td><td class="bangla">সে তার মিশনে সফল হয়েছিল।</td></tr>
+        <tr><td>80</td><td><span class="prep-phrase">weak in</span></td><td>He is weak <span class="prep">in</span> mathematics.</td><td class="bangla">সে গণিতে দুর্বল।</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════ -->
+<!-- SECTION 4: ADJECTIVE + FOR/WITH -->
+<!-- ════════════════════════════════════════ -->
+<div id="adj-for">
+  <div class="section-header">
+    <div class="icon">💡</div>
+    <div>
+      <h2>Adjective + FOR / WITH</h2>
+      <p>Responsibility, gratitude, readiness, and relations with people</p>
+    </div>
+    <div class="section-count">Examples 81–120</div>
+  </div>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>#</th><th>Phrase</th><th>Example Sentence</th><th>বাংলা অর্থ</th></tr></thead>
+      <tbody>
+        <tr><td>81</td><td><span class="prep-phrase">responsible for</span></td><td>He is responsible <span class="prep">for</span> the accident.<span class="hsc-star">HSC</span></td><td class="bangla">দুর্ঘটনার জন্য সে দায়ী।</td></tr>
+        <tr><td>82</td><td><span class="prep-phrase">sorry for</span></td><td>She is sorry <span class="prep">for</span> her mistake.</td><td class="bangla">সে তার ভুলের জন্য অনুতপ্ত।</td></tr>
+        <tr><td>83</td><td><span class="prep-phrase">grateful for</span></td><td>I am grateful <span class="prep">for</span> your help.<span class="hsc-star">HSC</span></td><td class="bangla">আমি আপনার সাহায্যের জন্য কৃতজ্ঞ।</td></tr>
+        <tr><td>84</td><td><span class="prep-phrase">eligible for</span></td><td>She is eligible <span class="prep">for</span> the scholarship.<span class="hsc-star">HSC</span></td><td class="bangla">সে বৃত্তির জন্য যোগ্য।</td></tr>
+        <tr><td>85</td><td><span class="prep-phrase">fit for</span></td><td>He is not fit <span class="prep">for</span> military service.</td><td class="bangla">সে সামরিক সেবার জন্য উপযুক্ত নয়।</td></tr>
+        <tr><td>86</td><td><span class="prep-phrase">unfit for</span></td><td>This water is unfit <span class="prep">for</span> drinking.</td><td class="bangla">এই পানি পান করার যোগ্য নয়।</td></tr>
+        <tr><td>87</td><td><span class="prep-phrase">famous for</span></td><td>Bangladesh is famous <span class="prep">for</span> its garment industry.<span class="hsc-star">HSC</span></td><td class="bangla">বাংলাদেশ তার গার্মেন্ট শিল্পের জন্য বিখ্যাত।</td></tr>
+        <tr><td>88</td><td><span class="prep-phrase">ready for</span></td><td>Are you ready <span class="prep">for</span> the exam?</td><td class="bangla">তুমি কি পরীক্ষার জন্য প্রস্তুত?</td></tr>
+        <tr><td>89</td><td><span class="prep-phrase">hungry for</span></td><td>She is hungry <span class="prep">for</span> knowledge.</td><td class="bangla">সে জ্ঞানের জন্য আগ্রহী।</td></tr>
+        <tr><td>90</td><td><span class="prep-phrase">notorious for</span></td><td>He is notorious <span class="prep">for</span> his bad habits.</td><td class="bangla">সে তার খারাপ অভ্যাসের জন্য কুখ্যাত।</td></tr>
+        <tr><td>91</td><td><span class="prep-phrase">suitable for</span></td><td>This book is suitable <span class="prep">for</span> HSC students.</td><td class="bangla">এই বইটি এইচএসসি শিক্ষার্থীদের জন্য উপযুক্ত।</td></tr>
+        <tr><td>92</td><td><span class="prep-phrase">anxious for</span></td><td>Parents are always anxious <span class="prep">for</span> their children's future.</td><td class="bangla">বাবা-মা সবসময় তাদের সন্তানদের ভবিষ্যৎ নিয়ে উদ্বিগ্ন।</td></tr>
+        <tr><td>93</td><td><span class="prep-phrase">eager for</span></td><td>She is eager <span class="prep">for</span> new experiences.</td><td class="bangla">সে নতুন অভিজ্ঞতার জন্য আগ্রহী।</td></tr>
+        <tr><td>94</td><td><span class="prep-phrase">angry with</span></td><td>She was angry <span class="prep">with</span> her brother.<span class="hsc-star">HSC</span></td><td class="bangla">সে তার ভাইয়ের উপর রাগান্বিত ছিল।</td></tr>
+        <tr><td>95</td><td><span class="prep-phrase">pleased with</span></td><td>The teacher was pleased <span class="prep">with</span> the student.</td><td class="bangla">শিক্ষক শিক্ষার্থীতে সন্তুষ্ট ছিলেন।</td></tr>
+        <tr><td>96</td><td><span class="prep-phrase">satisfied with</span></td><td>Are you satisfied <span class="prep">with</span> your result?<span class="hsc-star">HSC</span></td><td class="bangla">তুমি কি তোমার ফলাফলে সন্তুষ্ট?</td></tr>
+        <tr><td>97</td><td><span class="prep-phrase">disgusted with</span></td><td>He was disgusted <span class="prep">with</span> the food.</td><td class="bangla">সে খাবারে বিরক্ত হয়ে গেল।</td></tr>
+        <tr><td>98</td><td><span class="prep-phrase">familiar with</span></td><td>Are you familiar <span class="prep">with</span> this area?<span class="hsc-star">HSC</span></td><td class="bangla">তুমি কি এই এলাকার সাথে পরিচিত?</td></tr>
+        <tr><td>99</td><td><span class="prep-phrase">popular with</span></td><td>He is very popular <span class="prep">with</span> his students.</td><td class="bangla">সে তার ছাত্রদের মধ্যে খুব জনপ্রিয়।</td></tr>
+        <tr><td>100</td><td><span class="prep-phrase">bored with</span></td><td>She was bored <span class="prep">with</span> the lecture.</td><td class="bangla">বক্তৃতায় সে বিরক্ত হয়ে গেল।</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════ -->
+<!-- SECTION 5: NOUN + OF/FOR/TO -->
+<!-- ════════════════════════════════════════ -->
+<div id="noun-of">
+  <div class="section-header">
+    <div class="icon">📚</div>
+    <div>
+      <h2>Noun + OF</h2>
+      <p>Belonging, composition, and association</p>
+    </div>
+    <div class="section-count">Examples 101–130</div>
+  </div>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>#</th><th>Phrase</th><th>Example Sentence</th><th>বাংলা অর্থ</th></tr></thead>
+      <tbody>
+        <tr><td>101</td><td><span class="prep-phrase">lack of</span></td><td>Lack <span class="prep">of</span> water causes drought.<span class="hsc-star">HSC</span></td><td class="bangla">পানির অভাবে খরা হয়।</td></tr>
+        <tr><td>102</td><td><span class="prep-phrase">loss of</span></td><td>The loss <span class="prep">of</span> memory is called amnesia.</td><td class="bangla">স্মৃতিশক্তি হারানোকে অ্যামনেশিয়া বলে।</td></tr>
+        <tr><td>103</td><td><span class="prep-phrase">fear of</span></td><td>Fear <span class="prep">of</span> failure stops many people from trying.</td><td class="bangla">ব্যর্থতার ভয় অনেককে চেষ্টা করা থেকে বিরত রাখে।</td></tr>
+        <tr><td>104</td><td><span class="prep-phrase">cause of</span></td><td>Poverty is the main cause <span class="prep">of</span> crime.</td><td class="bangla">দারিদ্র্য অপরাধের প্রধান কারণ।</td></tr>
+        <tr><td>105</td><td><span class="prep-phrase">result of</span></td><td>Hard work is the result <span class="prep">of</span> good habits.</td><td class="bangla">ভালো অভ্যাসের ফলাফল হলো কঠোর পরিশ্রম।</td></tr>
+        <tr><td>106</td><td><span class="prep-phrase">sign of</span></td><td>Yawning is a sign <span class="prep">of</span> tiredness.</td><td class="bangla">হাই তোলা ক্লান্তির লক্ষণ।</td></tr>
+        <tr><td>107</td><td><span class="prep-phrase">symbol of</span></td><td>The dove is a symbol <span class="prep">of</span> peace.</td><td class="bangla">ঘুঘু শান্তির প্রতীক।</td></tr>
+        <tr><td>108</td><td><span class="prep-phrase">knowledge of</span></td><td>He has a good knowledge <span class="prep">of</span> history.</td><td class="bangla">তার ইতিহাসের ভালো জ্ঞান আছে।</td></tr>
+        <tr><td>109</td><td><span class="prep-phrase">importance of</span></td><td>We know the importance <span class="prep">of</span> trees.<span class="hsc-star">HSC</span></td><td class="bangla">আমরা গাছের গুরুত্ব জানি।</td></tr>
+        <tr><td>110</td><td><span class="prep-phrase">advantage of</span></td><td>There are many advantages <span class="prep">of</span> technology.</td><td class="bangla">প্রযুক্তির অনেক সুবিধা আছে।</td></tr>
+        <tr><td>111</td><td><span class="prep-phrase">disadvantage of</span></td><td>There is a disadvantage <span class="prep">of</span> every invention.</td><td class="bangla">প্রতিটি আবিষ্কারের একটি অসুবিধা আছে।</td></tr>
+        <tr><td>112</td><td><span class="prep-phrase">source of</span></td><td>The sun is the main source <span class="prep">of</span> energy.</td><td class="bangla">সূর্য শক্তির প্রধান উৎস।</td></tr>
+        <tr><td>113</td><td><span class="prep-phrase">victim of</span></td><td>She was a victim <span class="prep">of</span> circumstances.</td><td class="bangla">সে পরিস্থিতির শিকার ছিল।</td></tr>
+        <tr><td>114</td><td><span class="prep-phrase">master of</span></td><td>He is a master <span class="prep">of</span> disguise.</td><td class="bangla">সে ছদ্মবেশে পটু।</td></tr>
+        <tr><td>115</td><td><span class="prep-phrase">proof of</span></td><td>There is no proof <span class="prep">of</span> his involvement.</td><td class="bangla">তার সম্পৃক্ততার কোনো প্রমাণ নেই।</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div id="noun-for">
+  <div class="section-header">
+    <div class="icon">📖</div>
+    <div>
+      <h2>Noun + FOR / TO</h2>
+      <p>Purpose, desire, and relations</p>
+    </div>
+    <div class="section-count">Examples 116–145</div>
+  </div>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>#</th><th>Phrase</th><th>Example Sentence</th><th>বাংলা অর্থ</th></tr></thead>
+      <tbody>
+        <tr><td>116</td><td><span class="prep-phrase">need for</span></td><td>There is a great need <span class="prep">for</span> doctors in rural areas.</td><td class="bangla">গ্রামীণ এলাকায় চিকিৎসকের বড় প্রয়োজন।</td></tr>
+        <tr><td>117</td><td><span class="prep-phrase">reason for</span></td><td>What is the reason <span class="prep">for</span> your absence?<span class="hsc-star">HSC</span></td><td class="bangla">তোমার অনুপস্থিতির কারণ কী?</td></tr>
+        <tr><td>118</td><td><span class="prep-phrase">taste for</span></td><td>She has a taste <span class="prep">for</span> classical music.</td><td class="bangla">তার শাস্ত্রীয় সঙ্গীতের রুচি আছে।</td></tr>
+        <tr><td>119</td><td><span class="prep-phrase">demand for</span></td><td>The demand <span class="prep">for</span> skilled workers is increasing.</td><td class="bangla">দক্ষ কর্মীর চাহিদা বাড়ছে।</td></tr>
+        <tr><td>120</td><td><span class="prep-phrase">desire for</span></td><td>His desire <span class="prep">for</span> knowledge is limitless.</td><td class="bangla">তার জ্ঞানের আকাঙ্ক্ষা অসীম।</td></tr>
+        <tr><td>121</td><td><span class="prep-phrase">respect for</span></td><td>We should have respect <span class="prep">for</span> our elders.</td><td class="bangla">আমাদের বড়দের প্রতি সম্মান থাকা উচিত।</td></tr>
+        <tr><td>122</td><td><span class="prep-phrase">affection for</span></td><td>She has great affection <span class="prep">for</span> her students.</td><td class="bangla">তার ছাত্রদের প্রতি তার গভীর ভালোবাসা আছে।</td></tr>
+        <tr><td>123</td><td><span class="prep-phrase">fondness for</span></td><td>He has a fondness <span class="prep">for</span> adventure.</td><td class="bangla">তার অ্যাডভেঞ্চারের প্রতি আগ্রহ আছে।</td></tr>
+        <tr><td>124</td><td><span class="prep-phrase">answer to</span></td><td>I do not know the answer <span class="prep">to</span> this question.<span class="hsc-star">HSC</span></td><td class="bangla">এই প্রশ্নের উত্তর আমি জানি না।</td></tr>
+        <tr><td>125</td><td><span class="prep-phrase">solution to</span></td><td>We need to find a solution <span class="prep">to</span> this problem.</td><td class="bangla">আমাদের এই সমস্যার সমাধান খুঁজে বের করতে হবে।</td></tr>
+        <tr><td>126</td><td><span class="prep-phrase">key to</span></td><td>Hard work is the key <span class="prep">to</span> success.</td><td class="bangla">কঠোর পরিশ্রম সাফল্যের চাবিকাঠি।</td></tr>
+        <tr><td>127</td><td><span class="prep-phrase">exception to</span></td><td>There is an exception <span class="prep">to</span> every rule.</td><td class="bangla">প্রতিটি নিয়মের একটি ব্যতিক্রম আছে।</td></tr>
+        <tr><td>128</td><td><span class="prep-phrase">threat to</span></td><td>Global warming is a threat <span class="prep">to</span> the environment.</td><td class="bangla">বৈশ্বিক উষ্ণায়ন পরিবেশের জন্য হুমকিস্বরূপ।</td></tr>
+        <tr><td>129</td><td><span class="prep-phrase">access to</span></td><td>Everyone should have access <span class="prep">to</span> clean water.</td><td class="bangla">প্রত্যেকের বিশুদ্ধ পানিতে প্রবেশাধিকার থাকা উচিত।</td></tr>
+        <tr><td>130</td><td><span class="prep-phrase">contribution to</span></td><td>His contribution <span class="prep">to</span> science is remarkable.<span class="hsc-star">HSC</span></td><td class="bangla">বিজ্ঞানে তার অবদান উল্লেখযোগ্য।</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════ -->
+<!-- SECTION 6: VERB + TO -->
+<!-- ════════════════════════════════════════ -->
+<div id="verb-to">
+  <div class="section-header">
+    <div class="icon">🔄</div>
+    <div>
+      <h2>Verb + TO</h2>
+      <p>Actions directed towards something or someone</p>
+    </div>
+    <div class="section-count">Examples 131–165</div>
+  </div>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>#</th><th>Phrase</th><th>Example Sentence</th><th>বাংলা অর্থ</th></tr></thead>
+      <tbody>
+        <tr><td>131</td><td><span class="prep-phrase">listen to</span></td><td>Students should listen <span class="prep">to</span> their teachers.</td><td class="bangla">শিক্ষার্থীদের শিক্ষকদের কথা শোনা উচিত।</td></tr>
+        <tr><td>132</td><td><span class="prep-phrase">belong to</span></td><td>This book belongs <span class="prep">to</span> me.<span class="hsc-star">HSC</span></td><td class="bangla">এই বইটি আমার।</td></tr>
+        <tr><td>133</td><td><span class="prep-phrase">respond to</span></td><td>Please respond <span class="prep">to</span> my letter as soon as possible.</td><td class="bangla">দয়া করে যত তাড়াতাড়ি সম্ভব আমার চিঠির জবাব দিন।</td></tr>
+        <tr><td>134</td><td><span class="prep-phrase">refer to</span></td><td>She referred <span class="prep">to</span> the dictionary for help.</td><td class="bangla">সে সাহায্যের জন্য অভিধান দেখল।</td></tr>
+        <tr><td>135</td><td><span class="prep-phrase">apply to</span></td><td>He applied <span class="prep">to</span> the university for admission.</td><td class="bangla">সে বিশ্ববিদ্যালয়ে ভর্তির জন্য আবেদন করল।</td></tr>
+        <tr><td>136</td><td><span class="prep-phrase">agree to</span></td><td>He agreed <span class="prep">to</span> the proposal.<span class="hsc-star">HSC</span></td><td class="bangla">সে প্রস্তাবে সম্মত হলো।</td></tr>
+        <tr><td>137</td><td><span class="prep-phrase">object to</span></td><td>She objected <span class="prep">to</span> the new rule.</td><td class="bangla">সে নতুন নিয়মে আপত্তি জানাল।</td></tr>
+        <tr><td>138</td><td><span class="prep-phrase">resort to</span></td><td>He had to resort <span class="prep">to</span> borrowing money.</td><td class="bangla">তাকে টাকা ধার করতে বাধ্য হতে হলো।</td></tr>
+        <tr><td>139</td><td><span class="prep-phrase">succeed to</span></td><td>He succeeded <span class="prep">to</span> his father's property.</td><td class="bangla">সে তার বাবার সম্পত্তির উত্তরাধিকারী হলো।</td></tr>
+        <tr><td>140</td><td><span class="prep-phrase">attend to</span></td><td>Please attend <span class="prep">to</span> the patient carefully.</td><td class="bangla">দয়া করে রোগীর প্রতি সতর্কভাবে মনোযোগ দিন।</td></tr>
+        <tr><td>141</td><td><span class="prep-phrase">adapt to</span></td><td>Humans can adapt <span class="prep">to</span> different environments.</td><td class="bangla">মানুষ বিভিন্ন পরিবেশে মানিয়ে নিতে পারে।</td></tr>
+        <tr><td>142</td><td><span class="prep-phrase">contribute to</span></td><td>Trees contribute <span class="prep">to</span> a healthy environment.</td><td class="bangla">গাছ সুস্থ পরিবেশে অবদান রাখে।</td></tr>
+        <tr><td>143</td><td><span class="prep-phrase">consent to</span></td><td>The parents consented <span class="prep">to</span> the marriage.</td><td class="bangla">বাবা-মা বিয়েতে সম্মতি দিল।</td></tr>
+        <tr><td>144</td><td><span class="prep-phrase">confess to</span></td><td>He confessed <span class="prep">to</span> his crime.<span class="hsc-star">HSC</span></td><td class="bangla">সে তার অপরাধ স্বীকার করল।</td></tr>
+        <tr><td>145</td><td><span class="prep-phrase">submit to</span></td><td>He submitted <span class="prep">to</span> the authority.</td><td class="bangla">সে কর্তৃপক্ষের কাছে আত্মসমর্পণ করল।</td></tr>
+        <tr><td>146</td><td><span class="prep-phrase">surrender to</span></td><td>The enemy surrendered <span class="prep">to</span> the army.</td><td class="bangla">শত্রুপক্ষ সেনাবাহিনীর কাছে আত্মসমর্পণ করল।</td></tr>
+        <tr><td>147</td><td><span class="prep-phrase">yield to</span></td><td>Never yield <span class="prep">to</span> temptation.</td><td class="bangla">কখনো প্রলোভনের কাছে নতি স্বীকার করো না।</td></tr>
+        <tr><td>148</td><td><span class="prep-phrase">turn to</span></td><td>She turned <span class="prep">to</span> her mother for comfort.</td><td class="bangla">সান্ত্বনার জন্য সে তার মায়ের কাছে গেল।</td></tr>
+        <tr><td>149</td><td><span class="prep-phrase">point to</span></td><td>His actions point <span class="prep">to</span> a larger plan.</td><td class="bangla">তার কাজকর্ম একটি বড় পরিকল্পনার ইঙ্গিত দেয়।</td></tr>
+        <tr><td>150</td><td><span class="prep-phrase">pay attention to</span></td><td>Pay attention <span class="prep">to</span> what the teacher says.<span class="hsc-star">HSC</span></td><td class="bangla">শিক্ষক যা বলেন সেদিকে মনোযোগ দাও।</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════ -->
+<!-- SECTION 7: VERB + OF/FROM -->
+<!-- ════════════════════════════════════════ -->
+<div id="verb-of">
+  <div class="section-header">
+    <div class="icon">🔍</div>
+    <div>
+      <h2>Verb + OF / FROM</h2>
+      <p>Origin, separation, and awareness</p>
+    </div>
+    <div class="section-count">Examples 151–185</div>
+  </div>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>#</th><th>Phrase</th><th>Example Sentence</th><th>বাংলা অর্থ</th></tr></thead>
+      <tbody>
+        <tr><td>151</td><td><span class="prep-phrase">consist of</span></td><td>Water consists <span class="prep">of</span> hydrogen and oxygen.<span class="hsc-star">HSC</span></td><td class="bangla">পানি হাইড্রোজেন ও অক্সিজেন দিয়ে গঠিত।</td></tr>
+        <tr><td>152</td><td><span class="prep-phrase">consist in</span></td><td>True happiness consists <span class="prep">in</span> contentment.</td><td class="bangla">সত্যিকারের সুখ সন্তুষ্টির মধ্যে নিহিত।</td></tr>
+        <tr><td>153</td><td><span class="prep-phrase">think of</span></td><td>I often think <span class="prep">of</span> my hometown.</td><td class="bangla">আমি প্রায়ই আমার জন্মস্থানের কথা ভাবি।</td></tr>
+        <tr><td>154</td><td><span class="prep-phrase">approve of</span></td><td>I do not approve <span class="prep">of</span> his behaviour.</td><td class="bangla">আমি তার আচরণ অনুমোদন করি না।</td></tr>
+        <tr><td>155</td><td><span class="prep-phrase">suspect of</span></td><td>He was suspected <span class="prep">of</span> theft.</td><td class="bangla">চুরির সন্দেহে তাকে সন্দেহভাজন করা হলো।</td></tr>
+        <tr><td>156</td><td><span class="prep-phrase">accuse of</span></td><td>He was accused <span class="prep">of</span> cheating.<span class="hsc-star">HSC</span></td><td class="bangla">তাকে প্রতারণার অভিযোগে অভিযুক্ত করা হয়েছে।</td></tr>
+        <tr><td>157</td><td><span class="prep-phrase">boast of</span></td><td>He always boasts <span class="prep">of</span> his wealth.</td><td class="bangla">সে সবসময় তার সম্পদ নিয়ে বড়াই করে।</td></tr>
+        <tr><td>158</td><td><span class="prep-phrase">complain of</span></td><td>She complained <span class="prep">of</span> a headache.</td><td class="bangla">সে মাথাব্যথার অভিযোগ করল।</td></tr>
+        <tr><td>159</td><td><span class="prep-phrase">die of</span></td><td>Many people die <span class="prep">of</span> hunger in the world.<span class="hsc-star">HSC</span></td><td class="bangla">বিশ্বে অনেক মানুষ ক্ষুধায় মারা যায়।</td></tr>
+        <tr><td>160</td><td><span class="prep-phrase">die from</span></td><td>He died <span class="prep">from</span> a wound he received in the war.</td><td class="bangla">যুদ্ধে পাওয়া আঘাতের কারণে সে মারা গেল।</td></tr>
+        <tr><td>161</td><td><span class="prep-phrase">hear of</span></td><td>I have heard <span class="prep">of</span> this scientist before.</td><td class="bangla">আমি এই বিজ্ঞানীর কথা আগে শুনেছি।</td></tr>
+        <tr><td>162</td><td><span class="prep-phrase">hear from</span></td><td>I have not heard <span class="prep">from</span> him for a long time.</td><td class="bangla">অনেকদিন ধরে তার কাছ থেকে কোনো খবর পাইনি।</td></tr>
+        <tr><td>163</td><td><span class="prep-phrase">recover from</span></td><td>She has fully recovered <span class="prep">from</span> her illness.</td><td class="bangla">সে তার অসুস্থতা থেকে সম্পূর্ণ সুস্থ হয়েছে।</td></tr>
+        <tr><td>164</td><td><span class="prep-phrase">suffer from</span></td><td>He suffers <span class="prep">from</span> diabetes.<span class="hsc-star">HSC</span></td><td class="bangla">সে ডায়াবেটিসে ভোগে।</td></tr>
+        <tr><td>165</td><td><span class="prep-phrase">benefit from</span></td><td>We all benefit <span class="prep">from</span> technology.</td><td class="bangla">আমরা সবাই প্রযুক্তি থেকে উপকৃত হই।</td></tr>
+        <tr><td>166</td><td><span class="prep-phrase">abstain from</span></td><td>He abstained <span class="prep">from</span> voting.</td><td class="bangla">সে ভোট দেওয়া থেকে বিরত থাকল।</td></tr>
+        <tr><td>167</td><td><span class="prep-phrase">refrain from</span></td><td>Please refrain <span class="prep">from</span> smoking in this area.</td><td class="bangla">দয়া করে এই এলাকায় ধূমপান থেকে বিরত থাকুন।</td></tr>
+        <tr><td>168</td><td><span class="prep-phrase">prevent from</span></td><td>Rain prevented us <span class="prep">from</span> going out.</td><td class="bangla">বৃষ্টি আমাদের বের হতে বাধা দিল।</td></tr>
+        <tr><td>169</td><td><span class="prep-phrase">escape from</span></td><td>The prisoner escaped <span class="prep">from</span> jail.</td><td class="bangla">বন্দী জেল থেকে পালিয়ে গেল।</td></tr>
+        <tr><td>170</td><td><span class="prep-phrase">differ from</span></td><td>His opinion differs <span class="prep">from</span> mine.<span class="hsc-star">HSC</span></td><td class="bangla">তার মতামত আমার থেকে আলাদা।</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════ -->
+<!-- SECTION 8: VERB + IN/ON -->
+<!-- ════════════════════════════════════════ -->
+<div id="verb-in">
+  <div class="section-header">
+    <div class="icon">🔎</div>
+    <div>
+      <h2>Verb + IN / ON</h2>
+      <p>Participation, belief, and dependence</p>
+    </div>
+    <div class="section-count">Examples 171–210</div>
+  </div>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>#</th><th>Phrase</th><th>Example Sentence</th><th>বাংলা অর্থ</th></tr></thead>
+      <tbody>
+        <tr><td>171</td><td><span class="prep-phrase">believe in</span></td><td>I believe <span class="prep">in</span> hard work.<span class="hsc-star">HSC</span></td><td class="bangla">আমি কঠোর পরিশ্রমে বিশ্বাসী।</td></tr>
+        <tr><td>172</td><td><span class="prep-phrase">succeed in</span></td><td>He succeeded <span class="prep">in</span> passing the examination.<span class="hsc-star">HSC</span></td><td class="bangla">সে পরীক্ষায় উত্তীর্ণ হতে সফল হলো।</td></tr>
+        <tr><td>173</td><td><span class="prep-phrase">involve in</span></td><td>Do not involve yourself <span class="prep">in</span> bad company.</td><td class="bangla">খারাপ সঙ্গে নিজেকে জড়াবে না।</td></tr>
+        <tr><td>174</td><td><span class="prep-phrase">persist in</span></td><td>She persisted <span class="prep">in</span> her effort despite failure.</td><td class="bangla">ব্যর্থতা সত্ত্বেও সে তার প্রচেষ্টায় অটল থাকল।</td></tr>
+        <tr><td>175</td><td><span class="prep-phrase">result in</span></td><td>Carelessness may result <span class="prep">in</span> accidents.</td><td class="bangla">অসতর্কতার ফলে দুর্ঘটনা ঘটতে পারে।</td></tr>
+        <tr><td>176</td><td><span class="prep-phrase">engage in</span></td><td>She engages <span class="prep">in</span> various social activities.</td><td class="bangla">সে বিভিন্ন সামাজিক কার্যক্রমে নিযুক্ত।</td></tr>
+        <tr><td>177</td><td><span class="prep-phrase">take part in</span></td><td>He takes part <span class="prep">in</span> all school events.</td><td class="bangla">সে সমস্ত স্কুল অনুষ্ঠানে অংশ নেয়।</td></tr>
+        <tr><td>178</td><td><span class="prep-phrase">participate in</span></td><td>Students should participate <span class="prep">in</span> sports.</td><td class="bangla">শিক্ষার্থীদের খেলাধুলায় অংশগ্রহণ করা উচিত।</td></tr>
+        <tr><td>179</td><td><span class="prep-phrase">deal in</span></td><td>He deals <span class="prep">in</span> electronics.</td><td class="bangla">সে ইলেকট্রনিক্স ব্যবসায় নিযুক্ত।</td></tr>
+        <tr><td>180</td><td><span class="prep-phrase">deal with</span></td><td>He knows how to deal <span class="prep">with</span> difficult situations.</td><td class="bangla">সে কঠিন পরিস্থিতি সামলাতে জানে।</td></tr>
+        <tr><td>181</td><td><span class="prep-phrase">indulge in</span></td><td>He indulges <span class="prep">in</span> unnecessary gossip.</td><td class="bangla">সে অপ্রয়োজনীয় গল্পগুজবে মেতে ওঠে।</td></tr>
+        <tr><td>182</td><td><span class="prep-phrase">count on</span></td><td>You can always count <span class="prep">on</span> me for help.</td><td class="bangla">তুমি সাহায্যের জন্য সবসময় আমার উপর নির্ভর করতে পারো।</td></tr>
+        <tr><td>183</td><td><span class="prep-phrase">insist on</span></td><td>He insisted <span class="prep">on</span> paying the bill.<span class="hsc-star">HSC</span></td><td class="bangla">সে বিল পরিশোধ করার জন্য জিদ ধরল।</td></tr>
+        <tr><td>184</td><td><span class="prep-phrase">depend on</span></td><td>Success depends <span class="prep">on</span> hard work.<span class="hsc-star">HSC</span></td><td class="bangla">সাফল্য কঠোর পরিশ্রমের উপর নির্ভর করে।</td></tr>
+        <tr><td>185</td><td><span class="prep-phrase">rely on</span></td><td>He relies <span class="prep">on</span> his brother for financial help.</td><td class="bangla">আর্থিক সাহায্যের জন্য সে তার ভাইয়ের উপর নির্ভর করে।</td></tr>
+        <tr><td>186</td><td><span class="prep-phrase">concentrate on</span></td><td>Concentrate <span class="prep">on</span> your studies before the exam.</td><td class="bangla">পরীক্ষার আগে পড়াশোনায় মনোযোগ দাও।</td></tr>
+        <tr><td>187</td><td><span class="prep-phrase">comment on</span></td><td>She commented <span class="prep">on</span> his speech.</td><td class="bangla">সে তার বক্তৃতার উপর মন্তব্য করল।</td></tr>
+        <tr><td>188</td><td><span class="prep-phrase">decide on</span></td><td>They decided <span class="prep">on</span> a picnic spot.</td><td class="bangla">তারা একটি পিকনিকের স্থান ঠিক করল।</td></tr>
+        <tr><td>189</td><td><span class="prep-phrase">look down on</span></td><td>Never look down <span class="prep">on</span> the poor.</td><td class="bangla">কখনো গরিবদের অবজ্ঞা করো না।</td></tr>
+        <tr><td>190</td><td><span class="prep-phrase">pride oneself on</span></td><td>She prides herself <span class="prep">on</span> her punctuality.</td><td class="bangla">সে তার সময়নিষ্ঠার জন্য নিজেকে গর্বিত মনে করে।</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════ -->
+<!-- SECTION 9: VERB + AT/WITH -->
+<!-- ════════════════════════════════════════ -->
+<div id="verb-at">
+  <div class="section-header">
+    <div class="icon">🎯</div>
+    <div>
+      <h2>Verb + AT / WITH</h2>
+      <p>Targeting, reactions, and interactions</p>
+    </div>
+    <div class="section-count">Examples 191–220</div>
+  </div>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>#</th><th>Phrase</th><th>Example Sentence</th><th>বাংলা অর্থ</th></tr></thead>
+      <tbody>
+        <tr><td>191</td><td><span class="prep-phrase">laugh at</span></td><td>Do not laugh <span class="prep">at</span> the poor.<span class="hsc-star">HSC</span></td><td class="bangla">গরিবদের নিয়ে হাসাহাসি করো না।</td></tr>
+        <tr><td>192</td><td><span class="prep-phrase">look at</span></td><td>Look <span class="prep">at</span> the blackboard carefully.</td><td class="bangla">ব্ল্যাকবোর্ডের দিকে মনোযোগ দিয়ে তাকাও।</td></tr>
+        <tr><td>193</td><td><span class="prep-phrase">wonder at</span></td><td>We wonder <span class="prep">at</span> the beauty of nature.</td><td class="bangla">আমরা প্রকৃতির সৌন্দর্যে বিস্মিত হই।</td></tr>
+        <tr><td>194</td><td><span class="prep-phrase">aim at</span></td><td>He aimed <span class="prep">at</span> becoming a doctor.<span class="hsc-star">HSC</span></td><td class="bangla">তার ডাক্তার হওয়ার লক্ষ্য ছিল।</td></tr>
+        <tr><td>195</td><td><span class="prep-phrase">shout at</span></td><td>Please do not shout <span class="prep">at</span> the students.</td><td class="bangla">দয়া করে শিক্ষার্থীদের উপর চিৎকার করো না।</td></tr>
+        <tr><td>196</td><td><span class="prep-phrase">glance at</span></td><td>She glanced <span class="prep">at</span> the clock.</td><td class="bangla">সে ঘড়ির দিকে একবার তাকাল।</td></tr>
+        <tr><td>197</td><td><span class="prep-phrase">arrive at</span></td><td>We arrived <span class="prep">at</span> the station just in time.</td><td class="bangla">আমরা ঠিক সময়মতো স্টেশনে পৌঁছলাম।</td></tr>
+        <tr><td>198</td><td><span class="prep-phrase">knock at</span></td><td>Someone knocked <span class="prep">at</span> the door.</td><td class="bangla">কেউ দরজায় টোকা দিল।</td></tr>
+        <tr><td>199</td><td><span class="prep-phrase">stare at</span></td><td>It is rude to stare <span class="prep">at</span> people.</td><td class="bangla">মানুষের দিকে একদৃষ্টিতে তাকানো অভদ্রতা।</td></tr>
+        <tr><td>200</td><td><span class="prep-phrase">agree with</span></td><td>I agree <span class="prep">with</span> your opinion.<span class="hsc-star">HSC</span></td><td class="bangla">আমি তোমার মতামতের সাথে একমত।</td></tr>
+        <tr><td>201</td><td><span class="prep-phrase">comply with</span></td><td>You must comply <span class="prep">with</span> the school rules.</td><td class="bangla">তোমাকে স্কুলের নিয়ম মেনে চলতে হবে।</td></tr>
+        <tr><td>202</td><td><span class="prep-phrase">cope with</span></td><td>She copes well <span class="prep">with</span> stress.</td><td class="bangla">সে চাপ ভালোভাবে সামলায়।</td></tr>
+        <tr><td>203</td><td><span class="prep-phrase">interfere with</span></td><td>Do not interfere <span class="prep">with</span> others' affairs.</td><td class="bangla">অন্যের বিষয়ে নাক গলাবে না।</td></tr>
+        <tr><td>204</td><td><span class="prep-phrase">tamper with</span></td><td>Do not tamper <span class="prep">with</span> the machine.</td><td class="bangla">যন্ত্রটির সাথে টেম্পার করো না।</td></tr>
+        <tr><td>205</td><td><span class="prep-phrase">quarrel with</span></td><td>He often quarrels <span class="prep">with</span> his neighbours.</td><td class="bangla">সে প্রায়ই প্রতিবেশীদের সাথে ঝগড়া করে।</td></tr>
+        <tr><td>206</td><td><span class="prep-phrase">sympathise with</span></td><td>I sympathise <span class="prep">with</span> the victims.</td><td class="bangla">আমি ভুক্তভোগীদের প্রতি সহানুভূতি জানাই।</td></tr>
+        <tr><td>207</td><td><span class="prep-phrase">bear with</span></td><td>Please bear <span class="prep">with</span> me for a moment.</td><td class="bangla">একটু আমার সাথে সহ্য করুন।</td></tr>
+        <tr><td>208</td><td><span class="prep-phrase">meet with</span></td><td>He met <span class="prep">with</span> an accident yesterday.</td><td class="bangla">সে গতকাল একটি দুর্ঘটনার শিকার হয়েছে।</td></tr>
+        <tr><td>209</td><td><span class="prep-phrase">part with</span></td><td>He could not part <span class="prep">with</span> his old books.</td><td class="bangla">সে তার পুরনো বইগুলো থেকে আলাদা হতে পারল না।</td></tr>
+        <tr><td>210</td><td><span class="prep-phrase">put up with</span></td><td>I cannot put up <span class="prep">with</span> this noise.</td><td class="bangla">এই শব্দ আমি সহ্য করতে পারছি না।</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════ -->
+<!-- SECTION 10: VERB + FOR -->
+<!-- ════════════════════════════════════════ -->
+<div id="verb-for">
+  <div class="section-header">
+    <div class="icon">🌟</div>
+    <div>
+      <h2>Verb + FOR</h2>
+      <p>Searching, waiting, asking, and exchanging</p>
+    </div>
+    <div class="section-count">Examples 211–240</div>
+  </div>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>#</th><th>Phrase</th><th>Example Sentence</th><th>বাংলা অর্থ</th></tr></thead>
+      <tbody>
+        <tr><td>211</td><td><span class="prep-phrase">look for</span></td><td>She is looking <span class="prep">for</span> a new job.</td><td class="bangla">সে একটি নতুন চাকরি খুঁজছে।</td></tr>
+        <tr><td>212</td><td><span class="prep-phrase">wait for</span></td><td>We are waiting <span class="prep">for</span> the bus.</td><td class="bangla">আমরা বাসের জন্য অপেক্ষা করছি।</td></tr>
+        <tr><td>213</td><td><span class="prep-phrase">apply for</span></td><td>He applied <span class="prep">for</span> the post of headmaster.</td><td class="bangla">সে প্রধান শিক্ষকের পদের জন্য আবেদন করল।</td></tr>
+        <tr><td>214</td><td><span class="prep-phrase">ask for</span></td><td>Never be ashamed to ask <span class="prep">for</span> help.</td><td class="bangla">সাহায্য চাইতে কখনো লজ্জিত হবে না।</td></tr>
+        <tr><td>215</td><td><span class="prep-phrase">care for</span></td><td>She cares <span class="prep">for</span> the elderly in the community.</td><td class="bangla">সে সমাজের বৃদ্ধদের যত্ন নেয়।</td></tr>
+        <tr><td>216</td><td><span class="prep-phrase">long for</span></td><td>She longed <span class="prep">for</span> a peaceful life.</td><td class="bangla">সে একটি শান্তিপূর্ণ জীবনের জন্য আকাঙ্ক্ষা করত।</td></tr>
+        <tr><td>217</td><td><span class="prep-phrase">search for</span></td><td>The police searched <span class="prep">for</span> the missing child.</td><td class="bangla">পুলিশ নিখোঁজ শিশুটিকে খুঁজল।</td></tr>
+        <tr><td>218</td><td><span class="prep-phrase">strive for</span></td><td>We should strive <span class="prep">for</span> excellence.</td><td class="bangla">আমাদের শ্রেষ্ঠত্বের জন্য প্রচেষ্টা করা উচিত।</td></tr>
+        <tr><td>219</td><td><span class="prep-phrase">hope for</span></td><td>We hope <span class="prep">for</span> a better future.</td><td class="bangla">আমরা একটি উন্নত ভবিষ্যতের আশা করি।</td></tr>
+        <tr><td>220</td><td><span class="prep-phrase">hunger for</span></td><td>He hungers <span class="prep">for</span> recognition.</td><td class="bangla">সে স্বীকৃতির জন্য আগ্রহী।</td></tr>
+        <tr><td>221</td><td><span class="prep-phrase">pay for</span></td><td>You will have to pay <span class="prep">for</span> your mistakes.</td><td class="bangla">তোমাকে তোমার ভুলের মূল্য চুকাতে হবে।</td></tr>
+        <tr><td>222</td><td><span class="prep-phrase">account for</span></td><td>He could not account <span class="prep">for</span> his absence.</td><td class="bangla">সে তার অনুপস্থিতির ব্যাখ্যা দিতে পারল না।</td></tr>
+        <tr><td>223</td><td><span class="prep-phrase">stand for</span></td><td>The flag stands <span class="prep">for</span> our national pride.</td><td class="bangla">পতাকা আমাদের জাতীয় গর্বের প্রতীক।</td></tr>
+        <tr><td>224</td><td><span class="prep-phrase">vote for</span></td><td>Every citizen should vote <span class="prep">for</span> the right candidate.</td><td class="bangla">প্রতিটি নাগরিকের সঠিক প্রার্থীকে ভোট দেওয়া উচিত।</td></tr>
+        <tr><td>225</td><td><span class="prep-phrase">yearn for</span></td><td>The soldier yearned <span class="prep">for</span> his home.</td><td class="bangla">সৈনিকটি তার বাড়ির জন্য আকুল হয়ে উঠল।</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════ -->
+<!-- SECTION 11: MIXED / OTHERS -->
+<!-- ════════════════════════════════════════ -->
+<div id="mixed">
+  <div class="section-header">
+    <div class="icon">🏆</div>
+    <div>
+      <h2>Mixed & High-Frequency HSC Phrases</h2>
+      <p>Essential phrases seen repeatedly across all Bangladesh boards</p>
+    </div>
+    <div class="section-count">Examples 226–300</div>
+  </div>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>#</th><th>Phrase</th><th>Example Sentence</th><th>বাংলা অর্থ</th></tr></thead>
+      <tbody>
+        <tr><td>226</td><td><span class="prep-phrase">abide by</span></td><td>We must abide <span class="prep">by</span> the law.<span class="hsc-star">HSC</span></td><td class="bangla">আমাদের আইন মেনে চলতে হবে।</td></tr>
+        <tr><td>227</td><td><span class="prep-phrase">act on</span></td><td>You should act <span class="prep">on</span> your doctor's advice.</td><td class="bangla">তোমার ডাক্তারের পরামর্শ অনুযায়ী কাজ করা উচিত।</td></tr>
+        <tr><td>228</td><td><span class="prep-phrase">attribute to</span></td><td>His success is attributed <span class="prep">to</span> hard work.</td><td class="bangla">তার সাফল্যের কারণ কঠোর পরিশ্রম।</td></tr>
+        <tr><td>229</td><td><span class="prep-phrase">call on</span></td><td>I will call <span class="prep">on</span> you tomorrow.</td><td class="bangla">আমি আগামীকাল তোমার কাছে যাব।</td></tr>
+        <tr><td>230</td><td><span class="prep-phrase">call for</span></td><td>This situation calls <span class="prep">for</span> immediate action.</td><td class="bangla">এই পরিস্থিতিতে তাৎক্ষণিক ব্যবস্থার প্রয়োজন।</td></tr>
+        <tr><td>231</td><td><span class="prep-phrase">carry on</span></td><td>Please carry <span class="prep">on</span> with your work.</td><td class="bangla">দয়া করে তোমার কাজ চালিয়ে যাও।</td></tr>
+        <tr><td>232</td><td><span class="prep-phrase">come across</span></td><td>She came <span class="prep">across</span> an old letter in the drawer.</td><td class="bangla">সে দেরাজে একটি পুরনো চিঠি খুঁজে পেল।</td></tr>
+        <tr><td>233</td><td><span class="prep-phrase">cut down on</span></td><td>You should cut down <span class="prep">on</span> junk food.</td><td class="bangla">তোমার জাঙ্ক ফুড কমানো উচিত।</td></tr>
+        <tr><td>234</td><td><span class="prep-phrase">discriminate against</span></td><td>We should not discriminate <span class="prep">against</span> anyone.</td><td class="bangla">আমাদের কাউকে বৈষম্য করা উচিত নয়।</td></tr>
+        <tr><td>235</td><td><span class="prep-phrase">divide into</span></td><td>The class was divided <span class="prep">into</span> two groups.</td><td class="bangla">ক্লাসটি দুটি দলে বিভক্ত হলো।</td></tr>
+        <tr><td>236</td><td><span class="prep-phrase">exposed to</span></td><td>Children should not be exposed <span class="prep">to</span> violence.</td><td class="bangla">শিশুদের সহিংসতার সংস্পর্শে আনা উচিত নয়।</td></tr>
+        <tr><td>237</td><td><span class="prep-phrase">faced with</span></td><td>He was faced <span class="prep">with</span> a difficult decision.</td><td class="bangla">সে একটি কঠিন সিদ্ধান্তের মুখোমুখি হলো।</td></tr>
+        <tr><td>238</td><td><span class="prep-phrase">fall back on</span></td><td>We can always fall back <span class="prep">on</span> savings in an emergency.</td><td class="bangla">জরুরি অবস্থায় আমরা সঞ্চয়ের উপর নির্ভর করতে পারি।</td></tr>
+        <tr><td>239</td><td><span class="prep-phrase">give in to</span></td><td>Never give in <span class="prep">to</span> peer pressure.</td><td class="bangla">বন্ধুদের চাপের কাছে কখনো মাথা নত করো না।</td></tr>
+        <tr><td>240</td><td><span class="prep-phrase">give up</span></td><td>Never give <span class="prep">up</span> on your dreams.</td><td class="bangla">তোমার স্বপ্ন ছেড়ে দিও না।</td></tr>
+        <tr><td>241</td><td><span class="prep-phrase">go through</span></td><td>She went <span class="prep">through</span> many hardships in life.</td><td class="bangla">সে জীবনে অনেক কষ্ট সহ্য করেছে।</td></tr>
+        <tr><td>242</td><td><span class="prep-phrase">grateful to</span></td><td>I am grateful <span class="prep">to</span> my teacher for guidance.<span class="hsc-star">HSC</span></td><td class="bangla">পথনির্দেশনার জন্য আমি আমার শিক্ষকের কাছে কৃতজ্ঞ।</td></tr>
+        <tr><td>243</td><td><span class="prep-phrase">indebted to</span></td><td>I am deeply indebted <span class="prep">to</span> my parents.</td><td class="bangla">আমি আমার বাবা-মায়ের কাছে গভীরভাবে ঋণী।</td></tr>
+        <tr><td>244</td><td><span class="prep-phrase">intent on</span></td><td>She was intent <span class="prep">on</span> achieving her goal.</td><td class="bangla">সে তার লক্ষ্য অর্জনে সংকল্পবদ্ধ ছিল।</td></tr>
+        <tr><td>245</td><td><span class="prep-phrase">keen on</span></td><td>He is keen <span class="prep">on</span> photography.</td><td class="bangla">সে ফটোগ্রাফিতে উৎসাহী।</td></tr>
+        <tr><td>246</td><td><span class="prep-phrase">lay emphasis on</span></td><td>The teacher laid emphasis <span class="prep">on</span> grammar.<span class="hsc-star">HSC</span></td><td class="bangla">শিক্ষক ব্যাকরণের উপর জোর দিলেন।</td></tr>
+        <tr><td>247</td><td><span class="prep-phrase">make fun of</span></td><td>Do not make fun <span class="prep">of</span> disabled people.</td><td class="bangla">প্রতিবন্ধী মানুষদের নিয়ে মজা করো না।</td></tr>
+        <tr><td>248</td><td><span class="prep-phrase">obsessed with</span></td><td>He is obsessed <span class="prep">with</span> winning.</td><td class="bangla">সে জেতার ব্যাপারে মাথায় পোকা।</td></tr>
+        <tr><td>249</td><td><span class="prep-phrase">persist with</span></td><td>Despite failures, persist <span class="prep">with</span> your efforts.</td><td class="bangla">ব্যর্থতা সত্ত্বেও তোমার প্রচেষ্টা চালিয়ে যাও।</td></tr>
+        <tr><td>250</td><td><span class="prep-phrase">plead for</span></td><td>The lawyer pleaded <span class="prep">for</span> mercy.</td><td class="bangla">আইনজীবী করুণার জন্য আবেদন করলেন।</td></tr>
+        <tr><td>251</td><td><span class="prep-phrase">plead with</span></td><td>She pleaded <span class="prep">with</span> the judge to reduce the sentence.</td><td class="bangla">সে বিচারককে শাস্তি কমাতে অনুরোধ করল।</td></tr>
+        <tr><td>252</td><td><span class="prep-phrase">proficient in</span></td><td>She is proficient <span class="prep">in</span> three languages.</td><td class="bangla">সে তিনটি ভাষায় পারদর্শী।</td></tr>
+        <tr><td>253</td><td><span class="prep-phrase">puzzled at</span></td><td>He was puzzled <span class="prep">at</span> her strange behaviour.</td><td class="bangla">তার অদ্ভুত আচরণে সে বিভ্রান্ত হয়ে গেল।</td></tr>
+        <tr><td>254</td><td><span class="prep-phrase">related to</span></td><td>Success is closely related <span class="prep">to</span> discipline.</td><td class="bangla">সাফল্য শৃঙ্খলার সাথে ঘনিষ্ঠভাবে সম্পর্কিত।</td></tr>
+        <tr><td>255</td><td><span class="prep-phrase">rely upon</span></td><td>Do not rely <span class="prep">upon</span> others for everything.</td><td class="bangla">সবকিছুর জন্য অন্যের উপর নির্ভর করো না।</td></tr>
+        <tr><td>256</td><td><span class="prep-phrase">run out of</span></td><td>We ran <span class="prep">out of</span> petrol on the way.</td><td class="bangla">পথে আমাদের পেট্রোল শেষ হয়ে গেল।</td></tr>
+        <tr><td>257</td><td><span class="prep-phrase">set about</span></td><td>She set <span class="prep">about</span> cleaning the house early morning.</td><td class="bangla">সে ভোরবেলা ঘর পরিষ্কার করতে শুরু করল।</td></tr>
+        <tr><td>258</td><td><span class="prep-phrase">take after</span></td><td>She takes <span class="prep">after</span> her mother in appearance.</td><td class="bangla">চেহারায় সে তার মায়ের মতো।</td></tr>
+        <tr><td>259</td><td><span class="prep-phrase">take care of</span></td><td>Take care <span class="prep">of</span> your health always.<span class="hsc-star">HSC</span></td><td class="bangla">সবসময় তোমার স্বাস্থ্যের যত্ন নাও।</td></tr>
+        <tr><td>260</td><td><span class="prep-phrase">talk about</span></td><td>We talked <span class="prep">about</span> the new movie.</td><td class="bangla">আমরা নতুন সিনেমা নিয়ে আলোচনা করলাম।</td></tr>
+        <tr><td>261</td><td><span class="prep-phrase">tamper with</span></td><td>Someone tampered <span class="prep">with</span> the evidence.</td><td class="bangla">কেউ প্রমাণ নষ্ট করার চেষ্টা করেছিল।</td></tr>
+        <tr><td>262</td><td><span class="prep-phrase">tend to</span></td><td>He tends <span class="prep">to</span> exaggerate things.</td><td class="bangla">সে জিনিস বাড়িয়ে বলার প্রবণতা রাখে।</td></tr>
+        <tr><td>263</td><td><span class="prep-phrase">work on</span></td><td>She is working <span class="prep">on</span> a new project.</td><td class="bangla">সে একটি নতুন প্রকল্পে কাজ করছে।</td></tr>
+        <tr><td>264</td><td><span class="prep-phrase">write to</span></td><td>He wrote <span class="prep">to</span> his friend in the USA.</td><td class="bangla">সে যুক্তরাষ্ট্রে তার বন্ধুকে চিঠি লিখল।</td></tr>
+        <tr><td>265</td><td><span class="prep-phrase">adapt from</span></td><td>This film is adapted <span class="prep">from</span> a famous novel.</td><td class="bangla">এই চলচ্চিত্রটি একটি বিখ্যাত উপন্যাস থেকে রূপান্তরিত।</td></tr>
+        <tr><td>266</td><td><span class="prep-phrase">absorbed by</span></td><td>She was absorbed <span class="prep">by</span> the interesting story.</td><td class="bangla">আকর্ষণীয় গল্পে সে মগ্ন হয়ে গেল।</td></tr>
+        <tr><td>267</td><td><span class="prep-phrase">accompanied by</span></td><td>He was accompanied <span class="prep">by</span> his parents.</td><td class="bangla">সে তার বাবা-মায়ের সাথে ছিল।</td></tr>
+        <tr><td>268</td><td><span class="prep-phrase">afflicted with</span></td><td>The region was afflicted <span class="prep">with</span> drought.</td><td class="bangla">এই অঞ্চলটি খরায় আক্রান্ত হয়েছিল।</td></tr>
+        <tr><td>269</td><td><span class="prep-phrase">afflicted by</span></td><td>Many people are afflicted <span class="prep">by</span> poverty.</td><td class="bangla">অনেক মানুষ দারিদ্র্যে আক্রান্ত।</td></tr>
+        <tr><td>270</td><td><span class="prep-phrase">agree on</span></td><td>They agreed <span class="prep">on</span> a common plan.</td><td class="bangla">তারা একটি সাধারণ পরিকল্পনায় সম্মত হলো।</td></tr>
+        <tr><td>271</td><td><span class="prep-phrase">alarmed at</span></td><td>She was alarmed <span class="prep">at</span> the sudden noise.</td><td class="bangla">হঠাৎ শব্দে সে ভয় পেয়ে গেল।</td></tr>
+        <tr><td>272</td><td><span class="prep-phrase">annoyed at</span></td><td>He was annoyed <span class="prep">at</span> the delay.</td><td class="bangla">বিলম্বে সে বিরক্ত হলো।</td></tr>
+        <tr><td>273</td><td><span class="prep-phrase">annoyed with</span></td><td>She was annoyed <span class="prep">with</span> her classmate.</td><td class="bangla">সে তার সহপাঠীতে বিরক্ত ছিল।</td></tr>
+        <tr><td>274</td><td><span class="prep-phrase">apply for</span></td><td>Students can apply <span class="prep">for</span> scholarships online.</td><td class="bangla">শিক্ষার্থীরা অনলাইনে বৃত্তির জন্য আবেদন করতে পারে।</td></tr>
+        <tr><td>275</td><td><span class="prep-phrase">associated with</span></td><td>Smoking is associated <span class="prep">with</span> lung cancer.</td><td class="bangla">ধূমপান ফুসফুসের ক্যান্সারের সাথে সম্পর্কিত।</td></tr>
+        <tr><td>276</td><td><span class="prep-phrase">burdened with</span></td><td>She is burdened <span class="prep">with</span> too much homework.</td><td class="bangla">সে অতিরিক্ত হোমওয়ার্কের বোঝায় চাপা।</td></tr>
+        <tr><td>277</td><td><span class="prep-phrase">charged with</span></td><td>He was charged <span class="prep">with</span> murder.<span class="hsc-star">HSC</span></td><td class="bangla">তাকে হত্যার অভিযোগে অভিযুক্ত করা হয়েছে।</td></tr>
+        <tr><td>278</td><td><span class="prep-phrase">concerned about</span></td><td>Everyone is concerned <span class="prep">about</span> climate change.</td><td class="bangla">জলবায়ু পরিবর্তন নিয়ে সবাই উদ্বিগ্ন।</td></tr>
+        <tr><td>279</td><td><span class="prep-phrase">confronted with</span></td><td>He was confronted <span class="prep">with</span> a difficult choice.</td><td class="bangla">সে একটি কঠিন পছন্দের মুখোমুখি হলো।</td></tr>
+        <tr><td>280</td><td><span class="prep-phrase">content with</span></td><td>She is content <span class="prep">with</span> what she has.<span class="hsc-star">HSC</span></td><td class="bangla">সে যা আছে তাতেই সন্তুষ্ট।</td></tr>
+        <tr><td>281</td><td><span class="prep-phrase">credited with</span></td><td>He is credited <span class="prep">with</span> discovering penicillin.</td><td class="bangla">পেনিসিলিন আবিষ্কারের কৃতিত্ব তাকে দেওয়া হয়।</td></tr>
+        <tr><td>282</td><td><span class="prep-phrase">culminate in</span></td><td>Years of hard work culminated <span class="prep">in</span> success.</td><td class="bangla">বছরের পর বছর কঠোর পরিশ্রম সাফল্যে পরিণত হলো।</td></tr>
+        <tr><td>283</td><td><span class="prep-phrase">cursed with</span></td><td>He seemed cursed <span class="prep">with</span> bad luck.</td><td class="bangla">সে যেন দুর্ভাগ্যের অভিশাপে অভিশপ্ত।</td></tr>
+        <tr><td>284</td><td><span class="prep-phrase">distinguish between</span></td><td>We must distinguish <span class="prep">between</span> right and wrong.<span class="hsc-star">HSC</span></td><td class="bangla">আমাদের সঠিক ও ভুলের মধ্যে পার্থক্য করতে হবে।</td></tr>
+        <tr><td>285</td><td><span class="prep-phrase">divorced from</span></td><td>His theory is divorced <span class="prep">from</span> reality.</td><td class="bangla">তার তত্ত্ব বাস্তবতা থেকে বিচ্ছিন্ন।</td></tr>
+        <tr><td>286</td><td><span class="prep-phrase">encumbered with</span></td><td>He is encumbered <span class="prep">with</span> debt.</td><td class="bangla">সে ঋণের বোঝায় চাপা।</td></tr>
+        <tr><td>287</td><td><span class="prep-phrase">exposed to</span></td><td>Plants exposed <span class="prep">to</span> sunlight grow well.</td><td class="bangla">সূর্যালোকে উন্মুক্ত গাছপালা ভালো বাড়ে।</td></tr>
+        <tr><td>288</td><td><span class="prep-phrase">fed up with</span></td><td>I am fed up <span class="prep">with</span> the same routine every day.</td><td class="bangla">প্রতিদিন একই রুটিনে আমি বিরক্ত।</td></tr>
+        <tr><td>289</td><td><span class="prep-phrase">furnished with</span></td><td>The room was furnished <span class="prep">with</span> modern furniture.</td><td class="bangla">ঘরটি আধুনিক আসবাবপত্র দিয়ে সজ্জিত ছিল।</td></tr>
+        <tr><td>290</td><td><span class="prep-phrase">impressed by</span></td><td>I was deeply impressed <span class="prep">by</span> his speech.</td><td class="bangla">তার বক্তৃতায় আমি গভীরভাবে মুগ্ধ হলাম।</td></tr>
+        <tr><td>291</td><td><span class="prep-phrase">inspired by</span></td><td>She was inspired <span class="prep">by</span> her teacher's dedication.</td><td class="bangla">শিক্ষকের নিবেদনে সে অনুপ্রাণিত হলো।</td></tr>
+        <tr><td>292</td><td><span class="prep-phrase">intent upon</span></td><td>He was intent <span class="prep">upon</span> finishing the project.</td><td class="bangla">সে প্রকল্পটি সম্পন্ন করতে দৃঢ়প্রতিজ্ঞ ছিল।</td></tr>
+        <tr><td>293</td><td><span class="prep-phrase">known for</span></td><td>Mother Teresa is known <span class="prep">for</span> her kindness.<span class="hsc-star">HSC</span></td><td class="bangla">মাদার তেরেসা তার দয়ার জন্য পরিচিত।</td></tr>
+        <tr><td>294</td><td><span class="prep-phrase">obliged to</span></td><td>I am obliged <span class="prep">to</span> you for your assistance.</td><td class="bangla">আপনার সহায়তার জন্য আমি আপনার কাছে বাধিত।</td></tr>
+        <tr><td>295</td><td><span class="prep-phrase">preoccupied with</span></td><td>She was preoccupied <span class="prep">with</span> family matters.</td><td class="bangla">সে পারিবারিক বিষয়ে মগ্ন ছিল।</td></tr>
+        <tr><td>296</td><td><span class="prep-phrase">put off</span></td><td>Do not put <span class="prep">off</span> until tomorrow what you can do today.</td><td class="bangla">আজকে যা করতে পারো তা আগামীকালের জন্য ফেলে রেখো না।</td></tr>
+        <tr><td>297</td><td><span class="prep-phrase">relevant to</span></td><td>Your answer is not relevant <span class="prep">to</span> the question.</td><td class="bangla">তোমার উত্তর প্রশ্নের সাথে সংগতিপূর্ণ নয়।</td></tr>
+        <tr><td>298</td><td><span class="prep-phrase">resigned to</span></td><td>He seems resigned <span class="prep">to</span> his fate.</td><td class="bangla">সে তার ভাগ্য মেনে নিয়েছে বলে মনে হয়।</td></tr>
+        <tr><td>299</td><td><span class="prep-phrase">rid of</span></td><td>We should get rid <span class="prep">of</span> bad habits.<span class="hsc-star">HSC</span></td><td class="bangla">আমাদের খারাপ অভ্যাস থেকে মুক্তি পাওয়া উচিত।</td></tr>
+        <tr><td>300</td><td><span class="prep-phrase">shocked by</span></td><td>The community was shocked <span class="prep">by</span> the tragedy.</td><td class="bangla">ট্র্যাজেডিতে সমাজ হতবাক হয়ে গেল।</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- BONUS TIPS -->
+<div class="rules-section" style="margin-top:36px;">
+  <h2>🎓 Exam Day Tips — Last Minute Revision</h2>
+  <div class="rules-grid">
+    <div class="rule-card">
+      <h4>🔥 Most Repeated in HSC</h4>
+      <p>fond of · addicted to · accustomed to · superior/inferior to · responsible for · familiar with · succeed in · consist of · differ from · suffer from · aware of · capable of</p>
+    </div>
+    <div class="rule-card">
+      <h4>⚠️ Common Traps</h4>
+      <p><code>die of</code> (disease/hunger) vs <code>die from</code> (wound/injury) · <code>agree with</code> (person) vs <code>agree to</code> (proposal) · <code>angry with</code> (person) vs <code>angry at</code> (situation)</p>
+    </div>
+    <div class="rule-card">
+      <h4>📌 "IN" Patterns</h4>
+      <p>Believe, succeed, take part, engage, interest, involve, result, persist, specialise — all use <code>in</code></p>
+    </div>
+    <div class="rule-card">
+      <h4>📌 "ON" Patterns</h4>
+      <p>Depend, rely, insist, concentrate, comment, decide, count, act, embark, lay emphasis — all use <code>on</code></p>
+    </div>
+    <div class="rule-card">
+      <h4>📌 "FROM" Patterns</h4>
+      <p>Suffer, recover, benefit, prevent, abstain, refrain, escape, differ, emerge, resign — all use <code>from</code></p>
+    </div>
+    <div class="rule-card">
+      <h4>📌 "FOR" Patterns</h4>
+      <p>Famous, responsible, eligible, sorry, grateful, notorious, fit, ready, suitable, known — all use <code>for</code></p>
+    </div>
+  </div>
+</div>
+
+</div><!-- /container -->
+
+<footer>
+  <p>Prepared for <strong>HSC Students of Bangladesh</strong> · Class 11 &amp; 12 · All Education Boards</p>
+  <p style="margin-top:8px;font-size:12px;">Focus on the <span style="color:var(--gold-light)">HSC-marked examples</span> first — these appear most frequently across Dhaka, Chittagong, Rajshahi, Sylhet, Comilla, Jessore, Dinajpur and Mymensingh boards.</p>
+</footer>
+
+</body>
+</html>

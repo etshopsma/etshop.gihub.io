@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Day 3 — 1000 English Sentences for Bangla Speakers</title>
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Inter', sans-serif; background: #f0f2f5; color: #1a1a2e; }
+
+  .hero {
+    background: linear-gradient(135deg, #0f1923 0%, #1b3a6b 60%, #0d2e5a 100%);
+    color: white; padding: 40px 32px 32px; text-align: center;
+  }
+  .hero-tag {
+    display: inline-block; background: #f0a500; color: #0f1923;
+    font-size: 11px; font-weight: 800; letter-spacing: 2.5px;
+    text-transform: uppercase; padding: 5px 14px; border-radius: 3px; margin-bottom: 18px;
+  }
+  .hero h1 { font-size: 36px; font-weight: 800; line-height: 1.2; margin-bottom: 10px; }
+  .hero h1 span { color: #f0a500; }
+  .hero p { font-size: 15px; color: rgba(255,255,255,0.7); margin-bottom: 24px; }
+  .hero-badges { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; }
+  .badge {
+    background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);
+    color: rgba(255,255,255,0.9); font-size: 13px; font-weight: 600;
+    padding: 6px 16px; border-radius: 20px;
+  }
+  .badge strong { color: #f0a500; }
+
+  .top-bar {
+    background: white; border-bottom: 2px solid #e0e4ed;
+    padding: 10px 24px; display: flex; justify-content: space-between;
+    align-items: center; position: sticky; top: 0; z-index: 999;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  }
+  .top-bar span { font-size: 13px; color: #666; }
+  .btn-print {
+    background: #1b3a6b; color: white; border: none;
+    padding: 8px 20px; border-radius: 6px; font-size: 13px;
+    font-weight: 700; cursor: pointer; font-family: inherit;
+  }
+  .btn-print:hover { background: #2a5298; }
+
+  .howto {
+    max-width: 900px; margin: 24px auto 0;
+    background: #e8f5ee; border-left: 5px solid #1a7a4a;
+    border-radius: 0 8px 8px 0; padding: 16px 20px;
+    font-size: 14px; color: #0d3022;
+  }
+  .howto strong { display: block; color: #1a7a4a; font-size: 15px; margin-bottom: 8px; }
+  .howto ol { padding-left: 20px; }
+  .howto li { margin-bottom: 4px; line-height: 1.6; }
+
+  .content { max-width: 900px; margin: 0 auto; padding: 20px 16px 60px; }
+
+  .cat-block { margin-top: 36px; }
+  .cat-header {
+    display: flex; align-items: center; gap: 12px;
+    padding: 13px 20px; border-radius: 10px 10px 0 0; color: white;
+  }
+  .cat-icon { font-size: 20px; }
+  .cat-title { font-size: 16px; font-weight: 800; letter-spacing: 0.3px; }
+  .cat-range {
+    margin-left: auto; background: rgba(255,255,255,0.2);
+    font-size: 12px; font-weight: 700; padding: 3px 12px; border-radius: 12px;
+  }
+
+  table {
+    width: 100%; border-collapse: collapse; background: white;
+    border-radius: 0 0 10px 10px; overflow: hidden;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.07);
+  }
+  thead th {
+    background: #eef0f7; color: #4a5580; font-size: 11px;
+    font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
+    padding: 10px 16px; text-align: left;
+  }
+  thead th:first-child { text-align: center; width: 50px; }
+  tbody tr:nth-child(even) { background: #f8f9fc; }
+  tbody tr:hover { background: #eef3fb; }
+  tbody td {
+    padding: 11px 16px; border-bottom: 1px solid #eeeff5;
+    vertical-align: middle; font-size: 14.5px;
+  }
+  tbody tr:last-child td { border-bottom: none; }
+  .num { text-align: center; font-weight: 800; color: #2a5298; font-size: 13px; width: 50px; }
+  .eng { font-weight: 600; color: #1a1a2e; width: 50%; line-height: 1.5; }
+  .ban { font-family: 'Hind Siliguri', sans-serif; color: #1a2e1a; font-size: 15.5px; line-height: 1.7; width: 50%; }
+
+  .footer {
+    text-align: center; padding: 32px 20px 48px;
+    color: #888; font-size: 13px; border-top: 1px solid #ddd; margin-top: 40px;
+  }
+  .footer strong { color: #1b3a6b; }
+  .day-pills { display: flex; justify-content: center; gap: 8px; margin-top: 14px; flex-wrap: wrap; }
+  .pill { padding: 5px 16px; border-radius: 20px; font-size: 12px; font-weight: 700; background: #e0e8f4; color: #1b3a6b; }
+  .pill.done { background: #c8e6c9; color: #1b5e20; }
+  .pill.active { background: #1b3a6b; color: white; }
+
+  @media print {
+    body { background: white; }
+    .top-bar, .howto { display: none; }
+    .hero { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .cat-header { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    tbody tr:nth-child(even) { background: #f8f9fc !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-tag">English Speaking System</div>
+  <h1>1000 High-Frequency<br><span>English Sentences</span></h1>
+  <p>For Bangla-Speaking Learners &nbsp;·&nbsp; Practical Conversational English</p>
+  <div class="hero-badges">
+    <span class="badge">📅 <strong>Day 3</strong> of 5</span>
+    <span class="badge">🔢 Sentences <strong>401 – 600</strong></span>
+    <span class="badge">📂 <strong>9 Categories</strong></span>
+    <span class="badge">🌐 Open in Chrome or Firefox</span>
+  </div>
+</div>
+
+<div class="top-bar">
+  <span>💡 Tip: Press <strong>Ctrl+P</strong> to save as PDF anytime</span>
+  <button class="btn-print" onclick="window.print()">🖨️ Print / Save PDF</button>
+</div>
+
+<div class="content">
+
+  <div class="howto">
+    <strong>📖 How to Use This Sheet</strong>
+    <ol>
+      <li>Read each English sentence aloud <strong>3 times</strong>.</li>
+      <li>Cover the Bangla column and test yourself — say the meaning aloud.</li>
+      <li>Use at least <strong>10 sentences in real conversation</strong> today.</li>
+      <li>Revisit Days 1 &amp; 2 this weekend to reinforce memory.</li>
+    </ol>
+  </div>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- CAT 1: DESCRIBING PEOPLE & THINGS -->
+  <!-- ═══════════════════════════════════════════ -->
+  <div class="cat-block">
+    <div class="cat-header" style="background: #1a4332;">
+      <span class="cat-icon">🧑</span>
+      <span class="cat-title">Category 1 — Describing People &amp; Things</span>
+      <span class="cat-range">401 – 425</span>
+    </div>
+    <table>
+      <thead><tr><th>#</th><th>English Sentence</th><th>বাংলা অর্থ</th></tr></thead>
+      <tbody>
+        <tr><td class="num">401</td><td class="eng">She's very friendly and easy to talk to.</td><td class="ban">সে অনেক বন্ধুত্বপূর্ণ এবং কথা বলা সহজ।</td></tr>
+        <tr><td class="num">402</td><td class="eng">He's a very hardworking person.</td><td class="ban">সে অনেক পরিশ্রমী মানুষ।</td></tr>
+        <tr><td class="num">403</td><td class="eng">She looks exactly like her mother.</td><td class="ban">সে দেখতে হুবহু তার মায়ের মতো।</td></tr>
+        <tr><td class="num">404</td><td class="eng">He's quite tall with short hair.</td><td class="ban">সে বেশ লম্বা এবং চুল ছোট।</td></tr>
+        <tr><td class="num">405</td><td class="eng">She has a very warm personality.</td><td class="ban">তার ব্যক্তিত্ব অনেক উষ্ণ।</td></tr>
+        <tr><td class="num">406</td><td class="eng">This bag is made of good quality leather.</td><td class="ban">এই ব্যাগটা ভালো মানের চামড়া দিয়ে তৈরি।</td></tr>
+        <tr><td class="num">407</td><td class="eng">The room is small but very cozy.</td><td class="ban">ঘরটা ছোট কিন্তু অনেক আরামদায়ক।</td></tr>
+        <tr><td class="num">408</td><td class="eng">This phone is outdated now.</td><td class="ban">এই ফোনটা এখন পুরনো হয়ে গেছে।</td></tr>
+        <tr><td class="num">409</td><td class="eng">The view from here is absolutely stunning.</td><td class="ban">এখান থেকে দৃশ্যটা সত্যিই অসাধারণ।</td></tr>
+        <tr><td class="num">410</td><td class="eng">He's very patient with everyone.</td><td class="ban">সে সবার সাথে অনেক ধৈর্যশীল।</td></tr>
+        <tr><td class="num">411</td><td class="eng">She's one of the most honest people I know.</td><td class="ban">সে আমার পরিচিতদের মধ্যে সবচেয়ে সৎ মানুষদের একজন।</td></tr>
+        <tr><td class="num">412</td><td class="eng">The food here is a bit bland for my taste.</td><td class="ban">এখানকার খাবার আমার কাছে একটু পানসে মনে হয়।</td></tr>
+        <tr><td class="num">413</td><td class="eng">He tends to be very quiet in meetings.</td><td class="ban">মিটিংয়ে সে সাধারণত অনেক চুপ থাকে।</td></tr>
+        <tr><td class="num">414</td><td class="eng">The new office building is impressive.</td><td class="ban">নতুন অফিস বিল্ডিংটা চমৎকার।</td></tr>
+        <tr><td class="num">415</td><td class="eng">She's very creative and full of ideas.</td><td class="ban">সে অনেক সৃজনশীল এবং ধারণায় পরিপূর্ণ।</td></tr>
+        <tr><td class="num">416</td><td class="eng">This neighborhood is very safe at night.</td><td class="ban">এই এলাকাটা রাতেও অনেক নিরাপদ।</td></tr>
+        <tr><td class="num">417</td><td class="eng">He can be a little stubborn sometimes.</td><td class="ban">সে মাঝেমাঝে একটু একগুঁয়ে হতে পারে।</td></tr>
+        <tr><td class="num">418</td><td class="eng">The color doesn't suit the wall at all.</td><td class="ban">রঙটা দেয়ালের সাথে একদমই মানাচ্ছে না।</td></tr>
+        <tr><td class="num">419</td><td class="eng">She's incredibly smart for her age.</td><td class="ban">তার বয়সের তুলনায় সে অবিশ্বাস্যরকম বুদ্ধিমান।</td></tr>
+        <tr><td class="num">420</td><td class="eng">The material feels very soft and comfortable.</td><td class="ban">কাপড়টা অনেক নরম এবং আরামদায়ক লাগছে।</td></tr>
+        <tr><td class="num">421</td><td class="eng">He's always punctual — never late.</td><td class="ban">সে সবসময় সময়মতো আসে — কখনো দেরি করে না।</td></tr>
+        <tr><td class="num">422</td><td class="eng">The streets here are very clean.</td><td class="ban">এখানকার রাস্তাগুলো অনেক পরিষ্কার।</td></tr>
+        <tr><td class="num">423</td><td class="eng">She comes across as very professional.</td><td class="ban">সে অনেক পেশাদার মনে হয়।</td></tr>
+        <tr><td class="num">424</td><td class="eng">This chair is really uncomfortable.</td><td class="ban">এই চেয়ারটা সত্যিই অস্বস্তিকর।</td></tr>
+        <tr><td class="num">425</td><td class="eng">He's the kind of person you can always count on.</td><td class="ban">সে এমন মানুষ যার উপর তুমি সবসময় ভরসা করতে পারো।</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- CAT 2: GIVING & FOLLOWING DIRECTIONS -->
+  <!-- ═══════════════════════════════════════════ -->
+  <div class="cat-block">
+    <div class="cat-header" style="background: #1e3a5f;">
+      <span class="cat-icon">🗺️</span>
+      <span class="cat-title">Category 2 — Giving &amp; Following Directions</span>
+      <span class="cat-range">426 – 450</span>
+    </div>
+    <table>
+      <thead><tr><th>#</th><th>English Sentence</th><th>বাংলা অর্থ</th></tr></thead>
+      <tbody>
+        <tr><td class="num">426</td><td class="eng">Go straight ahead for about five minutes.</td><td class="ban">প্রায় পাঁচ মিনিট সোজা এগিয়ে যাও।</td></tr>
+        <tr><td class="num">427</td><td class="eng">Turn right at the traffic light.</td><td class="ban">ট্রাফিক লাইটে ডানদিকে মোড় নাও।</td></tr>
+        <tr><td class="num">428</td><td class="eng">It's just around the corner.</td><td class="ban">এটা ঠিক কোণার কাছেই।</td></tr>
+        <tr><td class="num">429</td><td class="eng">You'll see a big mosque on your left.</td><td class="ban">তোমার বাঁয়ে একটা বড় মসজিদ দেখতে পাবে।</td></tr>
+        <tr><td class="num">430</td><td class="eng">Cross the bridge and keep going straight.</td><td class="ban">সেতু পার হয়ে সোজা এগিয়ে যাও।</td></tr>
+        <tr><td class="num">431</td><td class="eng">It's about a ten-minute walk from here.</td><td class="ban">এখান থেকে হেঁটে প্রায় দশ মিনিট।</td></tr>
+        <tr><td class="num">432</td><td class="eng">You're going the wrong way.</td><td class="ban">তুমি ভুল দিকে যাচ্ছ।</td></tr>
+        <tr><td class="num">433</td><td class="eng">Make a U-turn at the next signal.</td><td class="ban">পরের সিগনালে ইউ-টার্ন নাও।</td></tr>
+        <tr><td class="num">434</td><td class="eng">The market is opposite the hospital.</td><td class="ban">হাসপাতালের সামনেই বাজার।</td></tr>
+        <tr><td class="num">435</td><td class="eng">Go past the school and then turn left.</td><td class="ban">স্কুল পেরিয়ে তারপর বাঁয়ে মোড় নাও।</td></tr>
+        <tr><td class="num">436</td><td class="eng">You can't miss it — it's a very tall building.</td><td class="ban">মিস করবে না — এটা অনেক উঁচু বিল্ডিং।</td></tr>
+        <tr><td class="num">437</td><td class="eng">It's on the third floor, room number five.</td><td class="ban">এটা তৃতীয় তলায়, রুম নম্বর পাঁচ।</td></tr>
+        <tr><td class="num">438</td><td class="eng">Follow the signs for the city center.</td><td class="ban">শহরের কেন্দ্রের সাইনবোর্ড অনুসরণ করো।</td></tr>
+        <tr><td class="num">439</td><td class="eng">Take the underpass and come out on the other side.</td><td class="ban">আন্ডারপাস দিয়ে যাও এবং অন্য পাশ দিয়ে বেরিয়ে এসো।</td></tr>
+        <tr><td class="num">440</td><td class="eng">It's next to the big supermarket.</td><td class="ban">বড় সুপারশপের পাশেই।</td></tr>
+        <tr><td class="num">441</td><td class="eng">You'll pass a petrol station on the way.</td><td class="ban">পথে একটা পেট্রোল স্টেশন পাবে।</td></tr>
+        <tr><td class="num">442</td><td class="eng">The entrance is at the back of the building.</td><td class="ban">প্রবেশদ্বার বিল্ডিংয়ের পেছনে।</td></tr>
+        <tr><td class="num">443</td><td class="eng">Can you show me on the map?</td><td class="ban">মানচিত্রে দেখাতে পারবে?</td></tr>
+        <tr><td class="num">444</td><td class="eng">I think we've taken a wrong turn.</td><td class="ban">মনে হচ্ছে আমরা ভুল মোড় নিয়েছি।</td></tr>
+        <tr><td class="num">445</td><td class="eng">Keep walking until you reach the park.</td><td class="ban">পার্কে পৌঁছানো পর্যন্ত হাঁটতে থাকো।</td></tr>
+        <tr><td class="num">446</td><td class="eng">It's about two kilometers from here.</td><td class="ban">এখান থেকে প্রায় দুই কিলোমিটার।</td></tr>
+        <tr><td class="num">447</td><td class="eng">The road is blocked — take a different route.</td><td class="ban">রাস্তা বন্ধ — অন্য পথ নাও।</td></tr>
+        <tr><td class="num">448</td><td class="eng">You'll find it on the left side of the road.</td><td class="ban">রাস্তার বাঁ পাশে পাবে।</td></tr>
+        <tr><td class="num">449</td><td class="eng">Go down this lane and it's the second house.</td><td class="ban">এই গলি দিয়ে যাও এবং দ্বিতীয় বাড়িটা।</td></tr>
+        <tr><td class="num">450</td><td class="eng">My GPS is not working. Can you help?</td><td class="ban">আমার জিপিএস কাজ করছে না। সাহায্য করতে পারবে?</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- CAT 3: EMERGENCY & URGENT SITUATIONS -->
+  <!-- ═══════════════════════════════════════════ -->
+  <div class="cat-block">
+    <div class="cat-header" style="background: #7b1c1c;">
+      <span class="cat-icon">🚨</span>
+      <span class="cat-title">Category 3 — Emergency &amp; Urgent Situations</span>
+      <span class="cat-range">451 – 470</span>
+    </div>
+    <table>
+      <thead><tr><th>#</th><th>English Sentence</th><th>বাংলা অর্থ</th></tr></thead>
+      <tbody>
+        <tr><td class="num">451</td><td class="eng">Help! Call an ambulance!</td><td class="ban">সাহায্য করুন! অ্যাম্বুলেন্স ডাকুন!</td></tr>
+        <tr><td class="num">452</td><td class="eng">There's been an accident.</td><td class="ban">একটা দুর্ঘটনা ঘটেছে।</td></tr>
+        <tr><td class="num">453</td><td class="eng">Please call the police immediately.</td><td class="ban">দয়া করে এখনই পুলিশ ডাকুন।</td></tr>
+        <tr><td class="num">454</td><td class="eng">I've lost my wallet.</td><td class="ban">আমার মানিব্যাগ হারিয়ে গেছে।</td></tr>
+        <tr><td class="num">455</td><td class="eng">My bag has been stolen.</td><td class="ban">আমার ব্যাগ চুরি হয়ে গেছে।</td></tr>
+        <tr><td class="num">456</td><td class="eng">I need help urgently.</td><td class="ban">আমার জরুরিভিত্তিতে সাহায্য দরকার।</td></tr>
+        <tr><td class="num">457</td><td class="eng">There's a fire in the building!</td><td class="ban">বিল্ডিংয়ে আগুন লেগেছে!</td></tr>
+        <tr><td class="num">458</td><td class="eng">Someone fainted on the street.</td><td class="ban">রাস্তায় কেউ একজন অজ্ঞান হয়ে গেছে।</td></tr>
+        <tr><td class="num">459</td><td class="eng">I've been in a road accident.</td><td class="ban">আমি সড়ক দুর্ঘটনায় পড়েছি।</td></tr>
+        <tr><td class="num">460</td><td class="eng">Is there a doctor nearby?</td><td class="ban">কাছে কোনো ডাক্তার আছেন?</td></tr>
+        <tr><td class="num">461</td><td class="eng">Please don't move him — he may be injured.</td><td class="ban">দয়া করে তাকে নাড়াবেন না — সে আহত হতে পারে।</td></tr>
+        <tr><td class="num">462</td><td class="eng">I need to report a missing person.</td><td class="ban">আমাকে একজন নিখোঁজ ব্যক্তির রিপোর্ট করতে হবে।</td></tr>
+        <tr><td class="num">463</td><td class="eng">My child is missing.</td><td class="ban">আমার সন্তান নিখোঁজ হয়েছে।</td></tr>
+        <tr><td class="num">464</td><td class="eng">I think I'm having a heart attack.</td><td class="ban">মনে হচ্ছে আমার হার্ট অ্যাটাক হচ্ছে।</td></tr>
+        <tr><td class="num">465</td><td class="eng">Please stay calm and wait for help.</td><td class="ban">দয়া করে শান্ত থাকুন এবং সাহায্যের জন্য অপেক্ষা করুন।</td></tr>
+        <tr><td class="num">466</td><td class="eng">I need to contact my embassy.</td><td class="ban">আমাকে আমার দূতাবাসে যোগাযোগ করতে হবে।</td></tr>
+        <tr><td class="num">467</td><td class="eng">What is the emergency number here?</td><td class="ban">এখানে জরুরি নম্বর কত?</td></tr>
+        <tr><td class="num">468</td><td class="eng">I've lost my passport.</td><td class="ban">আমার পাসপোর্ট হারিয়ে গেছে।</td></tr>
+        <tr><td class="num">469</td><td class="eng">The power is out in the whole building.</td><td class="ban">পুরো বিল্ডিংয়ের বিদ্যুৎ চলে গেছে।</td></tr>
+        <tr><td class="num">470</td><td class="eng">Please keep everyone away from the area.</td><td class="ban">দয়া করে সবাইকে এলাকা থেকে দূরে রাখুন।</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- CAT 4: EXPRESSING DOUBT & UNCERTAINTY -->
+  <!-- ═══════════════════════════════════════════ -->
+  <div class="cat-block">
+    <div class="cat-header" style="background: #2d4a22;">
+      <span class="cat-icon">🤨</span>
+      <span class="cat-title">Category 4 — Expressing Doubt &amp; Uncertainty</span>
+      <span class="cat-range">471 – 495</span>
+    </div>
+    <table>
+      <thead><tr><th>#</th><th>English Sentence</th><th>বাংলা অর্থ</th></tr></thead>
+      <tbody>
+        <tr><td class="num">471</td><td class="eng">I'm not entirely sure about that.</td><td class="ban">আমি এটা নিয়ে সম্পূর্ণ নিশ্চিত না।</td></tr>
+        <tr><td class="num">472</td><td class="eng">That doesn't sound right to me.</td><td class="ban">এটা আমার কাছে ঠিক মনে হচ্ছে না।</td></tr>
+        <tr><td class="num">473</td><td class="eng">I'm having second thoughts about this.</td><td class="ban">এটা নিয়ে আমার মনে দ্বিধা আসছে।</td></tr>
+        <tr><td class="num">474</td><td class="eng">Are you absolutely certain?</td><td class="ban">তুমি কি সম্পূর্ণ নিশ্চিত?</td></tr>
+        <tr><td class="num">475</td><td class="eng">Something doesn't add up here.</td><td class="ban">এখানে কিছু একটা মিলছে না।</td></tr>
+        <tr><td class="num">476</td><td class="eng">I'm not sure if that's a good idea.</td><td class="ban">আমি নিশ্চিত না এটা ভালো ধারণা কিনা।</td></tr>
+        <tr><td class="num">477</td><td class="eng">It might work, but I'm not confident.</td><td class="ban">এটা কাজ করতে পারে, কিন্তু আমি আত্মবিশ্বাসী না।</td></tr>
+        <tr><td class="num">478</td><td class="eng">I'm a little skeptical about this.</td><td class="ban">আমি এটা নিয়ে একটু সন্দিহান।</td></tr>
+        <tr><td class="num">479</td><td class="eng">I can't say for sure yet.</td><td class="ban">আমি এখনো নিশ্চিত করে বলতে পারছি না।</td></tr>
+        <tr><td class="num">480</td><td class="eng">Let me double-check before we proceed.</td><td class="ban">এগোনোর আগে আমাকে দুবার যাচাই করতে দাও।</td></tr>
+        <tr><td class="num">481</td><td class="eng">Maybe, but I need more information first.</td><td class="ban">হয়তো, কিন্তু আমার আগে আরও তথ্য দরকার।</td></tr>
+        <tr><td class="num">482</td><td class="eng">I'm not too sure that's the right approach.</td><td class="ban">আমি নিশ্চিত না এটাই সঠিক পদ্ধতি।</td></tr>
+        <tr><td class="num">483</td><td class="eng">It's hard to say without more details.</td><td class="ban">আরও বিস্তারিত ছাড়া বলা কঠিন।</td></tr>
+        <tr><td class="num">484</td><td class="eng">I have a feeling something could go wrong.</td><td class="ban">আমার মনে হচ্ছে কিছু একটা ভুল হতে পারে।</td></tr>
+        <tr><td class="num">485</td><td class="eng">That seems a bit too good to be true.</td><td class="ban">এটা সত্যি হতে একটু বেশি ভালো মনে হচ্ছে।</td></tr>
+        <tr><td class="num">486</td><td class="eng">I'm on the fence about this decision.</td><td class="ban">এই সিদ্ধান্তে আমি দ্বিধায় আছি।</td></tr>
+        <tr><td class="num">487</td><td class="eng">We should wait and see what happens.</td><td class="ban">আমাদের অপেক্ষা করা উচিত এবং কী হয় দেখা উচিত।</td></tr>
+        <tr><td class="num">488</td><td class="eng">I don't want to commit to anything just yet.</td><td class="ban">আমি এখনই কিছুতে প্রতিশ্রুতি দিতে চাই না।</td></tr>
+        <tr><td class="num">489</td><td class="eng">There's still a lot of uncertainty.</td><td class="ban">এখনও অনেক অনিশ্চয়তা আছে।</td></tr>
+        <tr><td class="num">490</td><td class="eng">I wouldn't bet on it.</td><td class="ban">আমি এটার উপর বাজি ধরতাম না।</td></tr>
+        <tr><td class="num">491</td><td class="eng">Things could go either way.</td><td class="ban">বিষয়টা যেকোনো দিকে যেতে পারে।</td></tr>
+        <tr><td class="num">492</td><td class="eng">I'd rather not make assumptions.</td><td class="ban">আমি অনুমান না করাই পছন্দ করব।</td></tr>
+        <tr><td class="num">493</td><td class="eng">Let's not jump to conclusions.</td><td class="ban">চলো তাড়াহুড়ো করে সিদ্ধান্তে না আসি।</td></tr>
+        <tr><td class="num">494</td><td class="eng">I'll believe it when I see it.</td><td class="ban">দেখলে তখন বিশ্বাস করব।</td></tr>
+        <tr><td class="num">495</td><td class="eng">We'll cross that bridge when we come to it.</td><td class="ban">সময় হলে সেটা নিয়ে ভাবা যাবে।</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- CAT 5: TALKING ABOUT HABITS & ROUTINES -->
+  <!-- ═══════════════════════════════════════════ -->
+  <div class="cat-block">
+    <div class="cat-header" style="background: #3d2b6e;">
+      <span class="cat-icon">🔄</span>
+      <span class="cat-title">Category 5 — Habits &amp; Daily Routines</span>
+      <span class="cat-range">496 – 520</span>
+    </div>
+    <table>
+      <thead><tr><th>#</th><th>English Sentence</th><th>বাংলা অর্থ</th></tr></thead>
+      <tbody>
+        <tr><td class="num">496</td><td class="eng">I usually wake up at six in the morning.</td><td class="ban">আমি সাধারণত সকাল ছয়টায় উঠি।</td></tr>
+        <tr><td class="num">497</td><td class="eng">I go for a walk every morning.</td><td class="ban">আমি প্রতিদিন সকালে হাঁটতে যাই।</td></tr>
+        <tr><td class="num">498</td><td class="eng">I skip breakfast sometimes when I'm in a rush.</td><td class="ban">তাড়া থাকলে মাঝেমাঝে সকালের নাস্তা বাদ দিই।</td></tr>
+        <tr><td class="num">499</td><td class="eng">I read for at least thirty minutes before bed.</td><td class="ban">ঘুমানোর আগে আমি কমপক্ষে ত্রিশ মিনিট পড়ি।</td></tr>
+        <tr><td class="num">500</td><td class="eng">I check my phone first thing in the morning.</td><td class="ban">সকালে উঠেই প্রথমে ফোন চেক করি।</td></tr>
+        <tr><td class="num">501</td><td class="eng">I try to drink eight glasses of water a day.</td><td class="ban">আমি প্রতিদিন আট গ্লাস পানি পান করার চেষ্টা করি।</td></tr>
+        <tr><td class="num">502</td><td class="eng">I cook at home most of the time.</td><td class="ban">বেশিরভাগ সময় আমি বাড়িতেই রান্না করি।</td></tr>
+        <tr><td class="num">503</td><td class="eng">I take a short nap after lunch.</td><td class="ban">দুপুরের খাবারের পর আমি একটু ঘুমাই।</td></tr>
+        <tr><td class="num">504</td><td class="eng">I usually go to bed around eleven.</td><td class="ban">আমি সাধারণত এগারোটার দিকে ঘুমাই।</td></tr>
+        <tr><td class="num">505</td><td class="eng">I work out three times a week.</td><td class="ban">আমি সপ্তাহে তিনবার ব্যায়াম করি।</td></tr>
+        <tr><td class="num">506</td><td class="eng">I always carry a notebook with me.</td><td class="ban">আমি সবসময় সাথে একটা নোটবুক রাখি।</td></tr>
+        <tr><td class="num">507</td><td class="eng">I call my parents every Sunday.</td><td class="ban">আমি প্রতি রবিবার বাবা-মাকে ফোন করি।</td></tr>
+        <tr><td class="num">508</td><td class="eng">I rarely eat fast food anymore.</td><td class="ban">আমি এখন আর তেমন ফাস্ট ফুড খাই না।</td></tr>
+        <tr><td class="num">509</td><td class="eng">I spend weekends with my family.</td><td class="ban">আমি সপ্তাহান্ত পরিবারের সাথে কাটাই।</td></tr>
+        <tr><td class="num">510</td><td class="eng">I make a to-do list every morning.</td><td class="ban">আমি প্রতিদিন সকালে একটা কাজের তালিকা বানাই।</td></tr>
+        <tr><td class="num">511</td><td class="eng">I've been trying to cut down on sugar.</td><td class="ban">আমি চিনি কমানোর চেষ্টা করছি।</td></tr>
+        <tr><td class="num">512</td><td class="eng">I listen to music while commuting.</td><td class="ban">যাতায়াতের সময় আমি গান শুনি।</td></tr>
+        <tr><td class="num">513</td><td class="eng">I've started meditating in the evenings.</td><td class="ban">আমি সন্ধ্যায় মেডিটেশন শুরু করেছি।</td></tr>
+        <tr><td class="num">514</td><td class="eng">I tend to procrastinate a lot.</td><td class="ban">আমি অনেক বেশি কাজ পিছিয়ে দিই।</td></tr>
+        <tr><td class="num">515</td><td class="eng">I always double-lock the door before leaving.</td><td class="ban">বের হওয়ার আগে সবসময় দরজায় দুটো তালা দিই।</td></tr>
+        <tr><td class="num">516</td><td class="eng">I've been waking up earlier these days.</td><td class="ban">ইদানীং আমি আগে আগে উঠছি।</td></tr>
+        <tr><td class="num">517</td><td class="eng">I review my goals every month.</td><td class="ban">আমি প্রতি মাসে আমার লক্ষ্যগুলো পর্যালোচনা করি।</td></tr>
+        <tr><td class="num">518</td><td class="eng">I catch up on news during breakfast.</td><td class="ban">সকালের নাস্তার সময় আমি খবর দেখি।</td></tr>
+        <tr><td class="num">519</td><td class="eng">I keep a journal to track my thoughts.</td><td class="ban">আমি চিন্তা লিখে রাখার জন্য জার্নাল রাখি।</td></tr>
+        <tr><td class="num">520</td><td class="eng">Old habits are hard to break.</td><td class="ban">পুরনো অভ্যাস ছাড়া কঠিন।</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- CAT 6: MAKING PLANS & SUGGESTIONS -->
+  <!-- ═══════════════════════════════════════════ -->
+  <div class="cat-block">
+    <div class="cat-header" style="background: #1a4a5a;">
+      <span class="cat-icon">💡</span>
+      <span class="cat-title">Category 6 — Making Plans &amp; Suggestions</span>
+      <span class="cat-range">521 – 545</span>
+    </div>
+    <table>
+      <thead><tr><th>#</th><th>English Sentence</th><th>বাংলা অর্থ</th></tr></thead>
+      <tbody>
+        <tr><td class="num">521</td><td class="eng">Why don't we go out for dinner tonight?</td><td class="ban">আজ রাতে কেন আমরা বাইরে ডিনার করতে না যাই?</td></tr>
+        <tr><td class="num">522</td><td class="eng">How about we try that new restaurant?</td><td class="ban">সেই নতুন রেস্তোরাঁটা কেমন হয়?</td></tr>
+        <tr><td class="num">523</td><td class="eng">What if we leave a bit earlier to avoid traffic?</td><td class="ban">যদি ট্রাফিক এড়াতে একটু আগে বের হই?</td></tr>
+        <tr><td class="num">524</td><td class="eng">Let's split the work between us.</td><td class="ban">চলো কাজটা আমাদের মধ্যে ভাগ করে নিই।</td></tr>
+        <tr><td class="num">525</td><td class="eng">We could always postpone it to next month.</td><td class="ban">আমরা এটা পরের মাসে পিছিয়ে দিতে পারি।</td></tr>
+        <tr><td class="num">526</td><td class="eng">That's a brilliant suggestion!</td><td class="ban">এটা একটা চমৎকার পরামর্শ!</td></tr>
+        <tr><td class="num">527</td><td class="eng">I'm up for anything — you decide.</td><td class="ban">আমি যেকোনো কিছুর জন্য প্রস্তুত — তুমি ঠিক করো।</td></tr>
+        <tr><td class="num">528</td><td class="eng">Why don't you take the day off?</td><td class="ban">কেন একটা দিন ছুটি নাও না?</td></tr>
+        <tr><td class="num">529</td><td class="eng">We should book the tickets in advance.</td><td class="ban">আমাদের আগে থেকে টিকিট বুক করা উচিত।</td></tr>
+        <tr><td class="num">530</td><td class="eng">How about a picnic this Sunday?</td><td class="ban">এই রবিবার পিকনিক হলে কেমন হয়?</td></tr>
+        <tr><td class="num">531</td><td class="eng">Maybe we should ask for a second opinion.</td><td class="ban">হয়তো আমাদের দ্বিতীয় মতামত নেওয়া উচিত।</td></tr>
+        <tr><td class="num">532</td><td class="eng">Let's make a plan and stick to it.</td><td class="ban">চলো একটা পরিকল্পনা করি এবং সেটায় থাকি।</td></tr>
+        <tr><td class="num">533</td><td class="eng">I suggest we start with the easiest part first.</td><td class="ban">আমি পরামর্শ দিচ্ছি প্রথমে সবচেয়ে সহজ অংশটা শুরু করি।</td></tr>
+        <tr><td class="num">534</td><td class="eng">Why not try a different approach?</td><td class="ban">ভিন্ন পদ্ধতি চেষ্টা করো না কেন?</td></tr>
+        <tr><td class="num">535</td><td class="eng">We could save a lot of time if we do it this way.</td><td class="ban">এভাবে করলে আমরা অনেক সময় বাঁচাতে পারব।</td></tr>
+        <tr><td class="num">536</td><td class="eng">It might be a good idea to call first.</td><td class="ban">আগে ফোন করাটা ভালো ধারণা হতে পারে।</td></tr>
+        <tr><td class="num">537</td><td class="eng">Let's take a vote on this.</td><td class="ban">চলো এটায় ভোট দিই।</td></tr>
+        <tr><td class="num">538</td><td class="eng">What do you think about going together?</td><td class="ban">একসাথে যাওয়া সম্পর্কে তুমি কী ভাবছ?</td></tr>
+        <tr><td class="num">539</td><td class="eng">We should set a clear deadline for this.</td><td class="ban">এর জন্য আমাদের একটা স্পষ্ট সময়সীমা ঠিক করা উচিত।</td></tr>
+        <tr><td class="num">540</td><td class="eng">I'd recommend talking to someone with experience.</td><td class="ban">আমি অভিজ্ঞ কারো সাথে কথা বলার পরামর্শ দেব।</td></tr>
+        <tr><td class="num">541</td><td class="eng">Shall we get started then?</td><td class="ban">তাহলে কি শুরু করব?</td></tr>
+        <tr><td class="num">542</td><td class="eng">We could try it on a small scale first.</td><td class="ban">আমরা প্রথমে ছোট আকারে চেষ্টা করতে পারি।</td></tr>
+        <tr><td class="num">543</td><td class="eng">What if we involve more people?</td><td class="ban">যদি আমরা আরও মানুষকে যুক্ত করি?</td></tr>
+        <tr><td class="num">544</td><td class="eng">I think we need to rethink our strategy.</td><td class="ban">আমি মনে করি আমাদের কৌশল পুনরায় ভাবতে হবে।</td></tr>
+        <tr><td class="num">545</td><td class="eng">Let's go for it — what do we have to lose?</td><td class="ban">চলো করে দেখি — হারানোর কী আছে?</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- CAT 7: TALKING ABOUT PAST EXPERIENCES -->
+  <!-- ═══════════════════════════════════════════ -->
+  <div class="cat-block">
+    <div class="cat-header" style="background: #5a3200;">
+      <span class="cat-icon">📖</span>
+      <span class="cat-title">Category 7 — Talking About Past Experiences</span>
+      <span class="cat-range">546 – 565</span>
+    </div>
+    <table>
+      <thead><tr><th>#</th><th>English Sentence</th><th>বাংলা অর্থ</th></tr></thead>
+      <tbody>
+        <tr><td class="num">546</td><td class="eng">I've never done anything like this before.</td><td class="ban">আমি আগে কখনো এরকম কিছু করিনি।</td></tr>
+        <tr><td class="num">547</td><td class="eng">I visited my hometown last year.</td><td class="ban">গত বছর আমি আমার গ্রামের বাড়ি গিয়েছিলাম।</td></tr>
+        <tr><td class="num">548</td><td class="eng">I used to play football when I was young.</td><td class="ban">ছোটবেলায় আমি ফুটবল খেলতাম।</td></tr>
+        <tr><td class="num">549</td><td class="eng">That was the best trip of my life.</td><td class="ban">এটা ছিল আমার জীবনের সেরা ভ্রমণ।</td></tr>
+        <tr><td class="num">550</td><td class="eng">I once got completely lost in a new city.</td><td class="ban">একবার নতুন শহরে আমি সম্পূর্ণ পথ হারিয়ে ফেলেছিলাম।</td></tr>
+        <tr><td class="num">551</td><td class="eng">I grew up in a small town.</td><td class="ban">আমি একটা ছোট শহরে বড় হয়েছি।</td></tr>
+        <tr><td class="num">552</td><td class="eng">I remember it like it was yesterday.</td><td class="ban">এটা মনে হয় যেন গতকালের ঘটনা।</td></tr>
+        <tr><td class="num">553</td><td class="eng">I learned a lot from that experience.</td><td class="ban">সেই অভিজ্ঞতা থেকে আমি অনেক কিছু শিখেছি।</td></tr>
+        <tr><td class="num">554</td><td class="eng">I made a lot of mistakes in my early career.</td><td class="ban">ক্যারিয়ারের শুরুতে আমি অনেক ভুল করেছিলাম।</td></tr>
+        <tr><td class="num">555</td><td class="eng">I've been to that place twice already.</td><td class="ban">আমি ইতিমধ্যে সেই জায়গায় দুবার গেছি।</td></tr>
+        <tr><td class="num">556</td><td class="eng">That moment changed my life completely.</td><td class="ban">সেই মুহূর্তটা আমার জীবন সম্পূর্ণ বদলে দিয়েছিল।</td></tr>
+        <tr><td class="num">557</td><td class="eng">I had a really tough childhood.</td><td class="ban">আমার শৈশব অনেক কঠিন ছিল।</td></tr>
+        <tr><td class="num">558</td><td class="eng">I studied abroad for two years.</td><td class="ban">আমি দুই বছর বিদেশে পড়াশোনা করেছি।</td></tr>
+        <tr><td class="num">559</td><td class="eng">I've met some really interesting people in my life.</td><td class="ban">জীবনে আমি কিছু অনেক আকর্ষণীয় মানুষের সাথে পরিচিত হয়েছি।</td></tr>
+        <tr><td class="num">560</td><td class="eng">Looking back, I wouldn't change a thing.</td><td class="ban">পেছনে ফিরে তাকালে, আমি কিছুই বদলাতাম না।</td></tr>
+        <tr><td class="num">561</td><td class="eng">I went through a really difficult period last year.</td><td class="ban">গত বছর আমি একটা অনেক কঠিন সময়ের মধ্যে দিয়ে গেছি।</td></tr>
+        <tr><td class="num">562</td><td class="eng">It was a turning point in my career.</td><td class="ban">এটা আমার ক্যারিয়ারের একটা মোড় পরিবর্তনকারী মুহূর্ত ছিল।</td></tr>
+        <tr><td class="num">563</td><td class="eng">I have many good memories of that place.</td><td class="ban">সেই জায়গাটা নিয়ে আমার অনেক ভালো স্মৃতি আছে।</td></tr>
+        <tr><td class="num">564</td><td class="eng">I wish I had started earlier.</td><td class="ban">আমি চাইতাম আরও আগে শুরু করতাম।</td></tr>
+        <tr><td class="num">565</td><td class="eng">It was a lesson I'll never forget.</td><td class="ban">এটা এমন একটা শিক্ষা যা আমি কখনো ভুলব না।</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- CAT 8: IDIOMS & NATURAL PHRASES -->
+  <!-- ═══════════════════════════════════════════ -->
+  <div class="cat-block">
+    <div class="cat-header" style="background: #2a1a4a;">
+      <span class="cat-icon">🗣️</span>
+      <span class="cat-title">Category 8 — Idioms &amp; Natural Everyday Phrases</span>
+      <span class="cat-range">566 – 585</span>
+    </div>
+    <table>
+      <thead><tr><th>#</th><th>English Sentence</th><th>বাংলা অর্থ</th></tr></thead>
+      <tbody>
+        <tr><td class="num">566</td><td class="eng">I'm totally swamped right now.</td><td class="ban">আমি এখন কাজে একদম ডুবে আছি।</td></tr>
+        <tr><td class="num">567</td><td class="eng">It's on the tip of my tongue.</td><td class="ban">এটা আমার মুখের ডগায় আছে কিন্তু বলতে পারছি না।</td></tr>
+        <tr><td class="num">568</td><td class="eng">Let's cut to the chase.</td><td class="ban">চলো সরাসরি মূল বিষয়ে আসি।</td></tr>
+        <tr><td class="num">569</td><td class="eng">I'm dead tired.</td><td class="ban">আমি ভীষণ ক্লান্ত।</td></tr>
+        <tr><td class="num">570</td><td class="eng">It's not the end of the world.</td><td class="ban">এটা দুনিয়ার শেষ না।</td></tr>
+        <tr><td class="num">571</td><td class="eng">Give it your best shot.</td><td class="ban">তোমার সেরাটা দিয়ে চেষ্টা করো।</td></tr>
+        <tr><td class="num">572</td><td class="eng">That's out of the question.</td><td class="ban">এটা একদমই সম্ভব না।</td></tr>
+        <tr><td class="num">573</td><td class="eng">I've had enough of this.</td><td class="ban">আমি এটাতে অনেক হয়েছে।</td></tr>
+        <tr><td class="num">574</td><td class="eng">It's worth a try.</td><td class="ban">চেষ্টা করার মতো।</td></tr>
+        <tr><td class="num">575</td><td class="eng">Better late than never.</td><td class="ban">না হওয়ার চেয়ে দেরিতে হওয়া ভালো।</td></tr>
+        <tr><td class="num">576</td><td class="eng">You're overthinking this.</td><td class="ban">তুমি এটা নিয়ে বেশি ভাবছ।</td></tr>
+        <tr><td class="num">577</td><td class="eng">That came out of nowhere.</td><td class="ban">এটা হঠাৎ করেই এলো।</td></tr>
+        <tr><td class="num">578</td><td class="eng">I need to get this off my chest.</td><td class="ban">এটা মন থেকে বলে হালকা হতে চাই।</td></tr>
+        <tr><td class="num">579</td><td class="eng">It's a win-win situation.</td><td class="ban">এটা উভয় পক্ষের জন্য লাভজনক।</td></tr>
+        <tr><td class="num">580</td><td class="eng">Just go with the flow.</td><td class="ban">শুধু স্বাভাবিকভাবে চলতে থাকো।</td></tr>
+        <tr><td class="num">581</td><td class="eng">That's the last straw.</td><td class="ban">এটাই শেষ সীমা।</td></tr>
+        <tr><td class="num">582</td><td class="eng">We're all in the same boat.</td><td class="ban">আমরা সবাই একই পরিস্থিতিতে আছি।</td></tr>
+        <tr><td class="num">583</td><td class="eng">Hit me up when you're free.</td><td class="ban">ফ্রি হলে আমাকে জানাও।</td></tr>
+        <tr><td class="num">584</td><td class="eng">I'm just pulling your leg.</td><td class="ban">আমি শুধু তোমাকে মজা করছিলাম।</td></tr>
+        <tr><td class="num">585</td><td class="eng">Let's sleep on it and decide tomorrow.</td><td class="ban">চলো আজ রাতটা ভেবে আগামীকাল সিদ্ধান্ত নিই।</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- CAT 9: TALKING ABOUT FUTURE & AMBITIONS -->
+  <!-- ═══════════════════════════════════════════ -->
+  <div class="cat-block">
+    <div class="cat-header" style="background: #1a3a4a;">
+      <span class="cat-icon">🌟</span>
+      <span class="cat-title">Category 9 — Future Plans &amp; Ambitions</span>
+      <span class="cat-range">586 – 600</span>
+    </div>
+    <table>
+      <thead><tr><th>#</th><th>English Sentence</th><th>বাংলা অর্থ</th></tr></thead>
+      <tbody>
+        <tr><td class="num">586</td><td class="eng">I'm planning to start my own business.</td><td class="ban">আমি নিজের ব্যবসা শুরু করার পরিকল্পনা করছি।</td></tr>
+        <tr><td class="num">587</td><td class="eng">I want to learn a new skill this year.</td><td class="ban">এই বছর আমি একটা নতুন দক্ষতা শিখতে চাই।</td></tr>
+        <tr><td class="num">588</td><td class="eng">My goal is to become fluent in English.</td><td class="ban">আমার লক্ষ্য হলো ইংরেজিতে সাবলীল হওয়া।</td></tr>
+        <tr><td class="num">589</td><td class="eng">I hope to travel to Europe one day.</td><td class="ban">আমি আশা করি একদিন ইউরোপ ভ্রমণ করব।</td></tr>
+        <tr><td class="num">590</td><td class="eng">I'm thinking of going back to school.</td><td class="ban">আমি আবার পড়াশোনায় ফেরার কথা ভাবছি।</td></tr>
+        <tr><td class="num">591</td><td class="eng">I'd love to own a house someday.</td><td class="ban">আমি একদিন নিজের বাড়ির মালিক হতে চাই।</td></tr>
+        <tr><td class="num">592</td><td class="eng">I plan to save more money this year.</td><td class="ban">এই বছর আমি আরও বেশি সঞ্চয় করার পরিকল্পনা করছি।</td></tr>
+        <tr><td class="num">593</td><td class="eng">I want to make a real difference in people's lives.</td><td class="ban">আমি মানুষের জীবনে সত্যিকারের পরিবর্তন আনতে চাই।</td></tr>
+        <tr><td class="num">594</td><td class="eng">I'm working towards a promotion.</td><td class="ban">আমি পদোন্নতির দিকে কাজ করছি।</td></tr>
+        <tr><td class="num">595</td><td class="eng">I aim to finish this project before the deadline.</td><td class="ban">আমি ডেডলাইনের আগে এই প্রজেক্ট শেষ করার লক্ষ্য রাখি।</td></tr>
+        <tr><td class="num">596</td><td class="eng">I'm hoping things will improve soon.</td><td class="ban">আমি আশা করছি শীঘ্রই সব ভালো হবে।</td></tr>
+        <tr><td class="num">597</td><td class="eng">Five years from now, I want to be in a different position.</td><td class="ban">পাঁচ বছর পরে আমি একটা ভিন্ন অবস্থানে থাকতে চাই।</td></tr>
+        <tr><td class="num">598</td><td class="eng">I believe hard work always pays off.</td><td class="ban">আমি বিশ্বাস করি পরিশ্রমের ফল সবসময় মেলে।</td></tr>
+        <tr><td class="num">599</td><td class="eng">I want to give my children a better life.</td><td class="ban">আমি আমার সন্তানদের একটা ভালো জীবন দিতে চাই।</td></tr>
+        <tr><td class="num">600</td><td class="eng">Dreams don't work unless you do.</td><td class="ban">স্বপ্ন পূরণ হয় না যদি তুমি পরিশ্রম না করো।</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <strong>1000 High-Frequency English Sentences for Bangla Speakers</strong><br>
+    Memorize · Practice · Speak with Confidence
+    <div class="day-pills">
+      <a class="pill done" href="Day1_English_Sentences.html">✓ Day 1</a>
+      <a class="pill done" href="Day2_English_Sentences.html">✓ Day 2</a>
+      <a class="pill active"">Day 3 ← You are here</a>
+      <a class="pill" href="Day4_English_Sentences.html">Day 4</a>
+      <a class="pill" href="Day5_English_Sentences.html">Day 5</a>
+    </div>
+    <p style="margin-top:12px; font-size:12px; color:#aaa;">
+      Days 4–5 cover: Workplace Conversations · Negotiations · Expressing Preferences · Storytelling · Complex Real-Life Situations
+    </p>
+  </div>
+
+</div>
+</body>
+</html>
